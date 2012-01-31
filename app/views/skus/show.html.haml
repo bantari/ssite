@@ -8,7 +8,7 @@
     = link_to 'Publish', "/skus/#{item.id}/publish",  :class=>'small publish'
     = link_to 'Disable', "/skus/#{item.id}/activate", :class=>'small disable'
   - else
-    = link_to 'Enable', "/skus/#{item.id}/activate", :class=>'small activate'
+    = link_to 'Enable', "/skus/#{item.id}/activate", :class=>'small enable'
   = buttons_divider
   = link_to 'List',skus_path,:class=>'list'
 

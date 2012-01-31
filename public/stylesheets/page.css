@@ -50,13 +50,16 @@
   margin: 0px; }
   #page .filters table {
     margin: 0px;
-    background-color: #f6f6f6; }
+    background-color: #dddddd; }
     #page .filters table input[type="text"] {
       background-color: #eeeeee;
       width: 200px; }
     #page .filters table select {
+      padding: 1px 1px 1px 5px;
       background-color: #eeeeee;
       width: auto; }
+    #page .filters table td.right {
+      width: 80px; }
 
 #page .boolean_flag {
   display: inline-block;
@@ -89,7 +92,7 @@
   background-color: transparent;
   margin: 0px 0px 0px 1px;
   font-variant: small-caps;
-  width: 50px;
+  width: 70px;
   display: inline-block;
   text-align: center; }
 #page .flag.new {
@@ -99,14 +102,17 @@
 #page .flag.adjusted {
   color: white;
   background-color: #003366; }
+#page .flag.active {
+  color: white;
+  background-color: #004400; }
 #page .flag.disabled,
 #page .flag.inactive {
   color: white;
   background-color: #660033; }
 #page .flag.live_data {
-  width: 380px;
+  width: 100%;
   color: white;
-  background-color: #cc0000; }
+  background-color: #990000; }
 
 #page .role {
   color: #999999;
@@ -138,7 +144,7 @@
   height: 20px;
   display: block; }
   #page #banner .banner_dialog {
-    width: 500px;
+    width: 400px;
     float: left;
     display: inline-block; }
     #page #banner .banner_dialog .banner_message {
@@ -152,8 +158,12 @@
         color: white;
         padding: 1px 10px;
         background-color: #990000; }
-  #page #banner .banner_flags {
+  #page #banner .banner_class_msg {
+    display: inline-block;
+    float: right;
     width: 400px;
+    margin-right: 2px; }
+  #page #banner .banner_flags {
     float: right;
     text-align: right;
     display: inline-block; }

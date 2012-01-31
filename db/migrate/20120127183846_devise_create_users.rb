@@ -41,6 +41,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.column :live,         :boolean, :default => false
 
       #--- object flags
+      t.column :active,       :boolean, :default => true
       t.column :editable,     :boolean, :default => true
 
       t.timestamps

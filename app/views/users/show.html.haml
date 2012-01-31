@@ -4,6 +4,11 @@
 = render :partial=>'/layouts/filters'
 
 .buttons.top
+  - if item.active
+    = link_to 'Disable', "/users/#{item.id}/activate", :class=>'small disable'
+  - else
+    = link_to 'Enable', "/users/#{item.id}/activate", :class=>'small enable'
+  = buttons_divider
   = link_to 'List',users_path,:class=>'list'
 
 = page_title_for item, :show

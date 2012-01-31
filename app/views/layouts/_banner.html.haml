@@ -4,9 +4,11 @@
 .banner_dialog
   - flash.each do |key, msg|
     = content_tag :div, msg, :class => ["banner_message ",key], :id=>"notice_#{key}"
-    
+
 .banner_flags
-  = safe @class_flags
   - if item && item.respond_to?(:get_flags)
     = item.get_flags
+
+.banner_class_msg
+  = safe @class_flags
 

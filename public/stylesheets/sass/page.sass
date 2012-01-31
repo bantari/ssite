@@ -60,13 +60,16 @@
     margin: 0px
     table
       margin: 0px
-      background-color: #f6f6f6
+      background-color: #ddd
       input[type="text"]
         background-color: #eee
         width: 200px
       select
+        padding: 1px 1px 1px 5px
         background-color: #eee
         width: auto
+      td.right
+        width: 80px
   
 
 
@@ -104,7 +107,7 @@
     background-color: transparent
     margin: 0px 0px 0px 1px
     font-variant: small-caps
-    width: 50px
+    width: 70px
     display: inline-block
     text-align: center
   .flag.new
@@ -114,14 +117,18 @@
   .flag.adjusted
     color: #fff
     background-color: #036
+  .flag.active
+    color: #fff
+    background-color: #040
   .flag.disabled,
   .flag.inactive
     color: #fff
     background-color: #603
+
   .flag.live_data
-    width: 380px
+    width: 100%
     color: #fff
-    background-color: #c00
+    background-color: #900
 
 #page
   .role
@@ -156,7 +163,7 @@
     display: block
 
     .banner_dialog
-      width: 500px
+      width: 400px
       float: left
       display: inline-block
       .banner_message
@@ -171,8 +178,13 @@
           padding: 1px 10px
           background-color: #900
 
-    .banner_flags
+    .banner_class_msg
+      display: inline-block
+      float: right
       width: 400px
+      margin-right: 2px
+
+    .banner_flags
       float: right
       text-align: right
       display: inline-block

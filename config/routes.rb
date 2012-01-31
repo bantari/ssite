@@ -2,7 +2,11 @@ Ssite::Application.routes.draw do
 
   devise_for :users
 
-  resources :users
+  resources :users do
+    member do 
+      get :activate
+    end
+  end
   resources :brands
   resources :categories
   

@@ -1,0 +1,47 @@
+<% block_id = 'flters_table' %>
+<% block_class = params[:filter] ? 'show' : 'noshow' %>
+<% top_class   = params[:filter] ? 'open' : 'closed' %>
+<div class="filters_block filters">
+
+  <%= form_for(:filter,@filter,:url=>{:action=>'index'},:html=>{:id=>'filters',:method=>'get'}) do |f| %>
+
+    <h5 class='clickable <%= top_class %>' id='<%= "#{block_id}_t" %>' onclick="flipBlock('<%= block_id %>')">Search Filters</h5>
+    <table cellspacing=0 id="<%= block_id %>" class="<%= block_class %>">
+      <tbody>
+
+        <tr>
+          <td>
+
+            <%= @filter.search_field %>
+
+            <% if @filter.boolean_field_registered?(:active) %>
+              <%= @filter.boolean_dropdown_field(:label=>'-Active',:name=>'active') %>
+            <% end %>
+
+            <% if @filter.boolean_field_registered?(:adjusted) %>
+              <%= @filter.boolean_dropdown_field(:label=>'-Adjusted',:name=>'adjusted') %>
+            <% end %>
+
+            <% if @filter.boolean_field_registered?(:published) %>
+              <%= @filter.boolean_dropdown_field(:label=>'-Published',:name=>'published') %>
+            <% end %>
+
+          </td>
+          <td class="right"><%= @filter.paginate_fields %><%= @filter.sort_by_fields %></td>
+        </tr>
+
+        <tr>
+          <td>
+
+            <%= yield %>
+
+          </td>
+          <td class="right controls"><%= @filter.default_links %></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  <% end %>
+
+</div>

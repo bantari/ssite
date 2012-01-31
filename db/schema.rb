@@ -753,6 +753,7 @@ ActiveRecord::Schema.define(:version => 20120129184330) do
     t.boolean  "special",                               :default => false
     t.boolean  "system",                                :default => false
     t.boolean  "live",                                  :default => false
+    t.boolean  "active",                                :default => true
     t.boolean  "editable",                              :default => true
     t.datetime "created_at"
     t.datetime "updated_at"

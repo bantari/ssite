@@ -30,7 +30,7 @@ module RControllerExtras
 
   def delete
     @object = model_name.find(params[:id])
-    @object.destroy
+    #@object.destroy
     redirect_to("/#{model_sym.to_s.pluralize}", :notice => 'Object deleted.')
   end
 
