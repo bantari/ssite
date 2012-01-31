@@ -7,7 +7,9 @@ Ssite::Application.routes.draw do
       get :activate
     end
   end
+
   resources :brands
+  resources :event_logs
   resources :categories
   
   resources :skus do

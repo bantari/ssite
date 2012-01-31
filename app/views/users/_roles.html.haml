@@ -1,18 +1,4 @@
 
-%h5= 'Admin Roles'
-%table
-  %tbody
-    = RDisplay.yn_row(item,:admin,:display=>:y_alert,       :info=>field_info('Has access to everything',:show=>item.admin))
-    = RDisplay.yn_row(item,:developer,:display=>:y_alert,   :info=>field_info('Can view dev info and perform dev actions',:show=>item.developer))
-
-%h5= 'Action Roles'
-%table
-  %tbody
-    = RDisplay.yn_row(item,:creator,:display=>:y_alert,     :info=>field_info('Can create accessible object',:show=>item.creator))
-    = RDisplay.yn_row(item,:editor,:display=>:y_alert,      :info=>field_info('Can edit accessible object',:show=>item.editor))
-    = RDisplay.yn_row(item,:destroyer,:display=>:y_alert,   :info=>field_info('Can destroy accessible object',:show=>item.destroyer))
-    = RDisplay.yn_row(item,:releaser,:display=>:y_alert,    :info=>field_info('Can release accessible object',:show=>item.releaser))
-
 %h5= 'Access Roles'
 %table
   %tbody
@@ -25,9 +11,23 @@
     = RDisplay.yn_row(item,:media,:display=>:y_strong,      :info=>field_info('Can view, create, and edit Images and Videos',:show=>item.media))
     = RDisplay.yn_row(item,:live,:display=>:y_alert,        :info=>field_info('Can access live data',:show=>item.live))
 
+%h5= 'Action Roles'
+%table
+  %tbody
+    = RDisplay.yn_row(item,:creator,:display=>:y_alert,     :info=>field_info('Can create accessible object',:show=>item.creator))
+    = RDisplay.yn_row(item,:editor,:display=>:y_alert,      :info=>field_info('Can edit accessible object',:show=>item.editor))
+    = RDisplay.yn_row(item,:destroyer,:display=>:y_alert,   :info=>field_info('Can destroy accessible object',:show=>item.destroyer))
+    = RDisplay.yn_row(item,:releaser,:display=>:y_alert,    :info=>field_info('Can release accessible object',:show=>item.releaser))
+
 %h5= 'Special Roles'
 %table
   %tbody                                                   
     = RDisplay.yn_row(item,:special,:display=>:y_alert,     :info=>field_info('Can access additional information (reports)',:show=>item.special))
     = RDisplay.yn_row(item,:system,:display=>:y_alert,      :info=>field_info('Can system additional information',:show=>item.system))
+
+%h5= 'System Roles'
+%table
+  %tbody
+    = RDisplay.yn_row(item,:admin,:display=>:y_alert,       :info=>field_info('Has access to everything',:show=>item.admin))
+    = RDisplay.yn_row(item,:developer,:display=>:y_alert,   :info=>field_info('Can view dev info and perform dev actions',:show=>item.developer))
 

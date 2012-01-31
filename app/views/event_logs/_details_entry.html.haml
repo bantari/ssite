@@ -1,0 +1,14 @@
+
+- item ||= f.object
+
+%h5= "Brand Details"
+%table.entry
+  %tbody
+    = RDisplay.row('Name',f.text_field(:name, :class=>'short required')+required)
+    = RDisplay.row('Title',f.text_field(:title, :class=>'normal')+optional)
+
+%h5= 'Parent'
+%table
+  %tbody
+    = RDisplay.row_for_selection_with_none('Parent', item, :parent_id, Brand.all)
+

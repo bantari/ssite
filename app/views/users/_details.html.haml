@@ -11,7 +11,7 @@
 %h5= 'User Roles Overview'
 %table
   %tbody
-    = RDisplay.row('System Roles',item.get_roles(:system=>true))
-    = RDisplay.row('Special Roles',item.get_roles(:special=>true))
-    = RDisplay.row('Action Roles',item.get_roles(:action=>true))
     = RDisplay.row('Access Roles',item.get_roles(:access=>true))
+    = RDisplay.row('Action Roles',item.get_roles(:action=>true))
+    = RDisplay.row('Special Roles',item.get_roles(:special=>true))
+    = RDisplay.row('System Roles',item.get_roles(:system=>true))

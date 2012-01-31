@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
     define_method("update_#{field}") do
       @object = Product.find(params[:id])
       if @object.update_attributes(params[model_sym])
-        @object.log_event(current_user,action_name)
+        EventLogger.log(current_user,@object,action_name)
         redirect_to("/products/#{@object.id}?show[#{field}]=yes", :notice=>"Object's #{field} updated.")
       else
         render :action => "edit_#{field}"
@@ -45,7 +45,7 @@ class ProductsController < ApplicationController
   def update_products
     @object = Product.find(params[:id])
     if @object.update_attributes(params[:product])
-      @object.log_event(current_user,action_name)
+      EventLogger.log(current_user,@object,action_name)
       redirect_to("/products/#{@object.id}?show[products]=yes", :notice=>"Object's Products updated.")
     else
       render :action => "edit_products"

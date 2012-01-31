@@ -83,11 +83,6 @@ class User < ActiveRecord::Base
     options[:all]     ||= false
     options[:special] ||= false
     s  = ''
-    self.creator    ? s+="<span class='role short acc'>C</span>"          : s+="<span class='role short'>C</span>"
-    self.editor     ? s+="<span class='role short acc'>E</span>"           : s+="<span class='role short'>E</span>"
-    self.destroyer  ? s+="<span class='role short act'>D</span>"        : s+="<span class='role short'>D</span>"
-    self.releaser   ? s+="<span class='role short act'>R</span>"         : s+="<span class='role short'>R</span>"
-    s += '&middot'
     self.documents  ? s+="<span class='role short acc'>D</span>"              : s+="<span class='role short'>D</span>" 
     self.inventory  ? s+="<span class='role short acc'>I</span>"              : s+="<span class='role short'>I</span>" 
     self.website    ? s+="<span class='role short acc'>W</span>"              : s+="<span class='role short'>W</span>" 
@@ -96,14 +91,21 @@ class User < ActiveRecord::Base
     self.web_faq        ? s+="<span class='role short acc'>F</span>"           : s+="<span class='role short'>F</span>" 
     self.media      ? s+="<span class='role short acc'>M</span>"            : s+="<span class='role short'>M</span>" 
     self.live       ? s+="<span class='role short acc'>L</span>"             : s+="<span class='role short'>L</span>" 
-    s += '&middot'
+    s += '&middot&middot'
+    self.creator    ? s+="<span class='role short acc'>C</span>"          : s+="<span class='role short'>C</span>"
+    self.editor     ? s+="<span class='role short acc'>E</span>"           : s+="<span class='role short'>E</span>"
+    self.destroyer  ? s+="<span class='role short act'>D</span>"        : s+="<span class='role short'>D</span>"
+    self.releaser   ? s+="<span class='role short act'>R</span>"         : s+="<span class='role short'>R</span>"
+    s += '&middot&middot'
     if options[:all] || options[:special]
       self.special    ? s+="<span class='role short spc'>S</span>"          : s+="<span class='role short'>S</span>" 
       self.system     ? s+="<span class='role short spc'>S</span>"           : s+="<span class='role short'>S</span>" 
-      s += '&middot'
+      s += '&middot&middot'
     end
-    self.developer  ? s+="<span class='role short sys'>D</span>"  : s+="<span class='role short'>D</span>"
+    self.developer  ? s+="<span class='role short sys'>D</span>"          : s+="<span class='role short'>D</span>"
     self.admin      ? s+="<span class='role short sys'>A</span>"          : s+="<span class='role short'>A</span>"
+    s += '&middot&middot'
+    self.active     ? s+="<span class='role short active'>X</span>"              : s+="<span class='role short inactive'>X</span>"
     return s.html_safe
   end
 

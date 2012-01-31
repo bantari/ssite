@@ -70,8 +70,6 @@
         width: auto
       td.right
         width: 80px
-  
-
 
 #page
   .boolean_flag
@@ -105,7 +103,7 @@
     font-size: 10px
     line-height: 10px
     background-color: transparent
-    margin: 0px 0px 0px 1px
+    margin: 0px 0px 0px 2px
     font-variant: small-caps
     width: 70px
     display: inline-block
@@ -116,17 +114,21 @@
   .flag.pending,
   .flag.adjusted
     color: #fff
-    background-color: #036
+    background-color: #468
   .flag.active
     color: #fff
-    background-color: #040
+    background-color: #050
   .flag.disabled,
   .flag.inactive
     color: #fff
-    background-color: #603
+    background-color: #900
 
+  .flag.read_only
+    width: 300px
+    color: #fff
+    background-color: #639
   .flag.live_data
-    width: 100%
+    width: 300px
     color: #fff
     background-color: #900
 
@@ -146,16 +148,22 @@
     padding: 1px 5px 2px
   .role.act
     color: #fff
-    background-color: #306
+    background-color: #636
   .role.acc
     color: #fff
-    background-color: #036
+    background-color: #147
   .role.spc
     color: #fff
-    background-color: #333
+    background-color: #444
   .role.sys
     color: #fff
     background-color: #603
+  .role.active
+    //color: #fff
+    //background-color: #060
+  .role.inactive
+    color: #fff
+    background-color: #900
 
 #page
   #banner
@@ -180,9 +188,9 @@
 
     .banner_class_msg
       display: inline-block
+      text-align: right
       float: right
       width: 400px
-      margin-right: 2px
 
     .banner_flags
       float: right

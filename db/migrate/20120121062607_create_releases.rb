@@ -4,13 +4,15 @@ class CreateReleases < ActiveRecord::Migration
 
       t.column :time, :datetime
 
-      t.column :user_id,     :integer, :default => nil
-      t.column :object_id,   :integer, :default => nil
-      t.column :object_type, :string,  :default => nil
+      t.column :user_id,      :integer, :default => nil
+      t.column :object_id,    :integer, :default => nil
+      t.column :object_type,  :string,  :default => nil
       
-      t.column :action,      :string,  :default => nil
-      t.column :description, :text
+      t.column :action,       :string,  :default => nil
+      t.column :description,  :text
       
+      t.column :site_id,      :integer, :default => nil
+
       t.timestamps
     end
   end

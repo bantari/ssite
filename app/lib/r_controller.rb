@@ -68,7 +68,7 @@ module RController
 
     respond_to do |format|
       if @object.save
-        @object.log_event(current_user,action_name)
+        EventLogger.log(current_user,@object,action_name)
         do_after_create
         do_after_save
         do_after_each
@@ -97,7 +97,7 @@ module RController
 
     respond_to do |format|
       if @object.update_attributes(params[model_sym])
-        @object.log_event(current_user,action_name)
+        EventLogger.log(current_user,@object,action_name)
         do_after_update
         do_after_save
         do_after_each

@@ -44,23 +44,23 @@
   background-color: transparent; }
 #page .buttons a.edit:hover {
   color: white;
-  background-color: #003366;
-  border-color: black; }
+  border-color: black;
+  background-color: #003366; }
 #page .buttons a.disable:hover {
   color: white;
-  background-color: #660033;
-  border-color: black; }
+  border-color: black;
+  background-color: #990000; }
 #page .buttons a.release:hover {
   color: white;
-  background-color: #330066;
-  border-color: black; }
+  border-color: black;
+  background-color: #330066; }
 #page .buttons a.new:hover,
 #page .buttons a.enable:hover,
 #page .buttons a.form_submit:hover {
   color: white;
-  background-color: #004400;
-  border-color: black; }
+  border-color: black;
+  background-color: #006600; }
 #page .buttons a.form_cancel:hover {
   color: white;
-  background-color: #660000;
-  border-color: black; }
+  border-color: black;
+  background-color: #990000; }

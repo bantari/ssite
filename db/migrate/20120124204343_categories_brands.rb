@@ -14,6 +14,8 @@ class CategoriesBrands < ActiveRecord::Migration
       t.column :trace,            :string,  :default => nil
       t.column :full,             :string,  :default => nil
 
+      t.column :site_id,          :integer, :default => nil
+
       t.timestamps
     end
 
@@ -30,6 +32,8 @@ class CategoriesBrands < ActiveRecord::Migration
       t.column :trace,            :string,  :default => nil
       t.column :full,             :string,  :default => nil
       
+      t.column :site_id,          :integer, :default => nil
+
       t.timestamps
     end
 

@@ -11,7 +11,7 @@
         %th.id.key= RFilterHelper.sort_by_link('ID','id',@filter,sorter)
         %th.str.w200px= RFilterHelper.sort_by_link('Name','name',@filter,sorter)
         %th.str= RFilterHelper.sort_by_link('Email','email',@filter,sorter)
-        %th.w300px.aright= 'Flags'
+        %th.w300px.aright= 'Roles &amp; Flags'.html_safe
 
       - reset_cycle
       - items.each do |item|

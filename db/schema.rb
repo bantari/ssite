@@ -12,17 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 20120129184330) do
 
-  create_table "action_events", :force => true do |t|
-    t.datetime "time"
-    t.integer  "user_id"
-    t.integer  "object_id"
-    t.string   "object_type"
-    t.string   "action"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "brand_banners", :force => true do |t|
     t.integer  "brand_id"
     t.integer  "banner_id"
@@ -87,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20120129184330) do
     t.integer  "parent_id"
     t.string   "trace"
     t.string   "full"
+    t.integer  "site_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -100,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20120129184330) do
     t.integer  "parent_id"
     t.string   "trace"
     t.string   "full"
+    t.integer  "site_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -287,6 +278,19 @@ ActiveRecord::Schema.define(:version => 20120129184330) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "event_logs", :force => true do |t|
+    t.datetime "time"
+    t.integer  "user_id"
+    t.integer  "object_id"
+    t.string   "object_type"
+    t.string   "action"
+    t.text     "description"
+    t.integer  "app_id"
+    t.integer  "site_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -571,6 +575,7 @@ ActiveRecord::Schema.define(:version => 20120129184330) do
     t.boolean  "sigma",               :default => false
     t.boolean  "bulk",                :default => false
     t.boolean  "inherited_bulk",      :default => false
+    t.integer  "site_id"
     t.integer  "replacement_id"
     t.datetime "introduced_at"
     t.integer  "introduced_by",       :default => 1
@@ -591,6 +596,7 @@ ActiveRecord::Schema.define(:version => 20120129184330) do
     t.string   "object_type"
     t.string   "action"
     t.text     "description"
+    t.integer  "site_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -755,6 +761,7 @@ ActiveRecord::Schema.define(:version => 20120129184330) do
     t.boolean  "live",                                  :default => false
     t.boolean  "active",                                :default => true
     t.boolean  "editable",                              :default => true
+    t.string   "sites_str"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

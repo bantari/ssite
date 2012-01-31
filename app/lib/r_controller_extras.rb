@@ -14,9 +14,9 @@ module RControllerExtras
   def activate
     @object = model_name.find(params[:id])
     @object.activate
-    msg = 'Object de-activated.'
-    msg = 'Object activated.' if @object.active
-    @object.log_event(current_user,action_name,msg)
+    msg = 'Object disabled.'
+    msg = 'Object enabled.' if @object.active
+    EventLogger.log(current_user,@object,action_name,msg)
     redirect_to(@object, :notice => msg)
   end
 
@@ -24,7 +24,7 @@ module RControllerExtras
     @object = model_name.find(params[:id])
     result = ''
     #@object.publish_all
-    @object.log_event(current_user,action_name,result)
+    EventLogger.log(current_user,@object,action_name,result)
     redirect_to("/#{@object.table_name}/#{@object.id}?show[releases]=yes", :notice => 'Object was successfully published.')
   end
 

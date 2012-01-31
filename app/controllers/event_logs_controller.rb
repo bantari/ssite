@@ -1,16 +1,17 @@
-class ActionEvent < ActiveRecord::Base
+class EventLogsController < ApplicationController
+#--------------------------------------------------------------------------------------------------------------------------------
+
+  include RController
+  
 #--------------------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------------
 
-  def self.generate(usr,obj,act,dscr=nil)
-    new_event = ActionEvent.create(
-      :time        => Time.now,
-      :object_id   => obj.id,
-      :object_type => obj.class.name,
-      :action      => act,
-      :description => dscr
-    )
-    return new_event
+  def filter_settings
+    @filter.set_sort_by_and_order('created_at','DESC')
+  end
+  
+  def do_before_each
+    @class_flags = read_only_flag
   end
 
 #--------------------------------------------------------------------------------------------------------------------------------
