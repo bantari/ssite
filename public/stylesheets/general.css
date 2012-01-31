@@ -1,0 +1,174 @@
+/* general.css */
+/*-------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------*/
+
+.noshow { display: none; }
+.debug  {
+	display: none; 
+	margin: 5px 0px; 
+	padding: 5px;
+	border: 1px solid #660;
+	background-color: #ffd;
+	color: #660;
+	font: 10px/14px verdana;
+}
+
+/*------------------------------------------------------------------- text styling ---*/
+.bold      { font-weight:     bold;      }
+.italic    { font-style:      italic;    }
+.underline { text-decoration: underline; }
+.normal    { font-weight: normal; font-style: normal; text-decoration: none;}
+
+/*------------------------------------------------------------------------ heights ---*/
+.h20px { height: 20px; }
+.h30px { height: 30px; }
+.h40px { height: 40px; }
+.h50px { height: 50px; }
+
+/*----------------------------------------------------------------- widths by parts ---*/
+.w2c { width: 50%; } /* 2-columns */
+.w3c { width: 33%; } /* 3-columns */
+.w4c { width: 25%; } /* 4-columns */
+.w5c { width: 20%; } /* 5-columns */
+
+/*------------------------------------------------------------ widths by percentage ---*/
+.w10p  { width:  10%; }
+.w20p  { width:  20%; }
+.w25p  { width:  25%; }
+.w30p  { width:  30%; }
+.w33p  { width:  33%; }
+.w40p  { width:  40%; }
+.w50p  { width:  50%; }
+.w60p  { width:  60%; }
+.w70p  { width:  70%; }
+.w80p  { width:  80%; }
+.w90p  { width:  90%; }
+.w100p { width: 100%; }
+
+/*----------------------------------------------------------------- widths by parts ---*/
+.w10px  { width:  10px; }
+.w20px  { width:  20px; }
+.w30px  { width:  30px; }
+.w40px  { width:  40px; }
+.w50px  { width:  50px; }
+.w60px  { width:  60px; }
+.w70px  { width:  70px; }
+.w80px  { width:  80px; }
+.w90px  { width:  90px; }
+.w100px { width: 100px; }
+.w110px { width: 110px; }
+.w120px { width: 120px; }
+.w130px { width: 130px; }
+.w140px { width: 140px; }
+.w150px { width: 150px; }
+.w160px { width: 160px; }
+.w170px { width: 170px; }
+.w180px { width: 180px; }
+.w190px { width: 190px; }
+.w200px { width: 200px; }
+.w210px { width: 210px; }
+.w220px { width: 220px; }
+.w230px { width: 230px; }
+.w240px { width: 240px; }
+.w250px { width: 250px; }
+.w260px { width: 260px; }
+.w270px { width: 270px; }
+.w280px { width: 280px; }
+.w290px { width: 290px; }
+.w300px { width: 300px; }
+.w320px { width: 320px; }
+.w350px { width: 350px; }
+.w360px { width: 360px; }
+.w400px { width: 400px; }
+.w500px { width: 500px; }
+.w600px { width: 600px; }
+.w700px { width: 700px; }
+.w800px { width: 800px; }
+
+/*--------------------------------------------------------------- widths by content ---*/
+.w-bool      { width: 50px; text-align:center; }
+.w-id        { width: 50px;  }
+.w-code      { width:100px;  }
+.w-number    { width: 60px;  }
+.w-amount    { width: 60px;  }
+.w-price     { width: 60px;  }
+.w-quantity  { width: 60px;  }
+.w-count     { width: 60px;  }
+.w-date      { width: 80px;  }
+.w-owner     { width: 140px; }
+.w-name      { width: 140px; }
+.w-status    { width: 90px;  text-align:center; }
+.w-actions   { width: 140px; }
+.w-approvals { width: 130px; }
+
+/*------------------------------------------------------------------- block indents ---*/
+.indent10px {padding-left: 10px;}
+.indent20px {padding-left: 20px;}
+.indent30px {padding-left: 30px;}
+.indent40px {padding-left: 40px;}
+.indent50px {padding-left: 50px;}
+/*----------------------------------------------------------------- text alignments ---*/
+.acenter,  .a-center, .align-center   { text-align: center;  }
+.aright,   .a-right,  .align-right    { text-align: right;   }
+.aleft,    .a-left,   .align-left     { text-align: left;    }
+.ajustify, .a-justify                 { text-align: justify; }
+
+/*------------------------------------------------------------- vertical alignments ---*/
+.v-top    { vertical-align: top;    }
+.v-middle { vertical-align: middle; }
+.v-bottom { vertical-align: bottom; }
+
+/*-------------------------------------------------------------------------- floats ---*/
+.f-left,  .float-left  { float: left;  }
+.f-right, .float-right { float: right; }
+.clear                 { clear: both;  }
+.float-left.first      {margin-right: 10px;}
+.float-left.next       {margin-right: 10px;}
+
+/*------------------------------------------------------------------------- borders ---*/
+.border-none    { border: none; }
+.border-top     { border-top:    1px solid #000; }
+.border-left    { border-left:   1px solid #000; }
+.border-right   { border-right:  1px solid #000; }
+.border-bottom  { border-bottom: 1px solid #000; }
+.border-tb      { border-top:    1px solid #000; border-bottom: 1px solid #000; }
+.border-lr      { border-left:   1px solid #000; border-right:  1px solid #000; }
+.border-tl      { border-top:    1px solid #000; border-left:   1px solid #000; }
+.border-br      { border-bottom: 1px solid #000; border-right:  1px solid #000; }
+
+/*-------------------------------------------------------------------------- colors ---*/
+.low    { color: #999; }
+.black  { color: #000; }
+.red    { color: #c00; }
+.gray   { color: #999; }
+.blue   { color: #00c; }
+.brown  { color: #036; }
+.green  { color: #070; }
+.purple { color: #909; }
+.yellow { color: #990; }
+.orange { color: #c60; }
+
+.zero     { color: #999; }
+.positive { color: #00c; }
+.negative { color: #c00; }
+.discount { color: #063; }
+
+/*-------------------------------------------------------------------------- raised ---*/
+.raised {
+  display: block;
+  text-align: center;
+  padding: 1px 3px;
+  border: 1px solid #000;
+  border-color: #eee #666 #666 #eee;
+  background-color: #999; }
+
+/*------------------------------------------------------------------- raised colors ---*/
+.raised.red    { background-color: #c99; color: #000; }
+.raised.blue   { background-color: #99c; color: #000; }
+.raised.green  { background-color: #9c9; color: #000; }
+.raised.purple { background-color: #c9c; color: #000; }
+.raised.yellow { background-color: #cc9; color: #000; }
+
+/*-------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------*/
+/* eof */

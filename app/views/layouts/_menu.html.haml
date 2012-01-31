@@ -1,0 +1,111 @@
+#menu_title= 'StemSite II'
+
+- menu_00_class = 'noshow'
+- menu_01_class = 'noshow'
+- menu_02_class = 'noshow'
+- menu_03_class = 'noshow'
+- menu_04_class = 'noshow'
+- menu_10_class = 'noshow'
+
+- menu_00_class_h = ''
+- menu_01_class_h = ''
+- menu_02_class_h = ''
+- menu_03_class_h = ''
+- menu_04_class_h = ''
+- menu_10_class_h = ''
+
+- if %(home).include? controller.controller_name 
+  - menu_00_class   = 'show'
+  - menu_00_class_h = 'here'
+- elsif %(documents publications).include? controller.controller_name 
+  - menu_01_class   = 'show'
+  - menu_01_class_h = 'here'
+- elsif %(skus courses products brands categories).include? controller.controller_name 
+  - menu_02_class   = 'show'
+  - menu_02_class_h = 'here'
+- elsif %(pages surveys snipplets).include? controller.controller_name 
+  - menu_03_class   = 'show'
+  - menu_03_class_h = 'here'
+- elsif %(images videos).include? controller.controller_name 
+  - menu_04_class   = 'show'
+  - menu_04_class_h = 'here'
+- elsif %(users).include? controller.controller_name 
+  - menu_10_class   = 'show'
+  - menu_10_class_h = 'here'
+
+
+%h5.clickable{:id=>'menu_00_h',:class=>menu_00_class_h,:onclick=>"changeMenu('menu_00');"}= 'Dashboard'
+#menu_00{:class=>menu_00_class}
+  .menu_block
+    %ul
+      %li= link_to 'User', skus_path, :class=>menu_here('home')
+    
+- if has_roles?(:documents)
+  %h5.far.clickable{:id=>'menu_01_h',:class=>menu_01_class_h,:onclick=>"changeMenu('menu_01');"}= 'Documents'
+  #menu_01{:class=>menu_01_class}
+    .menu_block
+      %ul
+        %li= link_to 'Documents', skus_path, :class=>menu_here('documents')
+        %li= link_to 'Publications', products_path, :class=>menu_here('publications')
+    
+
+- if has_roles?(:inventory)
+  %h5.clickable{:id=>'menu_02_h',:class=>menu_02_class_h,:onclick=>"changeMenu('menu_02');"}= 'Inventory'
+  #menu_02{:class=>menu_02_class}
+    .menu_block
+      %ul
+        %li= link_to 'SKUs', skus_path, :class=>menu_here('skus')
+        %li= link_to 'Courses', products_path, :class=>menu_here('courses')
+        %li= link_to 'Products', products_path, :class=>menu_here('products')
+      - if has_roles?(:live)
+        %h6= 'Live Data'
+        %ul.small
+          %li= link_to 'Brands', brands_path, :class=>menu_here('brands')
+          %li= link_to 'Categories', categories_path, :class=>menu_here('categories')
+
+- if has_roles_either?(:website,:web_glossary,:web_faq)
+  %h5.clickable{:id=>'menu_03_h',:class=>menu_03_class_h,:onclick=>"changeMenu('menu_03');"}= 'Website'
+  #menu_03{:class=>menu_03_class}
+    .menu_block
+      - if has_roles?(:website)
+        %ul
+          %li= link_to 'Pages', skus_path, :class=>menu_here('pages')
+          %li= link_to 'Surveys', skus_path, :class=>menu_here('surveys')
+          %li= link_to 'Snipplets', products_path, :class=>menu_here('snipplets')
+        %h6= 'Minor'
+        %ul.small
+          %li= link_to 'Careers', products_path, :class=>menu_here('careers')
+      - if has_roles?(:website,:system)
+        %h6= 'System Objects'
+        %ul.small
+          %li= link_to 'Page Types', products_path, :class=>menu_here('page_types')
+      - if has_roles_either?(:web_glossary,:web_faq)
+        - if has_roles?(:website)
+          %h6= 'Glossary & FAQ'
+          %ul.small
+            - if has_roles?(:web_glossary)
+              %li= link_to 'Glossary', products_path, :class=>menu_here('glossary_words')
+            - if has_roles?(:web_faq)
+              %li= link_to 'FAQ', products_path, :class=>menu_here('faq_questions')
+        - else
+          %ul
+            - if has_roles?(:web_glossary)
+              %li= link_to 'Glossary', products_path, :class=>menu_here('glossary_words')
+            - if has_roles?(:web_faq)
+              %li= link_to 'FAQ', products_path, :class=>menu_here('faq_questions')
+
+- if has_roles?(:media)
+  %h5.clickable{:id=>'menu_04_h',:class=>menu_04_class_h,:onclick=>"changeMenu('menu_04');"}= 'Media'
+  #menu_04{:class=>menu_04_class}
+    .menu_block
+      %ul
+        %li= link_to 'Images', users_path, :class=>menu_here('images')
+        %li= link_to 'Videos', users_path, :class=>menu_here('videos')
+
+- if has_roles?(:admin)
+  %h5.far.clickable{:id=>'menu_10_h',:class=>menu_10_class_h,:onclick=>"changeMenu('menu_10');"}= 'Admin'
+  #menu_10{:class=>menu_10_class}
+    .menu_block
+      %ul
+        %li= link_to 'Users', users_path, :class=>menu_here('users')
+        %li= link_to 'Events', users_path, :class=>menu_here('events')

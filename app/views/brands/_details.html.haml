@@ -1,0 +1,16 @@
+
+- item ||= @object
+
+%h5= 'Brand Details'
+%table
+  %tbody
+    = RDisplay.id_row(item,:class=>'low')
+    = RDisplay.data_row(item,:name)
+    = RDisplay.data_row(item,:title)
+
+%h5= 'Parent Information'
+%table
+  %tbody
+    = RDisplay.row('Parent',RDisplay.link_to_obj(item.parent))
+    = RDisplay.data_row(item,:trace)
+

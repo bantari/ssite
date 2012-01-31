@@ -1,0 +1,35 @@
+
+- item          ||= @object
+- help_partials ||= []
+- no_actions    ||= false
+- table_name    ||= item.class.name.tableize
+- class_name    ||= table_name.singularize
+- field_name    ||= :style_css
+
+.strip.undertabs
+
+  - unless no_actions
+    .buttons.fright
+      = link_to "Edit Styles", "/#{table_name}/#{item.id}/edit_css_styles", :class=>'edit'
+
+  .tabs.small
+    - tabs = "['#{field_name}_code','#{field_name}_raw']"
+    = link_to_function "Code", "goTo('#{field_name}_code',#{tabs})", :id=>"#{field_name}_code_a", :class=>'here'
+    = link_to_function "Raw",  "goTo('#{field_name}_raw',#{tabs})", :id=>"#{field_name}_raw_a"
+
+%div{:id=>"#{field_name}_code"}
+  %h5= safe "<span class='low'>[CODE] &rarr; </span> Internal CSS Styles"
+  .content_block
+    %pre= safe item.try(field_name)
+%div.noshow{:id=>"#{field_name}_raw"}
+  %h5.low= safe "<span class='low'>[RAW] &rarr; </span> Internal CSS Styles"
+  .content_block
+    %code= item.try(field_name)
+
+
+
+
+
+
+
+

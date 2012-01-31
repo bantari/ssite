@@ -1,0 +1,8 @@
+
+- item = f.object || @object
+
+- if item && item.respond_to?(:editorial_comment)
+
+  %h5= 'Optional comment about this edit:'
+  .content_block.for_textarea
+    .textarea_wrapper= f.text_area :editorial_comment, :rows=>2, :class=>'wide'

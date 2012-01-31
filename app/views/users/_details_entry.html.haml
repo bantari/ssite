@@ -1,0 +1,43 @@
+
+- item ||= f.object
+
+%h5= "User Details"
+%table.entry
+  %tbody
+    = RDisplay.row('Name',f.text_field(:name, :class=>'required')+required)
+    = RDisplay.row('Title',f.text_field(:title, :class=>'normal')+optional)
+    = RDisplay.row('Description',f.text_field(:description, :class=>'normal')+optional)
+
+%h5= 'System Roles'.html_safe
+%table
+  %tbody
+    = RDisplay.row('Admin',f.check_box(:admin)          +field_info('Has access to everything'))
+    = RDisplay.row('Developer',f.check_box(:developer)  +field_info('Can view dev info and perform dev actions'))
+
+%h5= 'Action Roles'
+%table
+  %tbody
+    = RDisplay.row('Create',f.check_box(:creator)    +field_info('Can create accessible object'))
+    = RDisplay.row('Edit',f.check_box(:editor)      +field_info('Can edit accessible object'))
+    = RDisplay.row('Destroyer',f.check_box(:destroyer) +field_info('Can destroy accessible object'))
+    = RDisplay.row('Releaser',f.check_box(:releaser)  +field_info('Can release accessible object'))
+
+%h5= 'Access Roles'
+%table
+  %tbody
+    = RDisplay.row('Documents',f.check_box(:documents)  +field_info('Can view, create, and edit Documents and Publications'))
+    = RDisplay.row('Inventory',f.check_box(:inventory)  +field_info('Can view, create, and edit SKUs, Products, and Courses'))
+    = RDisplay.row('Website',f.check_box(:website)      +field_info('Can view, create, and edit Pages, Forms, Partials, and all layout elements'))
+    = RDisplay.row('Web Glossary',f.check_box(:web_glossary)    +field_info('Can view, create, and edit Glossary objects'))
+    = RDisplay.row('Web Social',f.check_box(:web_social)        +field_info('Can view, create, and edit social objects'))
+    = RDisplay.row('Web FAQ',f.check_box(:web_faq)              +field_info('Can view, create, and edit FAQ objects'))
+    = RDisplay.row('Media',f.check_box(:media)          +field_info('Can view, create, and edit Images and Videos'))
+    = RDisplay.row('Live',f.check_box(:live)            +field_info('Can manipulate live data'))
+
+%h5= 'Additional Roles'
+%table
+  %tbody
+    = RDisplay.row('Special',f.check_box(:special)      +field_info('Can access additional invormation (reports)'))
+    = RDisplay.row('System',f.check_box(:system)        +field_info('Can access system invormation'))
+    
+

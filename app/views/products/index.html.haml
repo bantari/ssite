@@ -1,0 +1,10 @@
+
+= render :partial=>'/layouts/filters'
+
+.buttons.top
+  - if has_roles?(:inventory)
+    = link_to 'New', new_product_path, :class=>'new'
+
+= page_title_for "Products"
+
+= render :partial=>'list'

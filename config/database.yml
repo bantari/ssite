@@ -1,0 +1,36 @@
+DEFAULTS: &DEFAULTS
+  adapter: mysql2
+  host: localhost
+  username: root
+  password:
+  port: 3306
+
+#==================================================================================
+
+development:
+  database: stemgent_dev
+  <<: *DEFAULTS
+
+test:
+  database: stemgent_tst
+  <<: *DEFAULTS
+
+engineering:
+  database: stemgent_eng
+  username: engineering
+  password: hobbit
+  <<: *DEFAULTS
+
+staging:
+  database: stemgent_stg
+  username: staging
+  password: hobbit
+  <<: *DEFAULTS
+
+production:
+  database: stemgent
+  username: production
+  password: hobbit
+  <<: *DEFAULTS
+
+#==================================================================================

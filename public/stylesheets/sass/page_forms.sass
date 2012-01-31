@@ -1,0 +1,111 @@
+
+#page
+  select,
+  textarea,
+  input[type="text"],
+  input[type="email"],
+  input[type="password"]
+    padding: 2px 5px
+    font: 12px/12px monospace
+    background-color: #ddd
+    border: none
+    border-bottom: 1px solid #999
+  input[type="text"]
+    width: 500px
+  input.tiny
+    width: 100px
+  input.short
+    width: 300px
+  input.long
+    width: 700px
+  textarea
+    width: 500px
+    padding: 5px
+    line-height: 20px
+  textarea.wide
+    width: 100%
+    border-color: #ccc
+    background-color: #eee
+    
+  select
+    padding: 2px 5px 1px
+    width: 508px
+    
+  .textarea_wrapper 
+    width: 955px
+    textarea
+      padding: 0px
+  .ckeditor_wrapper 
+    width: 967px
+    margin-bottom: 10px
+  .live_data
+    color: #936
+    font-variant: small-caps
+  .input_msg
+    color: #999
+    b
+      font-weight: normal
+      color: #999
+  .input_msg.info
+    color: #666
+
+  input.required,
+  textarea.required
+    color: #603
+    background-color: #cfc0c9
+  .input_msg.required
+    color: #936
+  input.necessary,
+  textarea.necessary
+    color: #306
+    background-color: #c9c0cf
+  .input_msg.necessary
+    color: #639
+    
+  .field_with_errors
+    display: inline
+    input.required,
+    inpue.necessary,
+    input[type="text"]
+      color: #fff
+      background-color: #603
+  
+  
+#page
+  .content_block.for_line_items
+    border-width: 1px 5px
+    border-color: #999 #666
+    background-color: #eee
+    .fields
+      margin: 0px 0px 5px
+      table
+        width: 99%
+        margin: 5px
+        border: 1px solid #bbb
+        border-top: 2px solid #666
+        background-color: #fff
+      label
+        width: 100px
+        text-align: right
+        display: inline-block
+    a.add_nested_fields
+      font-size: 10px
+      line-height: 12px
+      border-right: 1px solid #000
+      border-bottom: 1px solid #000
+      background-color: #ccc
+      padding: 2px 5px
+      text-decoration: none
+      display: inline-block
+      color: #000
+      margin: 10px 0px 0px 5px
+    a.add_nested_fields:hover
+      color: #fff
+      border-color: #000
+      background-color: #666
+
+#page      
+  .content_block.for_ckeditor
+    border: none
+    padding: 0px
+    

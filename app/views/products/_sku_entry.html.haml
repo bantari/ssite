@@ -1,0 +1,9 @@
+%table
+  %tbody
+    = RDisplay.row('Sku',       sku_form.text_field(:code,:class=>' short required')+required)      
+    = RDisplay.row('Price',     sku_form.text_field(:price,:class=>'short required')+required)
+    = RDisplay.row('Size',      sku_form.text_field(:size,:class=>'short necessary')+necessary)
+    = RDisplay.row('Package',   sku_form.text_field(:package,:class=>'short')+optional)
+    = RDisplay.row('Position',  sku_form.text_field(:position,:class=>'tiny')+optional)
+    = RDisplay.row('Delete',    sku_form.check_box(:_destroy))
+    -# sku_form.link_to_remove("Remove This SKU")

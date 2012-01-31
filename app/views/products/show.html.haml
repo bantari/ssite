@@ -1,0 +1,64 @@
+
+- item ||= @object
+
+= render :partial=>'/layouts/filters'
+- if item.active
+  = render :partial=>'/layouts/condition'
+
+.buttons.top
+  - if has_roles?(:inventory,:releaseer)
+    - if item.active
+      - unless @no_publish
+        = link_to 'Publish', "/products/#{item.id}/publish",  :class=>'small publish'
+      = link_to 'Disable', "/products/#{item.id}/activate", :class=>'small disable'
+    - else
+      = link_to 'Enable', "/products/#{item.id}/activate", :class=>'small enable'
+    = buttons_divider
+  = link_to 'List',products_path,:class=>'list'
+
+= page_title_for item, :show
+
+.tabs
+
+  = link_to "Details","?show[details]=yes", :class=>here_class(params[:show],'details',true)
+  = link_to "Search","?show[search]=yes", :class=>here_class(params[:show],'search')
+  = tabs_divider
+  = link_to "Overview","?show[overview]=yes", :class=>here_class(params[:show],'overview')
+  = link_to "Specifications","?show[specifications]=yes", :class=>here_class(params[:show],'specifications')
+  = tabs_divider
+  = link_to "Styles","?show[css_styles]=yes", :class=>here_class(params[:show],'css_styles')
+  = tabs_divider
+  = link_to "Products","?show[products]=yes", :class=>here_class(params[:show],'products')
+  .f-right
+    = link_to "L","?show[live]=yes", :class=>here_class(params[:show],'live')
+    = link_to "P","?show[published]=yes", :class=>here_class(params[:show],'published')
+    = link_to "R","?show[releases]=yes", :class=>here_class(params[:show],'releases')
+    = link_to "H","?show[history]=yes", :class=>here_class(params[:show],'history')
+    = link_to "Comments","?show[comments]=yes", :class=>here_class(params[:show],'comments')
+
+.undertabs
+
+  - if params[:show] == nil || params[:show] && params[:show][:details]
+    = render :partial=>'show_details'
+  - elsif params[:show] && params[:show][:search]
+    = render :partial=>'/shared/display/show_search_fields'
+  - elsif params[:show] && params[:show][:overview]
+    = render :partial=>'/shared/display/show_html_block', :locals=>{:field_name=>:overview}
+  - elsif params[:show] && params[:show][:specifications]
+    = render :partial=>'/shared/display/show_html_block', :locals=>{:field_name=>:specifications}
+  - elsif params[:show] && params[:show][:css_styles]
+    = render :partial=>'/shared/display/show_css_styles'
+
+  - elsif params[:show] && params[:show][:products]
+    = render :partial=>'show_products'
+
+  - elsif params[:show] && params[:show][:live]
+    = render :partial=>'show_live', :locals=>{:item=>item}
+  - elsif params[:show] && params[:show][:published]
+    = render :partial=>'show_published', :locals=>{:item=>item}
+  - elsif params[:show] && params[:show][:releases]
+    = render :partial=>'/shared/display/show_releases'
+  - elsif params[:show] && params[:show][:history]
+    = render :partial=>'/shared/display/show_history', :locals=>{:field_name=>:history,:no_actions=>true}
+  - elsif params[:show] && params[:show][:comments]
+    = render :partial=>'/shared/display/show_comments'

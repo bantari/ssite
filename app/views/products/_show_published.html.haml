@@ -1,0 +1,23 @@
+
+- item ||= @object
+
+.strip.undertabs
+  
+  %h4.blue= 'Published Data'
+
+  .tabs.small
+    = link_to_function 'Details', "changeTab('tab_01')", :id=>'tab_01_a', :class=>'here'
+    = link_to_function 'HTML',    "changeTab('tab_02')", :id=>'tab_02_a'
+    = link_to_function 'CSS',     "changeTab('tab_03')", :id=>'tab_03_a'
+  
+
+#tab_01
+  = render :partial=>'details_published'
+  = render :partial=>'/shared/published/search_fields'
+  
+#tab_02.noshow
+  = render :partial=>'/shared/published/html_block', :locals=>{:field_name=>:overview}
+  = render :partial=>'/shared/published/html_block', :locals=>{:field_name=>:specifications}
+
+#tab_03.noshow
+  = render :partial=>'/shared/published/css_styles'

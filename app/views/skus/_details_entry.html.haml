@@ -1,0 +1,16 @@
+
+- item ||= f.object
+
+%h5= "SKU Details"
+%table.entry
+  %tbody
+    = RDisplay.row('SKU',item.code + input_msg('can only be changed from product/cours screen'))
+    = RDisplay.row('Price',f.text_field(:price, :class=>'short required')+required)
+
+- if item.product
+  %h5= 'Product Information'
+  %table
+    %tbody
+      = RDisplay.row('Size',f.text_field(:size,:class=>'necessary')+necessary)
+      = RDisplay.row('Package',f.text_field(:package)+optional)
+      = RDisplay.row('Position',f.text_field(:position)+optional)

@@ -1,0 +1,17 @@
+
+- item ||= @object
+
+- block_id = 'product_flags'
+%h5.clickable.closed{:id=>"#{block_id}_t",:onclick=>"flipBlock('#{block_id}');"}= "Product Flags"
+%div.noshow{:id=>block_id}
+  %table.first
+    %tbody
+      = RDisplay.yn_row(item,:sigma,:yes_class=>'yes_flag_hi',                  :info=>field_info('Product will not be sold via our website',:show=>item.sigma))
+      = RDisplay.yn_row(item,:bulk,:yes_class=>'yes_flag_hi',                   :info=>field_info('Product has the ability to be sold in bulk',:show=>item.bulk))
+      = RDisplay.yn_row(item,:inherited_bulk,:yes_class=>'yes_flag_hi',         :info=>field_info('Product inherits the bulk flag from Category',:show=>item.inherited_bulk))
+  %table.last                                                             
+    %tbody                                                                
+      = RDisplay.yn_row(item,:wholesale,:yes_class=>'yes_flag_hi',              :info=>field_info('Product is sold via a 3rd party distributor (??)',:show=>item.wholesale))
+      = RDisplay.yn_row(item,:restricted_use,:yes_class=>'yes_flag_hi',         :info=>field_info('Restricted use info is added to product page',:show=>item.restricted_use))
+      = RDisplay.yn_row(item,:notice_to_purchaser,:yes_class=>'yes_flag_hi',    :info=>field_info('Notice to purchaser is added to product page',:show=>item.notice_to_purchaser))
+

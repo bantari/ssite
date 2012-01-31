@@ -1,0 +1,15 @@
+
+- item       ||= f.object
+- required   ||= []
+- necessary  ||= []
+
+.block.entry.details
+  .inside
+    %h5= "[TEXT] &rarr; Details".html_safe
+    %table.entry
+      %tbody
+        = RDisplay.row('Code',f.text_field(:code,:class=>'tiny'+input_class(:code,required,necessary))+input_flag(:code,required,necessary))
+        = RDisplay.row('Name',f.text_field(:name, :class=>'short'+input_class(:name,required,necessary))+input_flag(:name,required,necessary))
+        = RDisplay.row('Title',f.text_field(:title, :class=>'normal'+input_class(:title,required,necessary))+input_flag(:title,required,necessary))
+        = RDisplay.row('Description',f.text_field(:description,:class=>'long'+input_class(:description,required,necessary))+input_flag(:description,required,necessary))
+

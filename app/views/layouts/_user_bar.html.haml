@@ -1,0 +1,10 @@
+
+- if current_user
+
+  .f-right
+    = link_to('Logout', destroy_user_session_path, :method=>:delete, :class=>'low')
+
+  = current_user.get_system_roles
+  = current_user.name
+  = '/'
+  = current_user.email

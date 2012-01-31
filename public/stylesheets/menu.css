@@ -1,0 +1,70 @@
+#menu {
+  font: 10px/16px verdana;
+  background-color: #eeeeee;
+  border: 1px solid #666666; }
+  #menu #menu_title {
+    padding: 24px 0px;
+    font-size: 20px;
+    color: black;
+    text-align: center; }
+  #menu .menu_block {
+    padding: 10px 0px 40px;
+    border-bottom: 1px solid #997788;
+    background-color: #ccaabb; }
+  #menu h5 {
+    color: white;
+    padding: 2px 5px;
+    margin: 1px 0px;
+    font-weight: normal;
+    color: black;
+    cursor: pointer;
+    background-color: #cccccc;
+    border-bottom: 1px solid #999999; }
+  #menu h5.far_alt {
+    border-top: 3px double white; }
+  #menu h5.here,
+  #menu h5:hover,
+  #menu h5.here:hover {
+    color: white;
+    border-color: white white black;
+    background-color: #664455; }
+  #menu h6 {
+    color: #997788;
+    margin: 10px 10px 0px 0px;
+    text-align: right;
+    border-top: 1px dotted #997788;
+    font-weight: normal;
+    position: relative;
+    top: 10px; }
+  #menu ul {
+    margin: 0px;
+    padding: 0px 0px 0px 20px; }
+    #menu ul li {
+      list-style-type: none; }
+  #menu a {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 2px 5px;
+    color: black;
+    display: inline-block;
+    text-decoration: none; }
+  #menu a.here,
+  #menu a:hover,
+  #menu a.here:hover {
+    color: black;
+    font-weight: bold;
+    text-decoration: underline; }
+  #menu ul.small {
+    margin-top: 0px; }
+    #menu ul.small a {
+      line-height: 14px;
+      font-size: 10px;
+      color: #333333; }
+    #menu ul.small a.here,
+    #menu ul.small a:hover,
+    #menu ul.small a.here:hover {
+      color: black; }
+  #menu hr {
+    border: none;
+    border-top: 1px dotted #999999;
+    margin: 10px; }

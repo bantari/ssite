@@ -1,0 +1,93 @@
+#page
+  table
+    width: 100%
+    margin: 0px 0px 2px
+    border: 1px solid #999
+    th,
+    td
+      padding: 2px 5px
+    th,
+    td.label
+      color: #000
+      font-weight: bold
+      background-color: #ccc
+      text-transform: lowercase
+    th
+      text-align: left
+      font-weight: normal
+      vertical-align: bottom
+      border-bottom: 1px solid #999
+      a
+        color: inherit
+      a:hover
+        color: #f00
+      .lft
+        display: none
+      .rgh
+        font-weight: bold
+        color: #f00
+    th.aright
+      text-align: right
+      .lft
+        display: inline
+        font-weight: bold
+        color: #f00
+      .rgh
+        display: none
+    td
+      vertical-align: top
+    td.aright
+      text-align: right
+    td.label
+      text-align: right
+      border-right: 1px solid #999
+      width: 160px
+
+  table.list
+    th.id,
+    td.id
+      width: 40px
+    th.code,
+    td.code
+      width: 100px
+    th.price,
+    td.price
+      width: 80px
+    th.status,
+    td.status
+      width: 70px
+      text-align: center
+    th.actions,
+    td.actions
+      width: 120px
+      text-align: right
+    th.bool,
+    td.bool
+      padding: 0px 2px
+      width: 42px
+    th.key
+      background-color: #bbb
+    td.key
+      background-color: #ddd
+    tr.even
+      td
+        background-color: #ddd
+      td.key
+        background-color: #ccc
+
+  table.first,
+  table.next
+    margin-bottom: 0px
+  table.next,
+  table.last
+    border-top: none
+    
+  .no_items_found
+    margin: 0px 0px 1px
+    padding: 2px 5px
+    border: 1px solid #ccc
+    color: #936
+    background-color: #eee
+    display: block
+    text-align: center
+

@@ -1,0 +1,17 @@
+
+- item ||= @object
+
+.strip.undertabs
+
+  .buttons.fright
+    = link_to 'Edit Details', "/categories/#{item.id}/edit", :class=>'edit'
+
+  .tabs.small
+    = link_to_function 'Details', "changeTab('tab_01')", :id=>'tab_01_a', :class=>'here'
+    = link_to_function 'Timeline',"changeTab('tab_03')", :id=>'tab_03_a'
+
+#tab_01
+  = render :partial=>'details',  :locals=>{:item=>item}
+
+#tab_03.noshow
+  = render :partial=>'/shared/display/timeline', :locals=>{:item=>item}

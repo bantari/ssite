@@ -1,0 +1,31 @@
+
+- item ||= @object
+
+- block_id = 'p_meta_fields'
+%h5.clickable.closed{:id=>"#{block_id}_t",:onclick=>"flipBlock('#{block_id}');"}= 'Published Meta Fields'
+%div.noshow{:id=>block_id}
+  %table
+    %tbody
+      = RDisplay.data_row(item,:p_m_title,:label=>'Meta Title')
+      = RDisplay.data_row(item,:p_m_keywords,:label=>'Meta Keywords')
+      = RDisplay.data_row(item,:p_m_description,:label=>'Meta Description')
+
+- block_id = 'p_search_fields'
+%h5.clickable.closed{:id=>"#{block_id}_t",:onclick=>"flipBlock('#{block_id}');"}= 'Published Search Fields'
+%div.noshow{:id=>block_id}
+  %table
+    %tbody
+      = RDisplay.data_row(item,:p_s_title,:label=>'Search Title')
+      = RDisplay.data_row(item,:p_s_keywords,:label=>'Search Keywords')
+      = RDisplay.data_row(item,:p_s_description,:label=>'Search Description')
+
+- block_id = 'p_auto_fields'
+%h5.clickable.closed{:id=>"#{block_id}_t",:onclick=>"flipBlock('#{block_id}');"}= "Published Auto Fields"
+%div.noshow{:id=>block_id}
+  %table
+    %tbody
+      = RDisplay.data_row(item,:p_a_title,:label=>'Auto Title')
+      = RDisplay.data_row(item,:p_a_keywords,:label=>'Auto Description')
+      = RDisplay.data_row(item,:p_a_description,:label=>'Auto Description')
+
+        

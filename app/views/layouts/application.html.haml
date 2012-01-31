@@ -1,0 +1,39 @@
+!!!
+%html{'xmlns' => "http://www.w3.org/1999/xhtml", 'xml:lang' => "en", 'lang' => "en"}
+  %head
+    %meta{'http-equiv' => "X-UA-Compatible", 'content' => "IE=EmulateIE7" }
+    %meta{'http-equiv' => "content-type",    'content' => "text/html;charset=UTF-8"}
+    %title= application_title
+
+    <link rel='shortcut icon' href='/favicon.ico' />
+
+    = stylesheet_link_tag 'reset', 'general'
+    = stylesheet_link_tag 'master','menu'
+    = stylesheet_link_tag 'page','page_tabs','page_buttons','page_blocks','page_tables','page_forms'
+    
+    - if @devise_action == true
+      = stylesheet_link_tag 'devise'
+
+    = javascript_include_tag 'jquery_161_min','jquery_platformselector'
+    = javascript_include_tag 'rails', 'application','nested_form'
+    = javascript_include_tag 'ckeditor/ckeditor.js'
+
+  %body
+  
+
+    #wrapper
+      
+    
+      - if is_developer?
+        #dev_info
+          .inner= render :partial=>'/layouts/dev_info'
+
+      #menu
+        .inner= render :partial=>'/layouts/menu'
+
+      #page
+        .inner
+          #user_bar= render :partial=>'/layouts/user_bar'
+          #banner= render :partial=>'/layouts/banner'
+          = yield
+

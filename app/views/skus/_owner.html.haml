@@ -1,0 +1,9 @@
+
+- item ||= @object
+
+%h5= "SKU's Parent Object"
+- if item.product
+  - p = item.product
+  %table
+    %tbody
+      = RDisplay.row(p.class_identifier,"#{link_to(p.code,p)} -- #{p.name}")

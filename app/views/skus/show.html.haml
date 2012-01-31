@@ -1,0 +1,41 @@
+
+- item ||= @object
+
+= render :partial=>'/layouts/filters'
+
+.buttons.top
+  - if item.active
+    = link_to 'Publish', "/skus/#{item.id}/publish",  :class=>'small publish'
+    = link_to 'Disable', "/skus/#{item.id}/activate", :class=>'small disable'
+  - else
+    = link_to 'Enable', "/skus/#{item.id}/activate", :class=>'small activate'
+  = buttons_divider
+  = link_to 'List',skus_path,:class=>'list'
+
+= page_title_for item, :show
+
+.tabs
+
+  = link_to "Details","?show[details]=yes", :class=>here_class(params[:show],'details',true)
+  .f-right
+    = link_to "L","?show[live]=yes", :class=>here_class(params[:show],'live')
+    = link_to "P","?show[published]=yes", :class=>here_class(params[:show],'published')
+    = link_to "R","?show[releases]=yes", :class=>here_class(params[:show],'releases')
+    = link_to "H","?show[history]=yes", :class=>here_class(params[:show],'history')
+    = link_to "Comments","?show[comments]=yes", :class=>here_class(params[:show],'comments')
+
+.undertabs
+
+  - if params[:show] == nil || params[:show] && params[:show][:details]
+    = render :partial=>'show_details'
+
+  - elsif params[:show] && params[:show][:live]
+    = render :partial=>'show_live', :locals=>{:item=>item}
+  - elsif params[:show] && params[:show][:published]
+    = render :partial=>'show_published', :locals=>{:item=>item}
+  - elsif params[:show] && params[:show][:releases]
+    = render :partial=>'/shared/display/show_releases'
+  - elsif params[:show] && params[:show][:history]
+    = render :partial=>'/shared/display/show_history', :locals=>{:field_name=>:history,:no_actions=>true}
+  - elsif params[:show] && params[:show][:comments]
+    = render :partial=>'/shared/display/show_comments'

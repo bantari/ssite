@@ -1,0 +1,12 @@
+
+- item ||= @object
+
+%h5.clickable.closed{:onclick=>"flipElement('text_details');"}= '[TEXT] &rarr; Published Details'.html_safe
+#text_details.noshow
+  %table
+    %tbody
+      = RDisplay.data_row(item,:p_code,:label=>'Code')
+      = RDisplay.data_row(item,:p_name,:label=>'Name')
+      = RDisplay.data_row(item,:p_title,:label=>'Title')
+      = RDisplay.data_row(item,:p_description,:label=>'Description')
+

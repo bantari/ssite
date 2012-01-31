@@ -1,0 +1,19 @@
+- item ||= @object
+- table_name ||= item.class.name.tableize
+- class_name ||= table_name.singularize
+
+= page_title_for item, :edit, 'CSS Styles'
+
+- form_for(item,:url=>"/#{table_name}/#{item.id}/update_css_styles") do |f|
+  = render :partial=>'/shared/entry/errors'
+
+  %h5= '[CSS] &rarr; Internal Style'.html_safe 
+  .content_block.for_textarea
+    .textarea_wrapper= f.text_area(:style_css,:class=>'text wide',:rows=>20,:class=>'wide')
+  
+  = render :partial=>'/shared/entry/editorial_comment', :locals=>{:f=>f}
+
+.buttons.bot.for_form
+  = RDisplay.cancel_form_link("/#{table_name}/#{item.id}?show[css_styles]=yes")
+  = RDisplay.submit_form_link("edit_#{class_name}_#{item.id}")
+

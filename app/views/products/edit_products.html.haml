@@ -1,0 +1,32 @@
+
+- item  ||= @object
+
+= page_title_for item, :edit, 'Attached Products'
+
+= nested_form_for(item,:url=>"/products/#{item.id}/update_products") do |f|
+  = render :partial=>'/shared/entry/errors'
+  
+
+  %h5= 'Product Relations'
+  .content_block.for_line_items
+    - f.fields_for :product_relations do |product_relation_form|
+      = render :partial=>'product_relation_fields', :locals=>{:f=>product_relation_form}
+    = f.link_to_add "Add a Relation", :product_relations
+
+  %h5= 'Product Components'
+  .content_block.for_line_items
+    - f.fields_for :product_components do |product_component_form|
+      = render :partial=>'product_component_fields', :locals=>{:f=>product_component_form}
+    = f.link_to_add "Add a Component", :product_components
+  
+  %h5= 'Product Suggestions'
+  .content_block.for_line_items
+    - f.fields_for :product_suggestions do |product_suggestion_form|
+      = render :partial=>'product_suggestion_fields', :locals=>{:f=>product_suggestion_form}
+    = f.link_to_add "Add a Suggestion", :product_suggestions
+
+  = render :partial=>'/shared/entry/editorial_comment', :locals=>{:f=>f}
+
+.buttons.bot.for_form
+  = RDisplay.cancel_form_link("/products/#{item.id}?show[products]=yes")
+  = RDisplay.submit_form_link("edit_product_#{item.id}")

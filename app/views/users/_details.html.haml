@@ -1,0 +1,17 @@
+
+- item ||= @object
+
+%h5= 'User Details'
+%table
+  %tbody
+    = RDisplay.id_row(item,:class=>'low')
+    = RDisplay.data_row(item,:name)
+    = RDisplay.data_row(item,:email)
+
+%h5= 'User Roles Overview'
+%table
+  %tbody
+    = RDisplay.row('System Roles',item.get_roles(:system=>true))
+    = RDisplay.row('Special Roles',item.get_roles(:special=>true))
+    = RDisplay.row('Action Roles',item.get_roles(:action=>true))
+    = RDisplay.row('Access Roles',item.get_roles(:access=>true))

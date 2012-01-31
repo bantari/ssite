@@ -1,0 +1,15 @@
+
+- item        ||= @object
+- table_name  ||= item.class.name.tableize
+
+.buttons.top
+  = link_to 'Edit Details', "/#{table_name}/#{item.id}/edit", :class=>'edit'
+
+%h5= 'Details'
+%table
+  %tbody
+    = RDisplay.data_row(item,:code)
+    = RDisplay.data_row(item,:name)
+    = RDisplay.data_row(item,:title)
+    = RDisplay.data_row(item,:description)
+

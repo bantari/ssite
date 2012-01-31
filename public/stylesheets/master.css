@@ -1,0 +1,35 @@
+body {
+  padding: 10px; }
+
+#wrapper {
+  width: 1200px; }
+  #wrapper #menu {
+    width: 200px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    bottom: 10px; }
+  #wrapper #page {
+    margin-left: 220px; }
+  #wrapper #dev_info {
+    width: 200px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font: 10px/14px verdana;
+    color: #666666;
+    background-color: #eeeeee;
+    border: 2px solid #dddddd; }
+    #wrapper #dev_info .inner {
+      padding: 10px; }
+    #wrapper #dev_info h2 {
+      color: black;
+      border-bottom: 1px dotted #999999;
+      margin: 0px 0px 5px; }
+    #wrapper #dev_info ul {
+      margin: 0px 0px 10px 30px; }
+      #wrapper #dev_info ul li {
+        list-style-type: disc; }
+    #wrapper #dev_info b {
+      color: black;
+      font-weight: normal; }

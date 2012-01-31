@@ -1,0 +1,12 @@
+
+- item ||= @object
+
+- block_id = 'status_flags'
+%h5.clickable.closed{:id=>"#{block_id}_t",:onclick=>"flipBlock('#{block_id}');"}= "Status Flags #{noedit(:reason=>:event_driven)}".html_safe
+%div.noshow{:id=>block_id}
+  %table
+    %tbody
+      = RDisplay.yn_row(item,:active,:display=>:n_alert,:info=>field_info('Product is not visible on website and cannot be ordered',:show=>!item.active))
+      = RDisplay.yn_row(item,:adjusted,:display=>:y_strong,:info=>field_info('Product has been edited since the last release',:show=>item.adjusted))
+      = RDisplay.yn_row(item,:published,:display=>:n_strong,:info=>field_info('Product has never been published',:show=>!item.published))
+

@@ -1,0 +1,27 @@
+- item ||= @object
+
+- block_id = 'filters_block'
+%h5.clickable.closed{:id=>"#{block_id}_t",:onclick=>"flipBlock('#{block_id}');"}= 'Search Filters'
+%div.filters.noshow{:id=>block_id}
+  = form_for(:filter,@filter,:url=>{:action=>'index'},:html=>{:id=>'filters',:method=>'get'}) do |f|
+    %table{:cellspacing=>0,:cellpadding=>0}
+      %tbody
+        %tr
+
+          %td.left
+            = @filter.search_field
+
+            - if @filter.boolean_field_registered?(:active)
+              = @filter.boolean_dropdown_field(:label=>'-Active',:name=>'active')
+            - if @filter.boolean_field_registered?(:adjusted)
+              = @filter.boolean_dropdown_field(:label=>'-Adjusted',:name=>'adjusted')
+            - if @filter.boolean_field_registered?(:published)
+              = @filter.boolean_dropdown_field(:label=>'-Published',:name=>'published')
+
+          %td.right
+            = @filter.sort_by_fields
+            = @filter.paginate_fields
+
+        %tr
+          %td= ''
+          %td.right.controls= @filter.default_links

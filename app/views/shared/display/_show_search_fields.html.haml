@@ -1,0 +1,37 @@
+
+- item        ||= @object
+- table_name  ||= item.class.name.tableize
+
+.strip.undertabs
+
+  .buttons.fright
+    = link_to 'Edit Search Fields', "/#{table_name}/#{item.id}/edit_search", :class=>'edit'
+
+  .tabs.small
+    = link_to_function "Editable",  "changeTab('tab_01')", :id=>'tab_01_a', :class=>"here" 
+    = link_to_function "Auto", "changeTab('tab_02')", :id=>'tab_02_a'
+
+#tab_01
+  %h5= '[SEO] &rarr; Meta Fields'.html_safe
+  %table
+    %tbody
+      = RDisplay.data_row(item,:m_title,:label=>'Meta Title')
+      = RDisplay.data_row(item,:m_keywords,:label=>'Meta Keywords')
+      = RDisplay.data_row(item,:m_description,:label=>'Meta Description')
+
+  %h5= 'Search Fields'.html_safe
+  %table
+    %tbody
+      = RDisplay.data_row(item,:s_title,:label=>'Search Title')
+      = RDisplay.data_row(item,:s_keywords,:label=>'Search Keywords')
+      = RDisplay.data_row(item,:s_description,:label=>'Search Description')
+
+#tab_02.noshow
+  %h5= "Auto Fields #{noedit(:reason=>:autocalc)}".html_safe
+  %table
+    %tbody
+      = RDisplay.data_row(item,:a_title,:label=>'Auto Title')
+      = RDisplay.data_row(item,:a_keywords,:label=>'Auto Keywords')
+      = RDisplay.data_row(item,:a_description,:label=>'Auto Description')
+
+    

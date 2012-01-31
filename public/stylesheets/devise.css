@@ -1,0 +1,32 @@
+#menu {
+  display: none; }
+
+#page #user_bar {
+  display: none; }
+#page table.devise {
+  border: none; }
+  #page table.devise td.left {
+    width: 430px;
+    height: 320px;
+    border-right: 2px solid #cccccc;
+    border-bottom: 2px solid #cccccc; }
+  #page table.devise td.right {
+    padding-left: 20px; }
+#page h2 {
+  color: black;
+  font-size: 16px;
+  margin: 0px 0px 20px; }
+#page input[type="text"],
+#page input[type="email"],
+#page input[type="password"] {
+  font-size: 16px;
+  line-height: 16px;
+  padding: 5px;
+  width: 400px;
+  margin-bottom: 10px;
+  background-color: #eeeeee;
+  border: 1px solid #cccccc;
+  border-bottom: 1px solid #999999; }
+#page .submit {
+  margin: 10px 20px 10px 0px;
+  text-align: right; }

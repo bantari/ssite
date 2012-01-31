@@ -1,0 +1,23 @@
+
+- item ||= @object
+
+.strip.undertabs
+
+  .buttons.fright
+    = link_to 'Edit Details', "/products/#{item.id}/edit", :class=>'edit'
+
+  .tabs.small
+    = link_to_function 'Details', "changeTab('tab_01')", :id=>'tab_01_a', :class=>'here'
+    = link_to_function 'Flags',   "changeTab('tab_02')", :id=>'tab_02_a'
+    = link_to_function 'Timeline',"changeTab('tab_03')", :id=>'tab_03_a'
+
+#tab_01
+  = render :partial=>'details',   :locals=>{:item=>item}
+  = render :partial=>'list_skus', :locals=>{:item=>item}
+
+#tab_02.noshow
+  = render :partial=>'flags'
+  = render :partial=>'/shared/display/status'
+
+#tab_03.noshow
+  = render :partial=>'/shared/display/timeline', :locals=>{:item=>item}

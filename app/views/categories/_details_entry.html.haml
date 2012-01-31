@@ -1,0 +1,18 @@
+
+- item ||= f.object
+
+.block.entry.details
+  .inside
+    %h5= "Category Details"
+    %table.entry
+      %tbody
+        = RDisplay.row('Name',f.text_field(:name, :class=>'short required')+required)
+        = RDisplay.row('Title',f.text_field(:title, :class=>'normal')+optional)
+
+.block.entry.parent
+  .inside
+    %h5= 'Parent Information'
+    %table
+      %tbody
+        = RDisplay.row_for_selection_with_none('Parent', item, :parent_id, Category.all)
+    

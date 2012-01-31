@@ -1,0 +1,18 @@
+
+- item        ||= @object
+- table_name  ||= item.class.name.tableize
+
+%h5= 'Details'
+%table
+  %tbody
+    = RDisplay.id_row(item,:class=>'low')
+    = RDisplay.data_row(item,:code,:label=>'SKU')
+    = RDisplay.row('Price',RDisplay.cents(item.price))
+
+- if item.product
+  %h5= 'Product Information'
+  %table
+    %tbody
+      = RDisplay.data_row(item,:size)
+      = RDisplay.data_row(item,:package)
+      = RDisplay.row('Position',RDisplay.count(item.position))

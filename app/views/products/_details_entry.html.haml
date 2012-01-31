@@ -1,0 +1,16 @@
+
+- item ||= f.object
+
+%h5= "Product Details"
+%table.entry
+  %tbody
+    = RDisplay.row('Base SKU (Code)',f.text_field(:code, :class=>'short required')+required)
+    = RDisplay.row('Name',f.text_field(:name, :class=>'short required')+required)
+    = RDisplay.row('Title',f.text_field(:title, :class=>'normal')+optional)
+
+%h5= 'Brand &amp; Category'.html_safe
+%table
+  %tbody
+    = RDisplay.row_for_selection_with_none('Brand', item, :brand_id, Brand.all)
+    = RDisplay.row('Category',f.collection_select(:category_id,Category.for_entry,:id,:name_for_selection))
+

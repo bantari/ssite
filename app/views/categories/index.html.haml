@@ -1,0 +1,9 @@
+
+= render :partial=>'/layouts/filters'
+
+.buttons.top
+  = link_to 'New', new_category_path, :class=>'new'
+
+= page_title_for "Categories"
+
+= render :partial=>'list'

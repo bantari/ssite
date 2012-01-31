@@ -1,0 +1,62 @@
+#page h5 {
+  padding: 2px 5px;
+  margin: 1px 0px;
+  font-weight: normal;
+  border-bottom: 1px solid black;
+  color: white;
+  border-color: white #666666 black black;
+  background-color: #666666; }
+  #page h5 .low {
+    color: #cccccc; }
+#page h5.clickable {
+  cursor: pointer; }
+#page h5.clickable:before {
+  content: ">>> "; }
+#page h5.clickable,
+#page .h5.clickable.closed:hover {
+  color: white;
+  border-color: white black black black;
+  background-color: #666666; }
+  #page h5.clickable .low,
+  #page .h5.clickable.closed:hover .low {
+    color: #cccccc; }
+#page h5.low,
+#page .h5.clickable:hover,
+#page h5.clickable.closed {
+  color: black;
+  border-color: white black #666666 #666666;
+  background-color: #cccccc; }
+  #page h5.low .low,
+  #page .h5.clickable:hover .low,
+  #page h5.clickable.closed .low {
+    color: #666666; }
+
+#page .block b {
+  color: black; }
+#page .block .inside {
+  background-color: red; }
+#page .content_block {
+  padding: 10px;
+  margin: 0px 0px 1px;
+  border: 1px solid #999999; }
+  #page .content_block p {
+    margin: 0px 0px 10px; }
+  #page .content_block ul {
+    margin: 0px 0px 10px 30px; }
+    #page .content_block ul li {
+      list-style-type: disc; }
+#page .necessities h5,
+#page .error_explanation h5 {
+  color: white;
+  border-color: black;
+  background-color: #660033; }
+#page .necessities .content_block,
+#page .error_explanation .content_block {
+  color: #660033;
+  border-color: #887799;
+  background-color: #eeccdd; }
+  #page .necessities .content_block b,
+  #page .necessities .content_block strong,
+  #page .error_explanation .content_block b,
+  #page .error_explanation .content_block strong {
+    color: black; }
