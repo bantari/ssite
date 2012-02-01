@@ -1,0 +1,11 @@
+
+- item ||= @object
+
+.strip.undertabs
+
+  .buttons.fright
+    = link_to 'Edit Products', "/courses/#{item.id}/edit_products", :class=>'edit'
+
+= render :partial=>'list_products', :locals=>{:items=>item.course_relations, :title=>'Product Relations'}
+= render :partial=>'list_products', :locals=>{:items=>item.course_components, :title=>'Product Components'}
+= render :partial=>'list_products', :locals=>{:items=>item.course_suggestions, :title=>'Product Suggestions'}

@@ -27,6 +27,9 @@
 #page select {
   padding: 2px 5px 1px;
   width: 508px; }
+#page .auto select,
+#page select.auto {
+  width: auto; }
 #page .textarea_wrapper {
   width: 955px; }
   #page .textarea_wrapper textarea {
@@ -44,12 +47,14 @@
     color: #999999; }
 #page .input_msg.info {
   color: #666666; }
+#page select.required,
 #page input.required,
 #page textarea.required {
   color: #660033;
   background-color: #cfc0c9; }
 #page .input_msg.required {
   color: #993366; }
+#page select.necessary,
 #page input.necessary,
 #page textarea.necessary {
   color: #330066;

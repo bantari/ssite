@@ -1,0 +1,6 @@
+%label= "Suggestion &rarr; ".html_safe
+= f.collection_select :suggestion_id, Product.for_select, :id, :name_for_selection
+= f.text_field :position, :class=>'tiny'
+= ' &larr; Position | Remove? &rarr; '.html_safe
+= f.check_box :_destroy, :class=>'checkbox'
+%br

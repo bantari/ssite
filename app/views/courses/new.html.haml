@@ -1,0 +1,25 @@
+
+- item        ||= @object
+- class_name  ||= item.class.name.titleize
+- table_name  ||= item.class.name.tableize
+- object_name ||= table_name.singularize
+
+= page_title_for item, :new
+
+= nested_form_for(item) do |f|
+  = render :partial=>'/shared/entry/errors'
+
+  = render :partial=>'details_entry', :locals=>{:f=>f}
+
+  %h5= 'Product SKUs'
+  .content_block.for_line_items
+    = f.fields_for :skus do |sku_form|
+      = render :partial=>'sku_entry',    :locals=>{:sku_form=>sku_form}
+    = f.link_to_add "Add a SKU", :skus
+  = render :partial=>'flags_entry',   :locals=>{:f=>f}
+
+  = render :partial=>'/shared/entry/editorial_comment', :locals=>{:f=>f}
+
+.buttons.bot.for_form
+  = RDisplay.cancel_form_link("/#{table_name}")
+  = RDisplay.submit_form_link("new_#{object_name}")

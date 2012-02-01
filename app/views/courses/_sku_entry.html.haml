@@ -1,0 +1,9 @@
+%table
+  %tbody
+    = RDisplay.row('Sku',       sku_form.text_field(:code,:class=>' short required')+required)      
+    = RDisplay.row('Price',     sku_form.text_field(:price,:class=>'short required')+required)
+    = RDisplay.row('Start Date',sku_form.date_select(:start_date, {:order=>[:day,:month,:year]},:class=>'necessary')+necessary,:row_class=>'auto')
+    = RDisplay.row('Start Date',sku_form.date_select(:end_date, {:order=>[:day,:month,:year]},:class=>'necessary')+necessary,:row_class=>'auto')
+    = RDisplay.row('Capacity',  sku_form.text_field(:capacity,:class=>'short necessary')+necessary)
+    = RDisplay.row('Delete',    sku_form.check_box(:_destroy))
+    -# sku_form.link_to_remove("Remove This SKU")

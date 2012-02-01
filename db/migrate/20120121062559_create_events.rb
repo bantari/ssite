@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.column :user_id,     :integer, :default => nil
       t.column :object_id,   :integer, :default => nil
       t.column :object_type, :string,  :default => nil
+      t.column :object_name, :string,  :default => nil
       
       t.column :action,      :string,  :default => nil
       t.column :result,      :text

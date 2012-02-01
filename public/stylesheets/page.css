@@ -95,6 +95,10 @@
   width: 70px;
   display: inline-block;
   text-align: center; }
+#page .flag.ready,
+#page .flag.current {
+  color: white;
+  background-color: #006600; }
 #page .flag.new {
   color: white;
   background-color: #330066; }

@@ -14,10 +14,11 @@ module RControllerExtras
   def activate
     @object = model_name.find(params[:id])
     @object.activate
-    msg = 'Object disabled.'
-    msg = 'Object enabled.' if @object.active
-    EventLogger.log(current_user,@object,action_name,msg)
-    redirect_to(@object, :notice => msg)
+    msg = 'disabled'
+    msg = 'enabled' if @object.active
+    notice = "Object #{msg}."
+    EventLogger.log(current_user,@object,msg)
+    redirect_to(@object, :notice => notice)
   end
 
   def publish

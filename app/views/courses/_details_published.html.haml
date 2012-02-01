@@ -1,0 +1,13 @@
+
+- item ||= @object
+
+- block_id = 'p_product_details'
+%h5.clickable.closed{:id=>"#{block_id}_t",:onclick=>"flipBlock('#{block_id}');"}= 'Published Product Details'
+%div.noshow{:id=>block_id}
+  %table
+    %tbody
+      = RDisplay.data_row(item,:p_code,:label=>'Base SKU')
+      = RDisplay.data_row(item,:p_name,:label=>'Name')
+      = RDisplay.data_row(item,:p_title,:label=>'Title')
+      = RDisplay.data_row(item,:p_description,:label=>'Description')
+

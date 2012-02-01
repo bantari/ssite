@@ -19,6 +19,28 @@ Ssite::Application.routes.draw do
     end
   end
   
+  resources :courses do
+    member do 
+      get :publish
+      get :activate
+      get :show_with_actions
+      get :edit_search
+      put :update_search
+      get :edit_overview
+      put :update_overview
+      get :edit_specifications
+      put :update_specifications
+      get :edit_css_styles
+      put :update_css_styles
+      get :edit_documents
+      put :update_documents
+      get :edit_products
+      put :update_products
+      get :edit_media
+      put :update_media
+    end
+  end
+
   resources :products do
     member do 
       get :publish

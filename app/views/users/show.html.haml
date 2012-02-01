@@ -4,11 +4,12 @@
 = render :partial=>'/layouts/filters'
 
 .buttons.top
-  - if item.active
+  - if item.editable && item.active
     = link_to 'Disable', "/users/#{item.id}/activate", :class=>'small disable'
-  - else
+    = buttons_divider
+  - elsif item.editable
     = link_to 'Enable', "/users/#{item.id}/activate", :class=>'small enable'
-  = buttons_divider
+    = buttons_divider
   = link_to 'List',users_path,:class=>'list'
 
 = page_title_for item, :show
@@ -18,6 +19,6 @@
   = link_to "Details","?show[details]=yes", :class=>here_class(params[:show],'details',true)
 
 .undertabs
-
+  
   - if params[:show] == nil || params[:show] && params[:show][:details]
     = render :partial=>'show_details'

@@ -1,4 +1,4 @@
-class Product < ActiveRecord::Base
+class Course < ActiveRecord::Base
 #--------------------------------------------------------------------------------------------------------------------------------
 
   include CommonStuff
@@ -13,12 +13,8 @@ class Product < ActiveRecord::Base
   validates_presence_of   :name
   validates_uniqueness_of :name
   
-  #--- associations
-  belongs_to :brand
-  belongs_to :category
-  has_many   :categories
-  
-  has_many :skus
+  #--- associations  
+  has_many :skus, :conditions => "course_id > 0"
   accepts_nested_attributes_for :skus, :allow_destroy => true, 
     :reject_if => proc {|attributes| attributes["_delete"] == "1"}
   def active_skus
@@ -32,19 +28,19 @@ class Product < ActiveRecord::Base
     return arr
   end
   
-  has_many :product_relations, :order => 'position ASC', :include => :relation
-  has_many :relations, :through => :product_relations, :class_name => 'Product'
-  accepts_nested_attributes_for :product_relations, :allow_destroy => true, 
+  has_many :course_relations, :order => 'position ASC', :include => :relation
+  has_many :relations, :through => :course_relations, :class_name => 'Product'
+  accepts_nested_attributes_for :course_relations, :allow_destroy => true, 
     :reject_if => proc {|attributes| attributes["_delete"] == "1"}
 
-  has_many :product_components, :order => 'position ASC', :include => :component
-  has_many :components, :through => :product_components, :class_name => 'Product'
-  accepts_nested_attributes_for :product_components, :allow_destroy => true, 
+  has_many :course_components, :order => 'position ASC', :include => :component
+  has_many :components, :through => :course_components, :class_name => 'Product'
+  accepts_nested_attributes_for :course_components, :allow_destroy => true, 
     :reject_if => proc {|attributes| attributes["_delete"] == "1"}
   
-  has_many :product_suggestions, :order => 'position ASC', :include => :suggestion
-  has_many :suggestions, :through => :product_suggestions, :class_name => 'Product'
-  accepts_nested_attributes_for :product_suggestions, :allow_destroy => true, 
+  has_many :course_suggestions, :order => 'position ASC', :include => :suggestion
+  has_many :suggestions, :through => :course_suggestions, :class_name => 'Product'
+  accepts_nested_attributes_for :course_suggestions, :allow_destroy => true, 
     :reject_if => proc {|attributes| attributes["_delete"] == "1"}
 
   #--- additional accessors

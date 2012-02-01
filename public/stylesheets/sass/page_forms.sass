@@ -30,6 +30,9 @@
   select
     padding: 2px 5px 1px
     width: 508px
+  .auto select,
+  select.auto
+    width: auto
     
   .textarea_wrapper 
     width: 955px
@@ -49,12 +52,14 @@
   .input_msg.info
     color: #666
 
+  select.required,
   input.required,
   textarea.required
     color: #603
     background-color: #cfc0c9
   .input_msg.required
     color: #936
+  select.necessary,
   input.necessary,
   textarea.necessary
     color: #306

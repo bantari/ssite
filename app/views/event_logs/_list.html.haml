@@ -10,16 +10,20 @@
       %tr
         %th.id.key= RFilterHelper.sort_by_link('ID','id',@filter,sorter)
         %th.str.w150px= RFilterHelper.sort_by_link('Date','created_at',@filter,sorter)
-        %th.str.w100px= RFilterHelper.sort_by_link('User','user_id',@filter,sorter)
-        %th.str= RFilterHelper.sort_by_link('Action','action',@filter,sorter)
+        %th.str.w160px= RFilterHelper.sort_by_link('User','user_id',@filter,sorter)
+        %th.str.w100px= RFilterHelper.sort_by_link('Object','object_type',@filter,sorter)
+        %th.str.w120px= RFilterHelper.sort_by_link('Action','action',@filter,sorter)
+        %th.str= RFilterHelper.sort_by_link('Comment','comment',@filter,sorter)
 
       - reset_cycle
       - items.each do |item|
         %tr{:class=>cycle('odd','even')+row_class_for(item)}
           %td.id.key= RDisplay.id_str(item)
           %td.str.w150px= item.created_at
-          %td.str.w100px= RDisplay.str(item.user_id)
-          %td.str= RDisplay.str(item.action)
+          %td.str.w160px= RDisplay.obj(item.user)
+          %td.str.w100px= RDisplay.str("#{item.object_type} #{item.object_id}")
+          %td.str.w120px= RDisplay.str(item.action)
+          %td.str= RDisplay.str(item.comment)
   
 - else
   = no_items_found

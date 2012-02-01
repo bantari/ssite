@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class CoursesController < ApplicationController
 #--------------------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------------
 
@@ -23,14 +23,14 @@ class ProductsController < ApplicationController
   [:search,:overview,:specifications,:css_styles,:documents,:products,:media].each do |field|
 
     define_method("edit_#{field}") do
-      @object = Product.find(params[:id])
+      @object = Course.find(params[:id])
     end
   
     define_method("update_#{field}") do
-      @object = Product.find(params[:id])
+      @object = Course.find(params[:id])
       if @object.update_attributes(params[model_sym])
         EventLogger.log(current_user,@object,action_name)
-        redirect_to("/products/#{@object.id}?show[#{field}]=yes", :notice=>"Object's #{field} updated.")
+        redirect_to("/courses/#{@object.id}?show[#{field}]=yes", :notice=>"Object's #{field} updated.")
       else
         render :action => "edit_#{field}"
       end
@@ -38,25 +38,11 @@ class ProductsController < ApplicationController
 
   end
 
-  #def edit_products
-  #  @object = Product.find(params[:id])
-  #end
-  #
-  #def update_products
-  #  @object = Product.find(params[:id])
-  #  if @object.update_attributes(params[:product])
-  #    EventLogger.log(current_user,@object,action_name)
-  #    redirect_to("/products/#{@object.id}?show[products]=yes", :notice=>"Object's Products updated.")
-  #  else
-  #    render :action => "edit_products"
-  #  end
-  #end
-
 #--------------------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------------
 
   def show_with_actions
-    @object    = Product.find(params[:id])
+    @object    = Course.find(params[:id])
     @filter    = RFilter.new
     parameters = ''
     notice     = ''

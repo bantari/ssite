@@ -1,6 +1,6 @@
-class CreateProducts < ActiveRecord::Migration
+class CreateCourses < ActiveRecord::Migration
   def self.up
-    create_table :products do |t|
+    create_table :courses do |t|
       
       t.column :history, :text
       
@@ -35,10 +35,6 @@ class CreateProducts < ActiveRecord::Migration
       t.column :a_title,          :string,  :default => nil
       t.column :a_keywords,       :text
       t.column :a_description,    :text
-
-      # product-specific
-      t.column :brand_id,         :integer, :default => nil
-      t.column :category_id,      :integer, :default => nil
 
       #------------------------------------------------------------ published data
 
@@ -81,12 +77,6 @@ class CreateProducts < ActiveRecord::Migration
       t.column :p_a_keywords,     :text
       t.column :p_a_description,  :text
 
-      #--- product-specific
-      t.column :p_brand_id,       :string,  :default => nil
-      t.column :p_category_id,    :string,  :default => nil
-      t.column :p_categories,     :string,  :default => nil
-      t.column :p_extras,         :string,  :default => nil
-
       #------------------------------------------------------------ live data
 
       # status flags
@@ -94,15 +84,7 @@ class CreateProducts < ActiveRecord::Migration
       t.column :adjusted,         :boolean, :default => false
       t.column :published,        :boolean, :default => false
 
-      # other flags - product-specific
-      t.column :wholesale,            :boolean, :default => false
-      t.column :restricted_use,       :boolean, :default => false
-      t.column :notice_to_purchaser,  :boolean, :default => false
-      t.column :sigma,                :boolean, :default => false
-      t.column :bulk,                 :boolean, :default => false
-      t.column :inherited_bulk,       :boolean, :default => false
-
-      # live bindings
+      # replacement product
       t.column :site_id,          :integer, :default => nil
       t.column :replacement_id,   :integer, :default => nil
       
@@ -120,6 +102,6 @@ class CreateProducts < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :products
+    drop_table :courses
   end
 end

@@ -2,7 +2,13 @@ class EventLog < ActiveRecord::Base
 #--------------------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------------
 
+  #--- associations
+  belongs_to :user
+
+#--------------------------------------------------------------------------------------------------------------------------------
+
   def self.generate(usr,obj,act,res=nil,dscr=nil)
+    return unless obj
     new_log = EventLog.create(
 
       :time        => Time.now,
@@ -10,6 +16,8 @@ class EventLog < ActiveRecord::Base
       :user_id     => usr ? usr.id : 1,
       :object_id   => obj.id,
       :object_type => obj.class.name,
+      
+      :object_name => "#{obj.id} #{obj.class.name}",
 
       :action      => act,
       :result      => res,

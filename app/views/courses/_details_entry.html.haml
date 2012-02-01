@@ -1,0 +1,10 @@
+
+- item ||= f.object
+
+%h5= "Product Details"
+%table.entry
+  %tbody
+    = RDisplay.row('Base SKU (Code)',f.text_field(:code, :class=>'short required')+required)
+    = RDisplay.row('Name',f.text_field(:name, :class=>'short required')+required)
+    = RDisplay.row('Title',f.text_field(:title, :class=>'normal')+optional)
+

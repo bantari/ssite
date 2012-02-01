@@ -55,7 +55,7 @@
     .menu_block
       %ul
         %li= link_to 'SKUs', skus_path, :class=>menu_here('skus')
-        %li= link_to 'Courses', products_path, :class=>menu_here('courses')
+        %li= link_to 'Courses', courses_path, :class=>menu_here('courses')
         %li= link_to 'Products', products_path, :class=>menu_here('products')
       - if has_roles?(:live)
         %h6= 'Live Data'

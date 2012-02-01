@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, 
     :admin, :developer, :creator, :editor, :destroyer, :releaser,
     :documents,:inventory,:website,:media,:web_social,:web_glossary,:web_faq,:live,:special,:system,
-    :name, :title, :description
+    :name, :title, :description, :editable, :active
 
 #--------------------------------------------------------------------------------------------------------------------------------
 
@@ -154,7 +154,7 @@ class User < ActiveRecord::Base
     return true if self.admin
     can = true
     items.each{ |item| can &&= AccessMatrix.visible_items_for(self).include?(item) }
-    return can && self.editor
+    return can && self.editor && other_conditions
   end
   def can_destroy?(*items)
     return true if self.admin

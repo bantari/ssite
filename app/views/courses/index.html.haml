@@ -1,0 +1,10 @@
+
+= render :partial=>'/layouts/filters'
+
+.strip.buttons.top
+  - if has_roles?(:inventory)
+    = link_to 'New', new_course_path, :class=>'new'
+
+= page_title_for "Courses"
+
+= render :partial=>'list'
