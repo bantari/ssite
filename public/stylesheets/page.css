@@ -35,6 +35,12 @@
   #page a:hover {
     color: #993366;
     text-decoration: underline; }
+  #page b,
+  #page strong {
+    color: black;
+    font-weight: bold; }
+  #page i {
+    color: #993366; }
   #page hr {
     border: none;
     border-top: 1px dotted #999999;

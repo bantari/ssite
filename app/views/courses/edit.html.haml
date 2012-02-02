@@ -17,8 +17,6 @@
       = render :partial=>'sku_entry',    :locals=>{:sku_form=>sku_form}
     = f.link_to_add "Add a SKU", :skus
   
-  = render :partial=>'flags_entry',   :locals=>{:f=>f}
-
   = render :partial=>'/shared/entry/editorial_comment', :locals=>{:f=>f}
 
 .buttons.bot.for_form

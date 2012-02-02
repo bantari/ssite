@@ -2,8 +2,13 @@
 - item ||= @object
 
 %h5= "SKU's Parent Object"
-- if item.product
+- if item.product_id
   - p = item.product
   %table
     %tbody
       = RDisplay.row(p.class_identifier,"#{link_to(p.code,p)} -- #{p.name}")
+- elsif item.course_id
+  - c = item.course
+  %table
+    %tbody
+      = RDisplay.row(c.class_identifier,"#{link_to(c.code,c)} -- #{c.name}")      

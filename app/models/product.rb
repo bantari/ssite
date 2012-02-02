@@ -104,7 +104,7 @@ class Product < ActiveRecord::Base
     arr << "<b>overview</b>"                      if self.overview.blank?
     arr << "<b>specifications</b>"                if self.specifications.blank?
     
-    arr << "need at least one <b>ready SKU</b> (i.e. flagged as READY)"  if self.publishable_skus.size == 0
+    arr << "need at least one <b>available SKU</b> (i.e. flagged as CURRENT)"  if self.publishable_skus.size == 0
 
     return arr
   end

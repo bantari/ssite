@@ -17,11 +17,25 @@ class Sku < ActiveRecord::Base
 
 #--------------------------------------------------------------------------------------------------------------------------------
 
+  def get_size
+    return self.size.blank? ? '<i>?size?</i>' : self.size
+  end
+  def get_package
+    return self.package.blank? ? '<i>?package?</i>' : self.package
+  end
+  def get_location
+    return self.location.blank? ? '<i>?location?</i>' : self.location
+  end
+
+
+#--------------------------------------------------------------------------------------------------------------------------------
+
   def get_details
     s = 'details'
     if self.product
-      s = "Size:#{self.size}"
+      s = "Size: #{self.get_size}, Package: #{self.get_package}"
     elsif self.course
+      s = "#{RDisplay.str(self.get_location)}: #{RDisplay.date(self.start_date)} - #{RDisplay.date(self.end_date)} [Enrolled: #{self.enrolled || 0}/#{self.capacity || 0}]"
     end
     return s.html_safe
   end
@@ -29,8 +43,9 @@ class Sku < ActiveRecord::Base
   def get_link_to_owner(style=:normal)
     s = 'owner'
     if self.product
-      s = "[ P <a href='/products/#{self.product_id}'>#{self.product_id.to_s.rjust(3,'0')}</a> ]"
+      s = "<a href='/products/#{self.product_id}'>#{self.product.code}</a>"
     elsif self.course
+      s = "<a href='/courses/#{self.course_id}'>#{self.course.code}</a>"
     end
     return s.html_safe
   end

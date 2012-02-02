@@ -12,7 +12,7 @@
         %th.str.code= RFilterHelper.sort_by_link('Code','code',@filter,sorter)
         %th.aright.price= RFilterHelper.sort_by_link('Price','price',@filter,sorter)
         %th.str= 'Details'
-        %th.str.w100px= 'Owner'
+        %th.str.w120px= 'Owner'
         %th.status= 'Status'
 
       - reset_cycle
@@ -22,7 +22,7 @@
           %td.str.code= link_to RDisplay.str(item.code), item, :class=>'low'
           %td.aright.price= RDisplay.cents(item.price)
           %td.details= item.get_details
-          %td.str.w100px= item.get_link_to_owner(:short)
+          %td.str.w120px= item.get_link_to_owner(:short)
           %td.status= item.get_flags
   
 - else

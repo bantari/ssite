@@ -3,13 +3,13 @@
 
 - if skus && skus.size>0
 
-  %h5= 'Product SKUs'.html_safe
+  %h5= 'Course Schedules'.html_safe
   %table.list
     %tbody
       %tr
         %th.id.key= 'ID'
         %th.str.code= 'SKU'
-        %th.price.right= 'Price'
+        %th.price.aright= 'Price'
         %th.str= 'Details'
         %th.status= 'Flags'
         %th.actions= 'Actions'
@@ -19,7 +19,7 @@
         %tr{:class=>cycle('odd','even')+row_class_for(sku)}
           %td.id.key= RDisplay.id_link(sku)
           %td.str.code= link_to RDisplay.str(sku.code), sku, :class=>'low'
-          %td.price.aright= RDisplay.cents(sku.price)
+          %td.price.aright= RDisplay.dollars(sku.price)
           %td.details= sku.get_details
           %td.status= sku.get_flags
           %td.actions

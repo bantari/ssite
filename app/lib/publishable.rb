@@ -16,7 +16,7 @@ module Publishable
     elsif !published
       arr[0] = 'new'
     else
-      arr[0] = 'ready'
+      arr[0] = 'current'
       arr[0] = 'pending' unless self.adjusted
     end
     s = arr.map{|x| "<span class='flag #{x}'>#{x}</span>"}.join(' ')
