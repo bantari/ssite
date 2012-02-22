@@ -50,6 +50,7 @@ class CreateSkus < ActiveRecord::Migration
       t.column :enrolled,         :integer, :default => 0
 
       # bindings
+      t.column :site_id,          :integer, :default => 1
       t.column :course_id,        :integer, :default => nil
       t.column :product_id,       :integer, :default => nil
       

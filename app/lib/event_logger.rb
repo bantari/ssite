@@ -16,7 +16,7 @@ class EventLogger
     EventLog.generate(usr,obj,act,res,comment)
 
     if obj.respond_to?(:history)
-      event  = "- [#{Time.now}] - [#{usr ? usr.id : '?'}] - #{act}"
+      event  = "- [#{Time.now}] - [<span class='user_name'>#{usr ? usr.name : '?'}</span>] - #{act}"
       event += " - #{cmt}" unless cmt.blank?
       obj.history = "#{event}<br/>#{obj.history || ''}"
       obj.save! if options[:save]

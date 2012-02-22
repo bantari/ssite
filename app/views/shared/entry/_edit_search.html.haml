@@ -7,24 +7,35 @@
 - required    ||= []
 - necessary   ||= []
 
+= render :partial=>'/shared/help/index', :locals=>{:blocks=>[:form_colors,:search_fields]}
+
+.buttons.top.for_form
+  = RDisplay.cancel_form_link("/#{table_name}/#{item.id}?show[search]=yes")
+  = RDisplay.submit_form_link("edit_#{object_name}_#{item.id}")
+
 = page_title_for item, :edit, 'Meta and Search Fields'
 
 = form_for(item,:url=>"/#{table_name}/#{item.id}/update_search") do |f|
   = render :partial=>'/shared/entry/errors'
 
-  %h5= 'Meta Fields'
-  %table
-    %tbody
-      = RDisplay.row('Meta Title',f.text_field(:m_title,:class=>input_class(:m_title,required,necessary))+input_flag(:m_title,required,necessary))
-      = RDisplay.row('Meta Keywords',f.text_area(:m_keywords,:rows=>2,:class=>input_class(:m_keywords,required,necessary))+input_flag(:m_keywords,required,necessary))
-      = RDisplay.row('Meta Description',f.text_area(:m_description,:rows=>3,:class=>input_class(:m_description,required,necessary))+input_flag(:m_description,required,necessary))
 
-  %h5= 'Search Fields'.html_safe
-  %table
-    %tbody
-      = RDisplay.row('Search Title',f.text_field(:s_title,:class=>input_class(:s_title,required,necessary))+input_flag(:s_title,required,necessary))
-      = RDisplay.row('Search Keywords',f.text_area(:s_keywords,:rows=>2,:class=>input_class(:s_keywords,required,necessary))+input_flag(:s_keywords,required,necessary))
-      = RDisplay.row('Search Description',f.text_area(:s_description,:rows=>3,:class=>input_class(:s_description,required,necessary))+input_flag(:s_description,required,necessary))
+  .block
+    .title= 'Meta Fields'
+    .inside
+      %table
+        %tbody
+          = RDisplay.row('Meta Title',f.text_field(:m_title,:class=>input_class(:m_title,required,necessary))+input_flag(:m_title,required,necessary))
+          = RDisplay.row('Meta Keywords',f.text_area(:m_keywords,:rows=>2,:class=>input_class(:m_keywords,required,necessary))+input_flag(:m_keywords,required,necessary))
+          = RDisplay.row('Meta Description',f.text_area(:m_description,:rows=>3,:class=>input_class(:m_description,required,necessary))+input_flag(:m_description,required,necessary))
+
+  .block
+    .title= 'Search Fields'
+    .inside
+      %table
+        %tbody
+          = RDisplay.row('Search Title',f.text_field(:s_title,:class=>input_class(:s_title,required,necessary))+input_flag(:s_title,required,necessary))
+          = RDisplay.row('Search Keywords',f.text_area(:s_keywords,:rows=>2,:class=>input_class(:s_keywords,required,necessary))+input_flag(:s_keywords,required,necessary))
+          = RDisplay.row('Search Description',f.text_area(:s_description,:rows=>3,:class=>input_class(:s_description,required,necessary))+input_flag(:s_description,required,necessary))
         
   = render :partial=>'/shared/entry/editorial_comment', :locals=>{:f=>f}
 

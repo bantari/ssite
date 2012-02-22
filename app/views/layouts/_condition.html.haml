@@ -2,16 +2,17 @@
 - item ||= @object
 
 - if item.respond_to?(:necessities)
+  = content_for :necessities do
   
-  - arr = item.necessities
-  - if arr && arr.size>0
-    - @no_publish = true
+    - arr = item.necessities
+    - if arr && arr.size>0
+      - @no_publish = true
     
-    .necessities
-      %h5.clickable{:onclick=>"flipElement('not_ready');"}= 'Not ready to be published yet!'
-      #not_ready.noshow
-        .content_block
-          %p= 'Missing components:'
-          %ul
-            - arr.each do |a|
-              %li= safe a
+      .block.necessities
+        .title.clickable{:onclick=>"flipElement('not_ready');"}= "<span class='tag'></span>Not ready to be published yet!".html_safe
+        #not_ready.noshow
+          .content
+            %p= 'Missing components:'
+            %ul
+              - arr.each do |a|
+                %li= safe a

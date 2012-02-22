@@ -1,11 +1,13 @@
 
 - item ||= @object
   
-%h5= "Timeline #{noedit(:reason=>:autocalc)}".html_safe
-%table
-  %tbody
-    = get_timeline_event(item,:created)
-    = get_timeline_event(item,:updated,:label=>'Last Updated')
-    = get_timeline_event(item,:introduced,:label=>'First Released')
-    = get_timeline_event(item,:released,:label=>'Last Released')
-    = get_timeline_event(item,:disabled)
+.block
+  .title= "Timeline #{noedit(:reason=>:autocalc)}".html_safe
+  .inside
+    %table
+      %tbody
+        = get_timeline_event(item,:created)
+        = get_timeline_event(item,:updated,:label=>'Last Updated')
+        = get_timeline_event(item,:introduced,:label=>'First Released')
+        = get_timeline_event(item,:released,:label=>'Last Released')
+        = get_timeline_event(item,:disabled)

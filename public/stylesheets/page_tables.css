@@ -1,86 +1,63 @@
 #page table {
-  width: 100%;
-  margin: 0px 0px 2px;
-  border: 1px solid #999999; }
+  width: 100%; }
   #page table th,
   #page table td {
     padding: 2px 5px; }
   #page table th,
   #page table td.label {
-    color: black;
-    font-weight: bold;
-    background-color: #cccccc;
-    text-transform: lowercase; }
+    background-color: #999999; }
   #page table th {
-    text-align: left;
-    font-weight: normal;
-    vertical-align: bottom;
-    border-bottom: 1px solid #999999; }
-    #page table th a {
-      color: inherit; }
-    #page table th a:hover {
-      color: red; }
-    #page table th .lft {
-      display: none; }
-    #page table th .rgh {
-      font-weight: bold;
-      color: red; }
-  #page table th.aright {
-    text-align: right; }
-    #page table th.aright .lft {
-      display: inline;
-      font-weight: bold;
-      color: red; }
-    #page table th.aright .rgh {
-      display: none; }
+    vertical-align: bottom; }
+  #page table th.key {
+    background-color: #888888; }
   #page table td {
     vertical-align: top; }
-  #page table td.aright {
-    text-align: right; }
   #page table td.label {
+    width: 160px;
     text-align: right;
-    border-right: 1px solid #999999;
-    width: 160px; }
-#page table.list th.id,
-#page table.list td.id {
-  width: 40px; }
-#page table.list th.code,
-#page table.list td.code {
-  width: 100px; }
-#page table.list th.price,
-#page table.list td.price {
-  width: 80px; }
-#page table.list th.status,
-#page table.list td.status {
-  width: 70px;
+    font-weight: bold; }
+  #page table td.data.title {
+    border: none;
+    background-color: transparent; }
+  #page table th {
+    text-align: left; }
+    #page table th .uarr,
+    #page table th .darr {
+      color: #66ff00;
+      font-weight: bold; }
+    #page table th a {
+      color: inherit; }
+  #page table th.aright {
+    text-align: right; }
+
+#page table.first {
+  border-bottom: 1px dotted #aaaaaa; }
+
+#page .no_items_found {
+  display: block;
   text-align: center; }
-#page table.list th.actions,
-#page table.list td.actions {
-  width: 120px;
-  text-align: right; }
-#page table.list th.bool,
-#page table.list td.bool {
-  padding: 0px 2px;
-  width: 42px; }
-#page table.list th.key {
-  background-color: #bbbbbb; }
+
 #page table.list td.key {
-  background-color: #dddddd; }
+  border-right: 1px solid white;
+  background-color: #999999; }
 #page table.list tr.even td {
   background-color: #dddddd; }
 #page table.list tr.even td.key {
-  background-color: #cccccc; }
-#page table.first,
-#page table.next {
-  margin-bottom: 0px; }
-#page table.next,
-#page table.last {
-  border-top: none; }
-#page .no_items_found {
-  margin: 0px 0px 1px;
-  padding: 2px 5px;
-  border: 1px solid #cccccc;
-  color: #993366;
-  background-color: #eeeeee;
-  display: block;
+  background-color: #aaaaaa; }
+#page table.list th.id,
+#page table.list td.id {
+  width: 60px; }
+#page table.list th.status,
+#page table.list td.status {
+  width: 80px;
   text-align: center; }
+#page table.list th.actions,
+#page table.list td.actions {
+  width: 100px;
+  text-align: right; }
+#page table.list th.code,
+#page table.list td.code {
+  width: 120px; }
+#page table.list th.price,
+#page table.list td.price {
+  width: 80px; }

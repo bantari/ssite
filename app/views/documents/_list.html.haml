@@ -1,0 +1,27 @@
+
+- items  ||= @objects
+- sorter ||= controller.action_name == 'index'
+
+.block
+  .title= 'Documents'
+  .inside
+    - if items && items.size>0
+
+      %table.list
+        %tbody
+          %tr
+            %th.id.key= RFilterHelper.sort_by_link('ID','id',@filter,sorter)
+            %th.str.w150px= RFilterHelper.sort_by_link('Name','name',@filter,sorter)
+            %th.str= RFilterHelper.sort_by_link('Title','title',@filter,sorter)
+            %th.status= 'Status'
+
+          - reset_cycle
+          - items.each do |item|
+            %tr{:class=>cycle('odd','even')+row_class_for(item)}
+              %td.id.key= RDisplay.id_link(item)
+              %td.str.w150px= link_to RDisplay.str(item.name), item, :class=>'low'
+              %td.str= RDisplay.str(item.get_title)
+              %td.status= item.get_flags
+            
+    - else
+      = no_items_found

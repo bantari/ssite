@@ -103,7 +103,7 @@ class CreateProducts < ActiveRecord::Migration
       t.column :inherited_bulk,       :boolean, :default => false
 
       # live bindings
-      t.column :site_id,          :integer, :default => nil
+      t.column :site_id,          :integer, :default => 1
       t.column :replacement_id,   :integer, :default => nil
       
       # timeline events

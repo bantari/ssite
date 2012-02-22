@@ -1,0 +1,20 @@
+
+- blocks        ||= []
+- local_blocks  ||= []
+- in_topper     ||= false
+
+- if (blocks && blocks.size>0) || (local_blocks && local_blocks.size>0)
+  
+  - if in_topper
+    = content_for :helps do
+      - blocks.each do |block|
+        = render :partial=>"/shared/help/#{block.to_s}"
+      - local_blocks.each do |block|
+        = render :partial=>block.to_s
+
+  - else
+    - blocks.each do |block|
+      = render :partial=>"/shared/help/#{block.to_s}"
+    - local_blocks.each do |block|
+      = render :partial=>block.to_s
+  

@@ -4,6 +4,12 @@
 - table_name  ||= item.class.name.tableize
 - object_name ||= table_name.singularize
 
+= render :partial=>'/shared/help/index', :locals=>{:blocks=>[:form_colors]}
+
+.buttons.top.for_form
+  = RDisplay.cancel_form_link("/#{table_name}")
+  = RDisplay.submit_form_link("new_#{object_name}")
+
 = page_title_for item, :new
 
 = nested_form_for(item) do |f|
@@ -11,11 +17,13 @@
 
   = render :partial=>'details_entry', :locals=>{:f=>f}
 
-  %h5= 'Product SKUs'
-  .content_block.for_line_items
-    = f.fields_for :skus do |sku_form|
-      = render :partial=>'sku_entry',    :locals=>{:sku_form=>sku_form}
-    = f.link_to_add "Add a SKU", :skus
+  .block.for_line_items
+    .title= 'Product SKUs'
+    .content
+      = f.fields_for :skus do |sku_form|
+        = render :partial=>'sku_entry',    :locals=>{:sku_form=>sku_form}
+      = f.link_to_add "Add a SKU", :skus
+
   = render :partial=>'flags_entry',   :locals=>{:f=>f}
 
   = render :partial=>'/shared/entry/editorial_comment', :locals=>{:f=>f}

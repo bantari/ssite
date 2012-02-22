@@ -1,10 +1,11 @@
 #page .tabs {
-  margin: 0px 0px 5px;
+  margin: 0px 0px 1px;
   border: 5px solid white;
   border-top: none;
   border-color: white white black; }
   #page .tabs a {
     color: black;
+    font-weight: normal;
     padding: 2px 5px 0px;
     text-decoration: none;
     display: inline-block; }
@@ -23,6 +24,7 @@
   padding: 0px 20px 0px 0px; }
   #page .tabs.small a {
     color: #666666;
+    font-weight: normal;
     padding: 1px 5px 0px;
     text-decoration: none;
     display: inline-block; }
@@ -35,9 +37,7 @@
   margin: 2px 0px;
   display: inline-block;
   width: auto;
-  border: 3px solid white;
-  border-color: white white #999999;
-  border-top: none;
+  border: none;
   padding: 0px 10px 0px 0px; }
   #page .tabs.smaller a {
     color: #999999;

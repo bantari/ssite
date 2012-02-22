@@ -1,0 +1,18 @@
+
+- item ||= @object
+
+.block
+  .title= 'Category Details'
+  .inside
+    %table.first
+      %tbody
+        = RDisplay.id_row(item,:class=>'low')
+    %table.next
+      %tbody
+        = RDisplay.data_row(item,:name)
+        = RDisplay.data_row(item,:title)
+        = RDisplay.data_row(item,:file_name)
+        = RDisplay.data_row(item,:description)
+    %table.last
+      %tbody
+        = RDisplay.row('Document Type',item.document_type.title)

@@ -1,11 +1,10 @@
 source 'http://rubygems.org'
 
-gem "rails", "3.0.9"
-gem "mysql2", "~> 0.2.7"
-gem "rake"
+gem "rails", "3.2.1"
+gem "mysql2"
 
 gem "aws-s3"
-gem "devise"
+gem "devise", "~> 1.5.3"
 gem "ckeditor", "3.4.0"
 gem "exception_notification", :git => "https://github.com/smartinez87/exception_notification.git"
 gem "fog"
@@ -18,4 +17,4 @@ gem "postmark-rails"
 gem "rack-ssl"
 gem "sass"
 gem "soap4r"
-gem "will_paginate", "3.0.pre2"
+gem "will_paginate"

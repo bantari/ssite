@@ -17,19 +17,13 @@
     = link_to_function "Code", "goTo('#{field_name}_code',#{tabs})", :id=>"#{field_name}_code_a", :class=>'here'
     = link_to_function "Raw",  "goTo('#{field_name}_raw',#{tabs})", :id=>"#{field_name}_raw_a"
 
-%div{:id=>"#{field_name}_code"}
-  %h5= safe "<span class='low'>[CODE] &rarr; </span> Internal CSS Styles"
-  .content_block
-    %pre= safe item.try(field_name)
-%div.noshow{:id=>"#{field_name}_raw"}
-  %h5.low= safe "<span class='low'>[RAW] &rarr; </span> Internal CSS Styles"
-  .content_block
-    %code= item.try(field_name)
-
-
-
-
-
-
-
+.block
+  %div{:id=>"#{field_name}_code"}
+    .title= safe "<span class='low'>[CODE] &rarr; </span> Internal CSS Styles"
+    .content
+      %pre= safe item.try(field_name)
+  %div.noshow{:id=>"#{field_name}_raw"}
+    .title.low= safe "<span class='low'>[RAW] &rarr; </span> Internal CSS Styles"
+    .content
+      %code= item.try(field_name)
 

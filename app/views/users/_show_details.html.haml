@@ -5,6 +5,7 @@
 
   .buttons.fright
     - if item.editable
+      = link_to 'Edit Roles', "/users/#{item.id}/edit_roles", :class=>'edit'
       = link_to 'Edit Details', "/users/#{item.id}/edit", :class=>'edit'
     - else
       = 'You cannot edit this User.'

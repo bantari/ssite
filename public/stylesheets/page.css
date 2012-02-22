@@ -26,14 +26,15 @@
   #page h4.blue {
     color: #663399; }
   #page a {
-    color: #663399;
+    color: #775599;
+    color: #660099;
     text-decoration: underline; }
   #page a.low {
     color: inherit;
     text-decoration: none; }
   #page a.low:hover,
   #page a:hover {
-    color: #993366;
+    color: #cc0000;
     text-decoration: underline; }
   #page b,
   #page strong {
@@ -45,27 +46,21 @@
     border: none;
     border-top: 1px dotted #999999;
     margin: 0px 0px 10px; }
+  #page p {
+    margin: 0px 0px 10px 0px; }
+  #page ul {
+    margin: 0px 0px 10px 30px; }
+    #page ul li {
+      list-style-type: disc; }
 
 #page .strip.undertabs {
   margin: 10px 0px;
   height: 26px; }
   #page .strip.undertabs h4 {
     float: right; }
-
-#page .filters {
-  margin: 0px; }
-  #page .filters table {
-    margin: 0px;
-    background-color: #dddddd; }
-    #page .filters table input[type="text"] {
-      background-color: #eeeeee;
-      width: 200px; }
-    #page .filters table select {
-      padding: 1px 1px 1px 5px;
-      background-color: #eeeeee;
-      width: auto; }
-    #page .filters table td.right {
-      width: 80px; }
+#page .user_name {
+  display: inline-block;
+  width: 100px; }
 
 #page .boolean_flag {
   display: inline-block;
@@ -77,18 +72,18 @@
   text-transform: lowercase;
   font-variant: small-caps;
   color: #666666;
-  background-color: #cccccc; }
+  background-color: #bbbbbb; }
 #page .boolean_flag.yes_flag_hi {
   color: white;
-  background-color: #336699; }
+  background-color: #224466; }
 #page .boolean_flag.no_flag_strong,
 #page .boolean_flag.yes_flag_strong {
   color: white;
-  background-color: #663399; }
+  background-color: #442266; }
 #page .boolean_flag.no_flag_alert,
 #page .boolean_flag.yes_flag_alert {
   color: white;
-  background-color: #993366; }
+  background-color: #662244; }
 
 #page .flag {
   color: #666666;
@@ -96,6 +91,7 @@
   font-size: 10px;
   line-height: 10px;
   background-color: transparent;
+  background-color: #bbbbbb;
   margin: 0px 0px 0px 2px;
   font-variant: small-caps;
   width: 70px;
@@ -104,17 +100,17 @@
 #page .flag.ready,
 #page .flag.current {
   color: white;
-  background-color: #006600; }
+  background-color: #226622; }
 #page .flag.new {
   color: white;
-  background-color: #330066; }
+  background-color: #442266; }
 #page .flag.pending,
 #page .flag.adjusted {
   color: white;
-  background-color: #446688; }
+  background-color: #224466; }
 #page .flag.active {
   color: white;
-  background-color: #005500; }
+  background-color: #226622; }
 #page .flag.disabled,
 #page .flag.inactive {
   color: white;
@@ -122,7 +118,7 @@
 #page .flag.read_only {
   width: 300px;
   color: white;
-  background-color: #663399; }
+  background-color: #442266; }
 #page .flag.live_data {
   width: 300px;
   color: white;
@@ -135,6 +131,7 @@
   font-size: 10px;
   line-height: 10px;
   background-color: #cccccc;
+  background-color: #bbbbbb;
   margin: 0px 0px 0px 1px;
   display: inline-block;
   text-align: center; }
@@ -143,16 +140,16 @@
   padding: 1px 5px 2px; }
 #page .role.act {
   color: white;
-  background-color: #663366; }
+  background-color: #442266; }
 #page .role.acc {
   color: white;
-  background-color: #114477; }
+  background-color: #224466; }
 #page .role.spc {
   color: white;
   background-color: #444444; }
 #page .role.sys {
   color: white;
-  background-color: #660033; }
+  background-color: #662244; }
 #page .role.inactive {
   color: white;
   background-color: #990000; }

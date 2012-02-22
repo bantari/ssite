@@ -44,12 +44,6 @@ class User < ActiveRecord::Base
     options[:action]  ||= false
     options[:access]  ||= false
     s  = ''
-    if options[:all] || options[:action]
-      self.creator    ? s+="<span class='role acc'>CREATOR</span>"          : s+="<span class='role'>CREATOR</span>"
-      self.editor     ? s+="<span class='role acc'>EDITOR</span>"           : s+="<span class='role'>EDITOR</span>"
-      self.destroyer  ? s+="<span class='role act'>DESTROYER</span>"        : s+="<span class='role'>DESTROYER</span>"
-      self.releaser   ? s+="<span class='role act'>RELEASER</span>"         : s+="<span class='role'>REALESER</span>"
-    end
     if options[:all] || options[:access]
       self.documents  ? s+="<span class='role acc'>DOC</span>"              : s+="<span class='role'>DOC</span>" 
       self.inventory  ? s+="<span class='role acc'>INV</span>"              : s+="<span class='role'>INV</span>" 
@@ -60,13 +54,19 @@ class User < ActiveRecord::Base
       self.media      ? s+="<span class='role acc'>MEDIA</span>"            : s+="<span class='role'>MEDIA</span>" 
       self.live       ? s+="<span class='role acc'>LIVE</span>"             : s+="<span class='role'>LIVE</span>" 
     end
-    if options[:all] || options[:special]
-      self.special    ? s+="<span class='role spc'>SPECIAL</span>"          : s+="<span class='role'>SPECIAL</span>" 
-      self.system     ? s+="<span class='role spc'>SYSTEM</span>"           : s+="<span class='role'>SYSTEM</span>" 
+    if options[:all] || options[:action]
+      self.creator    ? s+="<span class='role act'>CREATOR</span>"          : s+="<span class='role'>CREATOR</span>"
+      self.editor     ? s+="<span class='role act'>EDITOR</span>"           : s+="<span class='role'>EDITOR</span>"
+      self.releaser   ? s+="<span class='role act'>PUBLISHER</span>"         : s+="<span class='role'>PUBLISHER</span>"
+      self.destroyer  ? s+="<span class='role act'>DESTROYER</span>"        : s+="<span class='role'>DESTROYER</span>"
     end
     if options[:all] || options[:system]
       self.developer  ? s+="<span class='role sys'>DEVELOPER</span>"  : s+="<span class='role'>DEVELOPER</span>"
+      self.system     ? s+="<span class='role sys'>SYSTEM</span>"           : s+="<span class='role'>SYSTEM</span>" 
       self.admin      ? s+="<span class='role sys'>ADMIN</span>"          : s+="<span class='role'>ADMIN</span>"
+    end
+    if options[:all] || options[:special]
+      self.special    ? s+="<span class='role spc'>SPECIAL</span>"          : s+="<span class='role'>SPECIAL</span>" 
     end
     s = RDisplay::NONE if s.blank?
     return s.html_safe
@@ -75,12 +75,13 @@ class User < ActiveRecord::Base
   def get_system_roles(options={})
     s  = ''
     self.developer  ? s+="<span class='role short sys'>D</span>"    : s+=""
+    self.system     ? s+="<span class='role short sys'>S</span>"    : s+=""
     self.admin      ? s+="<span class='role short sys'>A</span>"    : s+=""
     return s.html_safe
   end
 
   def get_roles_short(options={})
-    options[:all]     ||= false
+    options[:all]     ||= true
     options[:special] ||= false
     s  = ''
     self.documents  ? s+="<span class='role short acc'>D</span>"              : s+="<span class='role short'>D</span>" 
@@ -91,20 +92,20 @@ class User < ActiveRecord::Base
     self.web_faq        ? s+="<span class='role short acc'>F</span>"           : s+="<span class='role short'>F</span>" 
     self.media      ? s+="<span class='role short acc'>M</span>"            : s+="<span class='role short'>M</span>" 
     self.live       ? s+="<span class='role short acc'>L</span>"             : s+="<span class='role short'>L</span>" 
-    s += '&middot&middot'
-    self.creator    ? s+="<span class='role short acc'>C</span>"          : s+="<span class='role short'>C</span>"
-    self.editor     ? s+="<span class='role short acc'>E</span>"           : s+="<span class='role short'>E</span>"
+    s += ' &middot&middot '
+    self.creator    ? s+="<span class='role short act'>C</span>"          : s+="<span class='role short'>C</span>"
+    self.editor     ? s+="<span class='role short act'>E</span>"           : s+="<span class='role short'>E</span>"
+    self.releaser   ? s+="<span class='role short act'>P</span>"         : s+="<span class='role short'>P</span>"
     self.destroyer  ? s+="<span class='role short act'>D</span>"        : s+="<span class='role short'>D</span>"
-    self.releaser   ? s+="<span class='role short act'>R</span>"         : s+="<span class='role short'>R</span>"
-    s += '&middot&middot'
+    s += ' &middot&middot '
     if options[:all] || options[:special]
       self.special    ? s+="<span class='role short spc'>S</span>"          : s+="<span class='role short'>S</span>" 
-      self.system     ? s+="<span class='role short spc'>S</span>"           : s+="<span class='role short'>S</span>" 
-      s += '&middot&middot'
+      s += ' &middot&middot '
     end
     self.developer  ? s+="<span class='role short sys'>D</span>"          : s+="<span class='role short'>D</span>"
+    self.system     ? s+="<span class='role short sys'>S</span>"          : s+="<span class='role short'>S</span>" 
     self.admin      ? s+="<span class='role short sys'>A</span>"          : s+="<span class='role short'>A</span>"
-    s += '&middot&middot'
+    s += ' &middot&middot '
     self.active     ? s+="<span class='role short active'>X</span>"              : s+="<span class='role short inactive'>X</span>"
     return s.html_safe
   end

@@ -1,0 +1,16 @@
+
+- item ||= f.object
+
+.block
+  .title= "Document Details"
+  .inside
+    %table.entry.first
+      %tbody
+        = RDisplay.row('Document Type',f.collection_select(:document_type_id,DocumentType.all,:id,:name,{}, :class=>'required')+required)
+    %table.entry.last
+      %tbody
+        = RDisplay.row('Name',f.text_field(:name, :class=>'required')+required)
+        = RDisplay.row('Title',f.text_field(:title, :class=>'necessary')+necessary)
+        = RDisplay.row('File Name',f.text_field(:file_name, :class=>'necessary')+necessary)
+        = RDisplay.row('Description',f.text_field(:description, :class=>'normal')+optional)
+

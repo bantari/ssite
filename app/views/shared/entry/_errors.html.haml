@@ -3,9 +3,9 @@
 - class_name  ||= item.class.name.titleize
 
 - if item.errors.any?
-  .error_explanation
-    %h5= "#{pluralize(item.errors.count,'error')} prohibited this #{class_name} from being saved!"
-    .content_block
+  .block.errors
+    .title= "#{pluralize(item.errors.count,'error')} prohibited this #{class_name} from being saved!"
+    .content
       %ul
         - item.errors.full_messages.each do |msg|
           %li= msg

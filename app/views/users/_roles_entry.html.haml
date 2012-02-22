@@ -1,0 +1,43 @@
+
+- item ||= f.object
+
+.block
+  .title= 'Access Roles'
+  .inside
+    %table
+      %tbody
+        = RDisplay.row('Documents',f.check_box(:documents)  +field_info('Can access Documents and Publications'))
+        = RDisplay.row('Inventory',f.check_box(:inventory)  +field_info('Can access SKUs, Products, and Courses'))
+        = RDisplay.row('Website',f.check_box(:website)      +field_info('Can access Pages, Forms, Partials, and all layout elements'))
+        = RDisplay.row('Web Glossary',f.check_box(:web_glossary)    +field_info('Can access Glossary objects'))
+        = RDisplay.row('Web Social',f.check_box(:web_social)        +field_info('Can access social objects'))
+        = RDisplay.row('Web FAQ',f.check_box(:web_faq)              +field_info('Can access FAQ objects'))
+        = RDisplay.row('Media',f.check_box(:media)          +field_info('Can access Images and Videos'))
+        = RDisplay.row('Live',f.check_box(:live)            +field_info('Can manipulate live data'))
+
+.block
+  .title= 'Action Roles'
+  .inside
+    %table
+      %tbody
+        = RDisplay.row('Create',f.check_box(:creator)    +field_info('Can create accessible object'))
+        = RDisplay.row('Edit',f.check_box(:editor)      +field_info('Can edit accessible object'))
+        = RDisplay.row('Destroyer',f.check_box(:destroyer) +field_info('Can destroy accessible object'))
+        = RDisplay.row('Releaser',f.check_box(:releaser)  +field_info('Can release accessible object'))
+
+.block
+  .title= 'System Roles'.html_safe
+  .inside
+    %table
+      %tbody
+        = RDisplay.row('Admin',f.check_box(:admin)          +field_info('Has access to all object and can perform all actions'))
+        = RDisplay.row('System',f.check_box(:system)        +field_info('Can access read-only system information'))
+        = RDisplay.row('Developer',f.check_box(:developer)  +field_info('Can view additional dev info and perform dev actions'))
+
+.block
+  .title= "Special Roles <span class='low'>(for read-only objects)</span>".html_safe
+  .inside
+    %table
+      %tbody
+        = RDisplay.row('Special',f.check_box(:special)      +field_info('Can access additional invormation (reports)'))
+    

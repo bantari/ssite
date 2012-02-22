@@ -4,10 +4,10 @@
 #page input[type="email"],
 #page input[type="password"] {
   padding: 2px 5px;
-  font: 12px/12px monospace;
+  font: 10px/10px verdana;
   background-color: #dddddd;
   border: none;
-  border-bottom: 1px solid #999999; }
+  border-bottom: 1px solid #666666; }
 #page input[type="text"] {
   width: 500px; }
 #page input.tiny {
@@ -31,9 +31,12 @@
 #page select.auto {
   width: auto; }
 #page .textarea_wrapper {
-  width: 955px; }
+  padding: 2px 5px;
+  background-color: #eeeeee; }
   #page .textarea_wrapper textarea {
-    padding: 0px; }
+    border: none;
+    padding: 2px;
+    width: 90%; }
 #page .ckeditor_wrapper {
   width: 967px;
   margin-bottom: 10px; }
@@ -51,14 +54,16 @@
 #page input.required,
 #page textarea.required {
   color: #660033;
-  background-color: #cfc0c9; }
+  border-color: #995577;
+  background-color: #ccaabb; }
 #page .input_msg.required {
   color: #993366; }
 #page select.necessary,
 #page input.necessary,
 #page textarea.necessary {
   color: #330066;
-  background-color: #c9c0cf; }
+  border-color: #775599;
+  background-color: #bbaacc; }
 #page .input_msg.necessary {
   color: #663399; }
 #page .field_with_errors {
@@ -66,40 +71,38 @@
   #page .field_with_errors input.required,
   #page .field_with_errors inpue.necessary,
   #page .field_with_errors input[type="text"] {
-    color: white;
-    background-color: #660033; }
-
-#page .content_block.for_line_items {
-  border-width: 1px 5px;
-  border-color: #999999 #666666;
-  background-color: #eeeeee; }
-  #page .content_block.for_line_items .fields {
-    margin: 0px 0px 5px; }
-    #page .content_block.for_line_items .fields table {
-      width: 99%;
-      margin: 5px;
-      border: 1px solid #bbbbbb;
-      border-top: 2px solid #666666;
-      background-color: white; }
-    #page .content_block.for_line_items .fields label {
-      width: 100px;
-      text-align: right;
-      display: inline-block; }
-  #page .content_block.for_line_items a.add_nested_fields {
-    font-size: 10px;
-    line-height: 12px;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    background-color: #cccccc;
-    padding: 2px 5px;
-    text-decoration: none;
-    display: inline-block;
     color: black;
-    margin: 10px 0px 0px 5px; }
-  #page .content_block.for_line_items a.add_nested_fields:hover {
-    color: white;
-    border-color: black;
-    background-color: #666666; }
+    border-color: #660033;
+    background-color: #bb7799; }
+
+#page .block.for_line_items .content {
+  border: 1px solid #999999;
+  background-color: #cccccc; }
+#page .block.for_line_items .fields {
+  margin: 0px 0px 5px; }
+  #page .block.for_line_items .fields table {
+    width: 99%;
+    margin: 5px;
+    border-top: 3px solid #999999; }
+  #page .block.for_line_items .fields label {
+    width: 100px;
+    text-align: right;
+    display: inline-block; }
+#page .block.for_line_items a.add_nested_fields {
+  font-size: 10px;
+  line-height: 12px;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: #999999;
+  padding: 2px 5px;
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+  margin: 10px 0px 0px 5px; }
+#page .block.for_line_items a.add_nested_fields:hover {
+  color: white;
+  border-color: black;
+  background-color: #666666; }
 
 #page .content_block.for_ckeditor {
   border: none;

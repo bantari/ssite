@@ -5,6 +5,6 @@
   - if has_roles?(:inventory)
     = link_to 'New', new_product_path, :class=>'new'
 
-= page_title_for "Products"
+= page_title_for "Products", :list
 
 = render :partial=>'list'

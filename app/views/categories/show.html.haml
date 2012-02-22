@@ -11,6 +11,8 @@
 .tabs
 
   = link_to "Details","?show[details]=yes", :class=>here_class(params[:show],'details',true)
+  = link_to "Children","?show[children]=yes", :class=>here_class(params[:show],'children')
+  = tabs_divider
   = link_to "Products","?show[products]=yes", :class=>here_class(params[:show],'products')
   .f-right
     = link_to "H","?show[history]=yes", :class=>here_class(params[:show],'history')

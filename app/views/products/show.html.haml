@@ -2,8 +2,7 @@
 - item ||= @object
 
 = render :partial=>'/layouts/filters'
-- if item.active
-  = render :partial=>'/layouts/condition'
+= render :partial=>'/layouts/condition'
 
 .buttons.top
   - if has_roles?(:inventory,:releaseer)

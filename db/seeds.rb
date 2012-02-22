@@ -52,4 +52,16 @@ Category.all.each do |cat|
 end # do categories
 
 #--------------------------------------------------------------------------------------------------------------------------------
+
+puts "--- create document types"
+DocumentType.create(:name=>'Specs',     :title=>'Specification Sheet',        :file_path=>'specs')
+DocumentType.create(:name=>'MSDS',      :title=>'Material Safety Data Sheet', :file_path=>'msds')
+DocumentType.create(:name=>'Manual',    :title=>'Manual',           :file_path=>'manuals')
+DocumentType.create(:name=>'Protocol',  :title=>'Protocol',         :file_path=>'protocols')
+DocumentType.create(:name=>'AppNote',   :title=>'Application Note', :file_path=>'appnotes')
+DocumentType.create(:name=>'Brochure',  :title=>'Brochure',         :file_path=>'brochures')
+DocumentType.create(:name=>'Press',     :title=>'Press Release',    :file_path=>'press')
+DocumentType.create(:name=>'Other',     :title=>'Other',            :file_path=>'other')
+
+#--------------------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------------

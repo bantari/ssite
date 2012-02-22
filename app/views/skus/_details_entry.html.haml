@@ -1,16 +1,31 @@
 
 - item ||= f.object
 
-%h5= "SKU Details"
-%table.entry
-  %tbody
-    = RDisplay.row('SKU',item.code + input_msg('can only be changed from product/cours screen'))
-    = RDisplay.row('Price',f.text_field(:price, :class=>'short required')+required)
+.block
+  .title= "SKU Details"
+  .inside
+    %table.entry
+      %tbody
+        = RDisplay.row('SKU',item.code + input_msg('can only be changed from product/course screen'))
+        = RDisplay.row('Price',f.text_field(:price, :class=>'short required')+required)
 
-- if item.product
-  %h5= 'Product Information'
-  %table
-    %tbody
-      = RDisplay.row('Size',f.text_field(:size,:class=>'necessary')+necessary)
-      = RDisplay.row('Package',f.text_field(:package)+optional)
-      = RDisplay.row('Position',f.text_field(:position)+optional)
+.block
+
+  - if item.product_id
+    .title= 'Product Information'
+    .inside
+      %table
+        %tbody
+          = RDisplay.row('Size',f.text_field(:size,:class=>'necessary')+necessary)
+          = RDisplay.row('Package',f.text_field(:package)+optional)
+          = RDisplay.row('Position',f.text_field(:position)+optional)
+
+  - elsif item.course_id
+    .title= 'Course Schedule Information'
+    .inside
+      %table
+        %tbody
+          = RDisplay.row('Start Date',f.date_select(:start_date, {:order=>[:day,:month,:year]},:class=>'necessary')+necessary,:row_class=>'auto')
+          = RDisplay.row('Start Date',f.date_select(:end_date, {:order=>[:day,:month,:year]},:class=>'necessary')+necessary,:row_class=>'auto')
+          = RDisplay.row('Location',  f.text_field(:location,:class=>'short necessary')+necessary)
+          = RDisplay.row('Capacity',  f.text_field(:capacity,:class=>'tiny necessary')+necessary)

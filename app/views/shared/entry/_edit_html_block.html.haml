@@ -9,10 +9,11 @@
 
 - form_for(item,:url=>"/#{table_name}/#{item.id}/update_#{field_name}") do |f|
   = render :partial=>'/shared/entry/errors'
-  
-  %h5= "[HTML] &rarr; #{field_name.to_s.titleize}".html_safe
-  .content_block.for_ckeditor
-    .ckeditor_wrapper= f.cktext_area(field_name.to_sym,:height=>height)
+
+  .block
+    .title= "[HTML] &rarr; #{field_name.to_s.titleize}".html_safe
+    .inside
+      .ckeditor_wrapper= f.cktext_area(field_name.to_sym,:height=>height)
 
   = render :partial=>'/shared/entry/editorial_comment', :locals=>{:f=>f}
 

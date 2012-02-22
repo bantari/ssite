@@ -1,10 +1,12 @@
 
 - item ||= @object
 
-%h5= "Status Flags #{noedit(:reason=>:event_driven)}".html_safe
-%table
-  %tbody
-    = RDisplay.yn_row(item,:active,:display=>:n_alert,:info=>field_info('Object is not visible on website and cannot be ordered',:show=>!item.active))
-    = RDisplay.yn_row(item,:adjusted,:display=>:y_strong,:info=>field_info('Object has been edited since the last release',:show=>item.adjusted))
-    = RDisplay.yn_row(item,:published,:display=>:n_strong,:info=>field_info('Object has never been published',:show=>!item.published))
+.block
+  .title= "Status Flags #{noedit(:reason=>:event_driven)}".html_safe
+  .inside
+    %table
+      %tbody
+        = RDisplay.yn_row(item,:active,:display=>:n_alert,:info=>field_info('Object is not visible on website and cannot be ordered',:show=>!item.active))
+        = RDisplay.yn_row(item,:adjusted,:display=>:y_strong,:info=>field_info('Object has been edited since the last release',:show=>item.adjusted))
+        = RDisplay.yn_row(item,:published,:display=>:n_strong,:info=>field_info('Object has never been published',:show=>!item.published))
 

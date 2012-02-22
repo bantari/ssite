@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120201185453) do
+ActiveRecord::Schema.define(:version => 20120214234017) do
 
   create_table "brand_banners", :force => true do |t|
     t.integer  "brand_id"
@@ -288,12 +288,12 @@ ActiveRecord::Schema.define(:version => 20120201185453) do
     t.string   "name"
     t.string   "title"
     t.string   "description"
+    t.text     "abstract"
+    t.text     "content"
     t.text     "overview"
     t.text     "specifications"
     t.integer  "style_id"
     t.text     "style_css"
-    t.integer  "brand_id"
-    t.integer  "category_id"
     t.string   "m_title"
     t.text     "m_keywords"
     t.text     "m_description"
@@ -320,10 +320,6 @@ ActiveRecord::Schema.define(:version => 20120201185453) do
     t.string   "p_relations"
     t.string   "p_components"
     t.string   "p_suggestions"
-    t.string   "p_brand_id"
-    t.string   "p_category_id"
-    t.string   "p_categories"
-    t.string   "p_extras"
     t.string   "p_m_title"
     t.text     "p_m_keywords"
     t.text     "p_m_description"
@@ -333,24 +329,87 @@ ActiveRecord::Schema.define(:version => 20120201185453) do
     t.string   "p_a_title"
     t.text     "p_a_keywords"
     t.text     "p_a_description"
-    t.boolean  "active",              :default => true
-    t.boolean  "adjusted",            :default => false
-    t.boolean  "published",           :default => false
-    t.boolean  "wholesale",           :default => false
-    t.boolean  "restricted_use",      :default => false
-    t.boolean  "notice_to_purchaser", :default => false
-    t.boolean  "sigma",               :default => false
-    t.boolean  "bulk",                :default => false
-    t.boolean  "inherited_bulk",      :default => false
-    t.integer  "site_id"
+    t.boolean  "active",           :default => true
+    t.boolean  "adjusted",         :default => false
+    t.boolean  "published",        :default => false
+    t.integer  "site_id",          :default => 1
     t.integer  "replacement_id"
     t.datetime "introduced_at"
-    t.integer  "introduced_by",       :default => 1
+    t.integer  "introduced_by",    :default => 1
     t.datetime "disabled_at"
-    t.integer  "disabled_by",         :default => 1
+    t.integer  "disabled_by",      :default => 1
     t.datetime "released_at"
-    t.integer  "released_by",         :default => 1
-    t.integer  "created_by",          :default => 1
+    t.integer  "released_by",      :default => 1
+    t.integer  "created_by",       :default => 1
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "document_types", :force => true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.string   "title"
+    t.string   "description"
+    t.string   "file_path"
+    t.integer  "created_by",  :default => 1
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "documents", :force => true do |t|
+    t.text     "history"
+    t.string   "code"
+    t.string   "name"
+    t.string   "title"
+    t.string   "description"
+    t.string   "file_name"
+    t.string   "file_url"
+    t.text     "abstract"
+    t.text     "content"
+    t.integer  "style_id"
+    t.text     "style_css"
+    t.string   "m_title"
+    t.text     "m_keywords"
+    t.text     "m_description"
+    t.string   "s_title"
+    t.text     "s_keywords"
+    t.text     "s_description"
+    t.string   "a_title"
+    t.text     "a_keywords"
+    t.text     "a_description"
+    t.string   "p_code"
+    t.string   "p_name"
+    t.string   "p_title"
+    t.string   "p_description"
+    t.string   "p_file_url"
+    t.text     "p_abstract"
+    t.text     "p_content"
+    t.integer  "p_style_id"
+    t.text     "p_style_css"
+    t.string   "p_m_title"
+    t.text     "p_m_keywords"
+    t.text     "p_m_description"
+    t.string   "p_s_title"
+    t.text     "p_s_keywords"
+    t.text     "p_s_description"
+    t.string   "p_a_title"
+    t.text     "p_a_keywords"
+    t.text     "p_a_description"
+    t.boolean  "active",           :default => true
+    t.boolean  "adjusted",         :default => false
+    t.boolean  "published",        :default => false
+    t.integer  "document_type_id"
+    t.integer  "site_id",          :default => 1
+    t.integer  "replacement_id"
+    t.datetime "introduced_at"
+    t.integer  "introduced_by",    :default => 1
+    t.datetime "disabled_at"
+    t.integer  "disabled_by",      :default => 1
+    t.datetime "released_at"
+    t.integer  "released_by",      :default => 1
+    t.integer  "created_by",       :default => 1
     t.integer  "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -366,7 +425,7 @@ ActiveRecord::Schema.define(:version => 20120201185453) do
     t.text     "result"
     t.text     "comment"
     t.integer  "app_id"
-    t.integer  "site_id"
+    t.integer  "site_id",     :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -597,12 +656,12 @@ ActiveRecord::Schema.define(:version => 20120201185453) do
     t.string   "name"
     t.string   "title"
     t.string   "description"
+    t.text     "abstract"
+    t.text     "content"
     t.text     "overview"
     t.text     "specifications"
     t.integer  "style_id"
     t.text     "style_css"
-    t.integer  "brand_id"
-    t.integer  "category_id"
     t.string   "m_title"
     t.text     "m_keywords"
     t.text     "m_description"
@@ -612,6 +671,8 @@ ActiveRecord::Schema.define(:version => 20120201185453) do
     t.string   "a_title"
     t.text     "a_keywords"
     t.text     "a_description"
+    t.integer  "brand_id"
+    t.integer  "category_id"
     t.string   "p_code"
     t.string   "p_name"
     t.string   "p_title"
@@ -629,10 +690,6 @@ ActiveRecord::Schema.define(:version => 20120201185453) do
     t.string   "p_relations"
     t.string   "p_components"
     t.string   "p_suggestions"
-    t.string   "p_brand_id"
-    t.string   "p_category_id"
-    t.string   "p_categories"
-    t.string   "p_extras"
     t.string   "p_m_title"
     t.text     "p_m_keywords"
     t.text     "p_m_description"
@@ -642,6 +699,10 @@ ActiveRecord::Schema.define(:version => 20120201185453) do
     t.string   "p_a_title"
     t.text     "p_a_keywords"
     t.text     "p_a_description"
+    t.string   "p_brand_id"
+    t.string   "p_category_id"
+    t.string   "p_categories"
+    t.string   "p_extras"
     t.boolean  "active",              :default => true
     t.boolean  "adjusted",            :default => false
     t.boolean  "published",           :default => false
@@ -651,7 +712,7 @@ ActiveRecord::Schema.define(:version => 20120201185453) do
     t.boolean  "sigma",               :default => false
     t.boolean  "bulk",                :default => false
     t.boolean  "inherited_bulk",      :default => false
-    t.integer  "site_id"
+    t.integer  "site_id",             :default => 1
     t.integer  "replacement_id"
     t.datetime "introduced_at"
     t.integer  "introduced_by",       :default => 1
@@ -672,7 +733,8 @@ ActiveRecord::Schema.define(:version => 20120201185453) do
     t.string   "object_type"
     t.string   "action"
     t.text     "description"
-    t.integer  "site_id"
+    t.integer  "app_id"
+    t.integer  "site_id",     :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -702,6 +764,7 @@ ActiveRecord::Schema.define(:version => 20120201185453) do
     t.boolean  "adjusted",      :default => false
     t.boolean  "published",     :default => false
     t.integer  "enrolled",      :default => 0
+    t.integer  "site_id",       :default => 1
     t.integer  "course_id"
     t.integer  "product_id"
     t.datetime "introduced_at"

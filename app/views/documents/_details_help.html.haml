@@ -1,0 +1,28 @@
+
+- block_id = 'h_details'
+
+.block.help
+  .title.clickable.closed{:id=>"#{block_id}_t",:onclick=>"flipBlock('#{block_id}');"}= "<span class='tag'></span>Details Explanation".html_safe
+  .content.noshow{:id=>block_id}
+    %ul
+      %li
+        [
+        %b= 'Name'
+        = "] --- this is what shows in the dropdown lists in StemSite"
+      %li
+        [
+        %b= 'Title'
+        = "] --- this is what shows as the document title on the website"
+      %li
+        [
+        %b= 'File Name'
+        = "] --- the name of the pdf file accessible from website"
+      %li
+        [
+        %b= 'Description'
+        = "] --- optional, shows nowhere except for the details screen in StemSite"
+      %li
+        [
+        %b= 'Document Type'
+        = "] --- type of this document"
+    

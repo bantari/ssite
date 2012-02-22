@@ -11,7 +11,8 @@ class CreateReleases < ActiveRecord::Migration
       t.column :action,       :string,  :default => nil
       t.column :description,  :text
       
-      t.column :site_id,      :integer, :default => nil
+      t.column :app_id,       :integer, :default => nil
+      t.column :site_id,      :integer, :default => 1
 
       t.timestamps
     end

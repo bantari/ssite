@@ -85,7 +85,7 @@ class CreateCourses < ActiveRecord::Migration
       t.column :published,        :boolean, :default => false
 
       # replacement product
-      t.column :site_id,          :integer, :default => nil
+      t.column :site_id,          :integer, :default => 1
       t.column :replacement_id,   :integer, :default => nil
       
       # timeline events

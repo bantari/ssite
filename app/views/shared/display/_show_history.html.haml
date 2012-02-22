@@ -4,8 +4,9 @@
 - if item.respond_to?(:history)
 
   .strip.undertabs
-    %h4= 'Action History'
-  
-%h5= 'Event History'
-.content_block
-  %pre= safe item.history
+    %h4= 'Object action history'
+
+.block  
+  .title= 'History'
+  .content
+    %pre= safe item.history

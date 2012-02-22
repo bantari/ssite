@@ -2,10 +2,12 @@
 - item        ||= @object
 - table_name  ||= item.class.name.tableize
 
-%h5= 'Course Details'
-%table
-  %tbody
-    = RDisplay.id_row(item,:class=>'low')
-    = RDisplay.data_row(item,:code,:label=>'Base SKU')
-    = RDisplay.data_row(item,:name)
-    = RDisplay.data_row(item,:title)
+.block
+  .title= 'Course Details'
+  .inside
+    %table
+      %tbody
+        = RDisplay.id_row(item,:class=>'low')
+        = RDisplay.data_row(item,:code,:label=>'Base SKU')
+        = RDisplay.data_row(item,:name)
+        = RDisplay.data_row(item,:title)

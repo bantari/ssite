@@ -14,7 +14,7 @@ class CreateEvents < ActiveRecord::Migration
       t.column :comment,     :text
       
       t.column :app_id,      :integer, :default => nil # application id
-      t.column :site_id,     :integer, :default => nil
+      t.column :site_id,     :integer, :default => 1
       
       t.timestamps
     end

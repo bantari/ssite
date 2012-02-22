@@ -4,24 +4,26 @@
 
 .strip.undertabs= ''
 
-%h5= 'Attached Products'
+.block
+  .title= 'Attached Products'
+  .inside
 
-- if products && products.size>0
-  %table.list
-    %tbody
-      %tr
-        %th.id.key= 'ID'
-        %th.str.code= 'Base SKU'
-        %th.str.name= 'Name'
-        %th.status= 'Status'
+    - if products && products.size>0
+      %table.list
+        %tbody
+          %tr
+            %th.id.key= 'ID'
+            %th.str.code= 'Base SKU'
+            %th.str.name= 'Name'
+            %th.status= 'Status'
 
-      - reset_cycle
-      - products.each do |product|
-        %tr{:class=>cycle('odd','even')+row_class_for(product)}
-          %td.id.key= RDisplay.id_link(product)
-          %td.str.code= link_to RDisplay.str(product.code), item, :class=>'low'
-          %td.str.name= link_to RDisplay.str(product.name), item, :class=>'low'
-          %td.status= product.get_flags
+          - reset_cycle
+          - products.each do |product|
+            %tr{:class=>cycle('odd','even')+row_class_for(product)}
+              %td.id.key= RDisplay.id_link(product)
+              %td.str.code= link_to RDisplay.str(product.code), item, :class=>'low'
+              %td.str.name= link_to RDisplay.str(product.name), item, :class=>'low'
+              %td.status= product.get_flags
   
-- else
-  = no_items_found
+    - else
+      = no_items_found

@@ -1,74 +1,130 @@
-
-//---------------------------------------- block headers
+//---------------------------------------- 
+//---------------------------------------- 
+// block layout
 #page
 
-  h5
-    padding: 2px 5px
-    margin: 1px 0px
-    font-weight: normal
-    border-bottom: 1px solid #000
-    
-    color: #fff
-    border-color: #fff #666 #000 #000
-    background-color: #666
-
-    .low
-      color: #ccc
-
-  h5.clickable
-    cursor: pointer
-  h5.clickable:before
-    content: ">>> "
-
-  h5.clickable,
-  .h5.clickable.closed:hover
-    color: #fff
-    border-color: #fff #000 #000 #000
-    background-color: #666
-    .low
-      color: #ccc
-  h5.low,
-  .h5.clickable:hover,
-  h5.clickable.closed
-    color: #000
-    border-color: #fff #000 #666 #666
-    background-color: #ccc
-    .low
-      color: #666
-
-
-//---------------------------------------- blocks
-#page
-
-  // for debug
   .block
-    b
-      color: #000
-    .inside
-      background-color: #f00
-
-  .content_block
-    padding: 10px
-    margin: 0px 0px 1px
-    border: 1px solid #999
-    p
-      margin: 0px 0px 10px
-    ul
-      margin: 0px 0px 10px 30px
-      li
-        list-style-type: disc
-
-  .necessities,
-  .error_explanation
-    h5
+    .title
       color: #fff
-      border-color: #000
-      background-color: #603
-    .content_block
+      border-bottom: 1px solid #fff
+      .tag
+        font-variant: small-caps
+        text-transform: lowercase
+        float: right
+        color: #999
+
+
+    .content
+      border-bottom: 1px solid #fff
+
+    .inside
+      table
+        border-bottom: 1px solid #fff
+        th
+          border-bottom: 1px solid #fff
+        th.key,
+        td.key,
+        td.label
+          border-right: 1px solid #fff
+    
+//---------------------------------------- 
+//---------------------------------------- 
+#page
+
+  .block
+
+    .title
+      padding: 2px 5px
+      background-color: #666
+
+    .title.clickable
+      color: #fff
+      cursor: pointer
+      
+    .title.clickable:hover
+      color: #ff0
+      .tag
+        color: #ff0
+
+    .title.clickable:before
+      content: "\2193 \2191  "
+
+    .inside,
+    .content
+      background-color: #ccc
+    .content
+      padding: 10px
+    
+
+  .block.low
+
+    .title
+      color: #000
+      background-color: #ccc
+
+//---------------------------------------- 
+#page
+    
+  .block.filters
+    .title
+      background-color: #666
+      .tag:before
+        content: "[SEARCH] \2191 \2193"
+    .inside,
+    .content
+      color: #666
+      background-color: #ccc
+      table
+        margin: 0px
+        input[type="text"]
+          background-color: #ddd
+          width: 200px
+        select
+          padding: 1px 1px 1px 5px
+          background-color: #ddd
+          width: auto
+        td.right
+          width: 80px
+          color: #000
+          border-left: 1px solid #fff
+          background-color: #999
+          text-align: right
+          a.dark
+            color: #666
+            margin-right: 10px
+          a:hover
+            color: #c00
+        td.first
+          padding-top: 10px
+        td.last
+          padding-bottom: 10px
+
+    
+  .block.errors,
+  .block.necessities
+    .title
+      color: #fff
+      background-color: #624
+    .inside,
+    .content
       color: #603
-      border-color: #879
-      background-color: #ecd
-      b,
-      strong
-        color: #000
-  
+      background-color: #b79
+    
+  .block.necessities
+    .title
+      .tag:before
+        content: "[NOTE] \2191 \2193"
+
+  .block.help
+    .title
+      color: #fff
+      background-color: #468
+      .tag:before
+        content: "[HELP] \2191 \2193"
+    .inside,
+    .content
+      color: #036
+      background-color: #79b
+    
+//---------------------------------------- 
+//---------------------------------------- 

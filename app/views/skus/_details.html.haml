@@ -2,26 +2,35 @@
 - item        ||= @object
 - table_name  ||= item.class.name.tableize
 
-%h5= 'Details'
-%table
-  %tbody
-    = RDisplay.id_row(item,:class=>'low')
-    = RDisplay.data_row(item,:code,:label=>'SKU')
-    = RDisplay.row('Price',RDisplay.cents(item.price))
+.block
+  .title= 'Details'
+  .inside
+    %table
+      %tbody
+        = RDisplay.id_row(item,:class=>'low')
+        = RDisplay.data_row(item,:code,:label=>'SKU')
+        = RDisplay.row('Price',RDisplay.cents(item.price))
 
 - if item.product_id
-  %h5= 'Product Information'
-  %table
-    %tbody
-      = RDisplay.data_row(item,:size)
-      = RDisplay.data_row(item,:package)
-      = RDisplay.row('Position',RDisplay.count(item.position))
+  .block
+    .title= 'Product Information'
+    .inside
+      %table
+        %tbody
+          = RDisplay.data_row(item,:size)
+          = RDisplay.data_row(item,:package)
+          = RDisplay.row('Position',RDisplay.count(item.position))
 
 - elsif item.course_id
-  %h5= 'Schedule Information'
-  %table
-    %tbody
-      = RDisplay.row('Start Date',RDisplay.date(item.start_date))
-      = RDisplay.row('Start Date',RDisplay.date(item.start_date))
-      = RDisplay.data_row(item,:get_location,:label=>'Location')
-      = RDisplay.row('Position',RDisplay.count(item.position))
+  .block
+    .title= 'Schedule Information'
+    .inside
+      %table.first
+        %tbody
+          = RDisplay.row('Start Date',RDisplay.date(item.start_date))
+          = RDisplay.row('Start Date',RDisplay.date(item.start_date))
+          = RDisplay.data_row(item,:get_location,:label=>'Location')
+          = RDisplay.data_row(item,:capacity)
+      %table.last
+        %tbody
+          = RDisplay.data_row(item,:enrolled)

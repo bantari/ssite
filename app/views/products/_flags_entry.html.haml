@@ -1,12 +1,14 @@
 
 - item ||= f.object
 
-%h5= "Product Flags".html_safe
-%table
-  %tbody
-    = RDisplay.row('Sigma',f.check_box(:sigma)                              +field_info('If checked, product will not be sold via our website'))
-    = RDisplay.row('Bulk',f.check_box(:bulk)                                +field_info('If checked, product has the ability to be sold in bulk'))
-    = RDisplay.row('Wholesale',f.check_box(:wholesale)                      +field_info('If checked, product is sold via a 3rd party distributor (??)'))
-    = RDisplay.row('Restricted Use',f.check_box(:restricted_use)            +field_info('If checked, restricted use info is added to product page'))
-    = RDisplay.row('Notice to Purchaser',f.check_box(:notice_to_purchaser)  +field_info('If checked, notice to purchaser is added to product page'))
+.block
+  .title= "Product Flags".html_safe
+  .inside
+    %table
+      %tbody
+        = RDisplay.row('Sigma',f.check_box(:sigma)                              +field_info('If checked, product will not be sold via our website'))
+        = RDisplay.row('Bulk',f.check_box(:bulk)                                +field_info('If checked, product has the ability to be sold in bulk'))
+        = RDisplay.row('Wholesale',f.check_box(:wholesale)                      +field_info('If checked, product is sold via a 3rd party distributor (??)'))
+        = RDisplay.row('Restricted Use',f.check_box(:restricted_use)            +field_info('If checked, restricted use info is added to product page'))
+        = RDisplay.row('Notice to Purchaser',f.check_box(:notice_to_purchaser)  +field_info('If checked, notice to purchaser is added to product page'))
 

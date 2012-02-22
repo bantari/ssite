@@ -6,10 +6,10 @@
   input[type="email"],
   input[type="password"]
     padding: 2px 5px
-    font: 12px/12px monospace
+    font: 10px/10px verdana
     background-color: #ddd
     border: none
-    border-bottom: 1px solid #999
+    border-bottom: 1px solid #666
   input[type="text"]
     width: 500px
   input.tiny
@@ -35,9 +35,13 @@
     width: auto
     
   .textarea_wrapper 
-    width: 955px
+    //width: 100%
+    padding: 2px 5px
+    background-color: #eee
     textarea
-      padding: 0px
+      border: none
+      padding: 2px
+      width: 90%
   .ckeditor_wrapper 
     width: 967px
     margin-bottom: 10px
@@ -56,14 +60,16 @@
   input.required,
   textarea.required
     color: #603
-    background-color: #cfc0c9
+    border-color: #957
+    background-color: #cab
   .input_msg.required
     color: #936
   select.necessary,
   input.necessary,
   textarea.necessary
     color: #306
-    background-color: #c9c0cf
+    border-color: #759
+    background-color: #bac
   .input_msg.necessary
     color: #639
     
@@ -72,23 +78,25 @@
     input.required,
     inpue.necessary,
     input[type="text"]
-      color: #fff
-      background-color: #603
+      color: #000
+      border-color: #603
+      background-color: #b79
   
   
 #page
-  .content_block.for_line_items
-    border-width: 1px 5px
-    border-color: #999 #666
-    background-color: #eee
+  .block.for_line_items
+    //background-color: #eee
+    .content
+      border: 1px solid #999
+      background-color: #ccc
+      //border-width: 1px 5px
+      //border-color: #999 #666
     .fields
       margin: 0px 0px 5px
       table
         width: 99%
         margin: 5px
-        border: 1px solid #bbb
-        border-top: 2px solid #666
-        background-color: #fff
+        border-top: 3px solid #999
       label
         width: 100px
         text-align: right
@@ -98,7 +106,7 @@
       line-height: 12px
       border-right: 1px solid #000
       border-bottom: 1px solid #000
-      background-color: #ccc
+      background-color: #999
       padding: 2px 5px
       text-decoration: none
       display: inline-block

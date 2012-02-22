@@ -1,6 +1,6 @@
 #menu {
   font: 10px/16px verdana;
-  background-color: #eeeeee;
+  background-color: #cccccc;
   border: 1px solid #666666; }
   #menu #menu_title {
     padding: 24px 0px;
@@ -9,8 +9,8 @@
     text-align: center; }
   #menu .menu_block {
     padding: 10px 0px 40px;
-    border-bottom: 1px solid #997788;
-    background-color: #ccaabb; }
+    border-bottom: 1px solid #999999;
+    background-color: #bbaacc; }
   #menu h5 {
     color: white;
     padding: 2px 5px;
@@ -18,21 +18,18 @@
     font-weight: normal;
     color: black;
     cursor: pointer;
-    background-color: #cccccc;
-    border-bottom: 1px solid #999999; }
-  #menu h5.far_alt {
-    border-top: 3px double white; }
+    background-color: #999999; }
   #menu h5.here,
   #menu h5:hover,
   #menu h5.here:hover {
     color: white;
     border-color: white white black;
-    background-color: #664455; }
+    background-color: #442266; }
   #menu h6 {
-    color: #997788;
+    color: #887799;
     margin: 10px 10px 0px 0px;
     text-align: right;
-    border-top: 1px dotted #997788;
+    border-top: 1px dotted #887799;
     font-weight: normal;
     position: relative;
     top: 10px; }
@@ -59,7 +56,7 @@
     #menu ul.small a {
       line-height: 14px;
       font-size: 10px;
-      color: #333333; }
+      color: black; }
     #menu ul.small a.here,
     #menu ul.small a:hover,
     #menu ul.small a.here:hover {
@@ -68,3 +65,23 @@
     border: none;
     border-top: 1px dotted #999999;
     margin: 10px; }
+
+#menu .dashboard .menu_block {
+  background-color: #aabbcc; }
+#menu .dashboard h5.here,
+#menu .dashboard h5:hover,
+#menu .dashboard h5.here:hover {
+  background-color: #224466; }
+#menu .dashboard h6 {
+  color: #557799;
+  border-top: 1px dotted #557799; }
+
+#menu .admin .menu_block {
+  background-color: #ccaabb; }
+#menu .admin h5.here,
+#menu .admin h5:hover,
+#menu .admin h5.here:hover {
+  background-color: #662244; }
+#menu .admin h6 {
+  color: #995577;
+  border-top: 1px dotted #995577; }

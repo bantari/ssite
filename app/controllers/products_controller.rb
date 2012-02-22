@@ -38,20 +38,6 @@ class ProductsController < ApplicationController
 
   end
 
-  #def edit_products
-  #  @object = Product.find(params[:id])
-  #end
-  #
-  #def update_products
-  #  @object = Product.find(params[:id])
-  #  if @object.update_attributes(params[:product])
-  #    EventLogger.log(current_user,@object,action_name)
-  #    redirect_to("/products/#{@object.id}?show[products]=yes", :notice=>"Object's Products updated.")
-  #  else
-  #    render :action => "edit_products"
-  #  end
-  #end
-
 #--------------------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------------
 

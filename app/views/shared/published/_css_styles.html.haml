@@ -3,19 +3,21 @@
 - field_name ||= :p_style_css
 
 - block_id = 'p_style_css'
-%h5.clickable.closed{:id=>"#{block_id}_t",:onclick=>"flipBlock('#{block_id}');"}= 'Published CSS Style'
-%div.noshow{:id=>block_id}
 
-  .content_block
+.block
+  .title.clickable.closed{:id=>"#{block_id}_t",:onclick=>"flipBlock('#{block_id}');"}= 'Published CSS Style'
+  .block.noshow{:id=>block_id}
 
-    .tabs.smaller
-      - tabs = "['#{field_name}_code','#{field_name}_raw']"
-      = link_to_function "Code", "goTo('#{field_name}_code',#{tabs})", :id=>"#{field_name}_code_a", :class=>'here'
-      = link_to_function "Raw",  "goTo('#{field_name}_raw',#{tabs})", :id=>"#{field_name}_raw_a"
+    .content
 
-    %hr
+      .tabs.smaller
+        - tabs = "['#{field_name}_code','#{field_name}_raw']"
+        = link_to_function "Code", "goTo('#{field_name}_code',#{tabs})", :id=>"#{field_name}_code_a", :class=>'here'
+        = link_to_function "Raw",  "goTo('#{field_name}_raw',#{tabs})", :id=>"#{field_name}_raw_a"
+
+      %hr
     
-    %div{:id=>"#{field_name}_code"}
-      %pre= safe item.try(field_name)
-    %div.noshow{:id=>"#{field_name}_raw"}
-      %code= item.try(field_name)
+      %div{:id=>"#{field_name}_code"}
+        %pre= safe item.try(field_name)
+      %div.noshow{:id=>"#{field_name}_raw"}
+        %code= item.try(field_name)

@@ -2,17 +2,19 @@
 - item        ||= @object
 - table_name  ||= item.class.name.tableize
 
-%h5= 'Product Details'
-%table
-  %tbody
-    = RDisplay.id_row(item,:class=>'low')
-    = RDisplay.data_row(item,:code,:label=>'Base SKU')
-    = RDisplay.data_row(item,:name)
-    = RDisplay.data_row(item,:title)
-
-%h5= 'Product Brand &amp; Category'.html_safe
-%table
-  %tbody
-    = RDisplay.row('Brand',RDisplay.link_to_obj(item.brand,:trace,:class=>'low'))
-    = RDisplay.row('Category',RDisplay.link_to_obj(item.category,:trace,:class=>'low'))
+.block
+  .title= 'Product Details'
+  .inside
+    %table.first
+      %tbody
+        = RDisplay.id_row(item,:class=>'low')
+    %table.next
+      %tbody
+        = RDisplay.data_row(item,:code,:label=>'Base SKU')
+        = RDisplay.data_row(item,:name)
+        = RDisplay.data_row(item,:title)
+    %table.last
+      %tbody
+        = RDisplay.row('Brand',RDisplay.link_to_obj(item.brand,:trace,:class=>'low'))
+        = RDisplay.row('Category',RDisplay.link_to_obj(item.category,:trace,:class=>'low'))
 

@@ -1,47 +1,56 @@
-<% block_id = 'flters_table' %>
-<% block_class = params[:filter] ? 'show' : 'noshow' %>
-<% top_class   = params[:filter] ? 'open' : 'closed' %>
-<div class="filters_block filters">
+<%- if @filter %>
+  <%= content_for :filters do %>
 
-  <%= form_for(:filter,@filter,:url=>{:action=>'index'},:html=>{:id=>'filters',:method=>'get'}) do |f| %>
+    <% block_id = 'flters_table' %>
+    <% block_class = params[:filter] ? 'noshow' : 'noshow' %>
+    <% top_class   = params[:filter] ? 'open' : 'closed' %>
 
-    <h5 class='clickable <%= top_class %>' id='<%= "#{block_id}_t" %>' onclick="flipBlock('<%= block_id %>')">Search Filters</h5>
-    <table cellspacing=0 id="<%= block_id %>" class="<%= block_class %>">
-      <tbody>
+    <div class="block filters">
+      <div class='title clickable <%= top_class %>' id='<%= "#{block_id}_t" %>' onclick="flipBlock('<%= block_id %>')"><span class='tag'></span>Search Filters</div>
+      <div  id="<%= block_id %>" class="inside <%= block_class %>">
 
-        <tr>
-          <td>
+        <%= form_for(:filter,@filter,:url=>{:action=>'index'},:html=>{:id=>'filters',:method=>'get'}) do |f| %>
 
-            <%= @filter.search_field %>
+          <table cellspacing=0>
+            <tbody>
 
-            <% if @filter.boolean_field_registered?(:active) %>
-              <%= @filter.boolean_dropdown_field(:label=>'-Active',:name=>'active') %>
-            <% end %>
+              <tr>
+                <td class='first'>
 
-            <% if @filter.boolean_field_registered?(:adjusted) %>
-              <%= @filter.boolean_dropdown_field(:label=>'-Adjusted',:name=>'adjusted') %>
-            <% end %>
+                  <%= @filter.search_field %>
 
-            <% if @filter.boolean_field_registered?(:published) %>
-              <%= @filter.boolean_dropdown_field(:label=>'-Published',:name=>'published') %>
-            <% end %>
+                  <% if @filter.boolean_field_registered?(:active) %>
+                    <%= @filter.boolean_dropdown_field(:label=>'-Active',:name=>'active') %>
+                  <% end %>
 
-          </td>
-          <td class="right"><%= @filter.paginate_fields %><%= @filter.sort_by_fields %></td>
-        </tr>
+                  <% if @filter.boolean_field_registered?(:adjusted) %>
+                    <%= @filter.boolean_dropdown_field(:label=>'-Adjusted',:name=>'adjusted') %>
+                  <% end %>
 
-        <tr>
-          <td>
+                  <% if @filter.boolean_field_registered?(:published) %>
+                    <%= @filter.boolean_dropdown_field(:label=>'-Published',:name=>'published') %>
+                  <% end %>
 
-            <%= yield %>
+                </td>
+                <td class="first right"><%= @filter.paginate_fields %><%= @filter.sort_by_fields %></td>
+              </tr>
 
-          </td>
-          <td class="right controls"><%= @filter.default_links %></td>
-        </tr>
+              <tr>
+                <td class='last'>
 
-      </tbody>
-    </table>
+                  <%= yield %>
 
-  <% end %>
+                </td>
+                <td class="last right controls"><%= @filter.default_links %></td>
+              </tr>
 
-</div>
+            </tbody>
+          </table>
+
+        <% end %>
+
+      </div>
+    </div>
+
+  <%- end %>
+<%- end %>

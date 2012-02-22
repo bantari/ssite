@@ -5,6 +5,8 @@ Ssite::Application.routes.draw do
   resources :users do
     member do 
       get :activate
+      get :edit_roles
+      put :update_roles
     end
   end
 
@@ -12,6 +14,8 @@ Ssite::Application.routes.draw do
   resources :event_logs
   resources :categories
   
+  resources :document_types
+
   resources :skus do
     member do 
       get :publish
@@ -19,6 +23,19 @@ Ssite::Application.routes.draw do
     end
   end
   
+  resources :documents do
+    member do 
+      get :publish
+      get :activate
+    end
+  end
+  resources :publications do
+    member do 
+      get :publish
+      get :activate
+    end
+  end
+
   resources :courses do
     member do 
       get :publish

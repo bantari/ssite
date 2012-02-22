@@ -111,16 +111,17 @@ module ApplicationHelper
 #--------------------------------------------------------------------------------------------------------------------------------
 # generates page titles for common actions
 
-  def page_title_for(obj,act=:list,segment='')
+  def page_title_for(obj,act=nil,options={})
     s = ''
     if act == :list
-      s = "<h1>List of #{obj.to_s.pluralize}</h1>"
-    elsif act == :show
-      s = "<h2>#{obj.h2_title}</h2><h1>#{obj.h1_title}</h1>"
-    elsif act == :edit
-      s = "<h2>#{obj.h2_title}</h2><h1 class='for_edit'>#{obj.h1_title}</h1><h3>Edit #{segment}</h3>"
+      s = "<h1 class='#{options[:h1_class]}'>List of #{obj.to_s.pluralize}</h1>"
     elsif act == :new
-      s = "<h1>Create New #{obj.class_identifier}</h1>"
+      s = "<h1 class='#{options[:h1_class]}'>Create New #{obj.class_identifier}</h1>"
+    else
+      s = "<h2 class='#{options[:h2_class]}'>#{obj.h2_title}</h2><h1 class='#{options[:h1_class]}'>#{obj.h1_title}</h1>"
+    end
+    unless options[:subtitle].blank?
+      s += "<h3 class='#{options[:h3_class]}'>#{options[:subtitle]}</h3>"
     end
     return s.html_safe
   end
@@ -130,8 +131,8 @@ module ApplicationHelper
   end
 
   def show_title_for(obj)
-    s  = "<h2>#{obj.class_identifier}</h2>"
-    s += "<h1>#{obj.title_identifier}</h1>"
+    s  = "<h2>#{obj.h2_title}</h2>"
+    s += "<h1>#{obj.h1_title}</h1>"
     return s.html_safe
   end
 
@@ -140,9 +141,12 @@ module ApplicationHelper
     return s.html_safe
   end
 
-  def edit_title_for(obj)
-    s  = "<h2>Edit #{obj.class_identifier}</h2>"
-    s += "<h1>#{obj.title_identifier}</h1>"
+  def edit_title_for(obj,what=nil)
+    s  = "<h2>Edit #{obj.h2_title}</h2>"
+    s += "<h1>#{obj.h1_title}</h1>"
+    #unless what.blank?
+    #  s += "<h3>#{what.to_s}</h3>"
+    #end
     return s.html_safe
   end
   

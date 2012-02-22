@@ -1,0 +1,16 @@
+
+- block_id = 'h_form_colors'
+
+.block.help
+  .title.clickable.closed{:id=>"#{block_id}_t",:onclick=>"flipBlock('#{block_id}');"}= "<span class='tag'></span>Form Field Colors Explanation".html_safe
+  .content.noshow{:id=>block_id}
+    %ul
+      %li
+        [
+        %b= 'Required Fields'
+        = "] --- fields which are required to be non-empty in order for the for to be submitted"
+      %li
+        [
+        %b= 'Necessary Fields'
+        = "] --- fields which can be left empty for now but will need to be filled in in order for the object to be released."
+    

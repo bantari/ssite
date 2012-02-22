@@ -1,16 +1,20 @@
 
 - item ||= @object
 
-%h5= 'Category Details'
-%table
-  %tbody
-    = RDisplay.id_row(item,:class=>'low')
-    = RDisplay.data_row(item,:name)
-    = RDisplay.data_row(item,:title)
+.block
+  .title= 'Category Details'
+  .inside
+    %table
+      %tbody
+        = RDisplay.id_row(item,:class=>'low')
+        = RDisplay.data_row(item,:name)
+        = RDisplay.data_row(item,:title)
 
-%h5= 'Parent Information'
-%table
-  %tbody
-    = RDisplay.row('Parent',RDisplay.link_to_obj(item.parent))
-    = RDisplay.data_row(item,:trace)
+.block
+  .title= 'Parent Information'
+  .inside
+    %table
+      %tbody
+        = RDisplay.row('Parent',RDisplay.link_to_obj(item.parent))
+        = RDisplay.data_row(item,:trace)
 

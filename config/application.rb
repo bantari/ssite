@@ -15,7 +15,10 @@ module Ssite
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
     config.autoload_paths += %W(
-      #{config.root}/app/models/joints
+      #{config.root}/app/models/documents,
+      #{config.root}/app/models/inventory,
+      #{config.root}/app/models/joints,
+      #{config.root}/app/models/system
     )
 
     # Only load the plugins named here, in the order given (default is alphabetical).
