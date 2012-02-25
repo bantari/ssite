@@ -1,10 +1,10 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem "rails", "3.2.1"
+gem 'rails', '3.2.1'
 gem "mysql2"
 
 gem "aws-s3"
-gem "devise", "~> 1.5.3"
+gem "devise"#, "~> 1.5.3"
 gem "ckeditor", "3.4.0"
 gem "exception_notification", :git => "https://github.com/smartinez87/exception_notification.git"
 gem "fog"

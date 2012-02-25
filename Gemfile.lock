@@ -6,7 +6,7 @@ GIT
       actionmailer (>= 3.0.4)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     actionmailer (3.2.1)
       actionpack (= 3.2.1)
@@ -35,7 +35,7 @@ GEM
     activesupport (3.2.1)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    arel (3.0.1)
+    arel (3.0.2)
     aws-s3 (0.6.2)
       builder
       mime-types
@@ -45,10 +45,11 @@ GEM
     ckeditor (3.4.0)
       mime-types (>= 1.16)
     cocaine (0.2.1)
-    devise (1.5.3)
+    devise (2.0.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
-      warden (~> 1.1)
+      railties (~> 3.1)
+      warden (~> 1.1.1)
     erubis (2.7.0)
     excon (0.6.6)
     fog (0.9.0)
@@ -70,7 +71,7 @@ GEM
       multi_xml
     httpclient (2.2.4)
     i18n (0.6.0)
-    journey (1.0.2)
+    journey (1.0.3)
     json (1.6.5)
     mail (2.4.1)
       i18n (>= 0.4.0)
@@ -86,7 +87,7 @@ GEM
     net-ssh (2.3.0)
     nokogiri (1.5.0)
     orm_adapter (0.0.6)
-    paperclip (2.6.0)
+    paperclip (2.7.0)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
@@ -147,7 +148,7 @@ PLATFORMS
 DEPENDENCIES
   aws-s3
   ckeditor (= 3.4.0)
-  devise (~> 1.5.3)
+  devise
   exception_notification!
   fog
   haml

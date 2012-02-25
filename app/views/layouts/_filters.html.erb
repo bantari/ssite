@@ -9,7 +9,7 @@
       <div class='title clickable <%= top_class %>' id='<%= "#{block_id}_t" %>' onclick="flipBlock('<%= block_id %>')"><span class='tag'></span>Search Filters</div>
       <div  id="<%= block_id %>" class="inside <%= block_class %>">
 
-        <%= form_for(:filter,@filter,:url=>{:action=>'index'},:html=>{:id=>'filters',:method=>'get'}) do |f| %>
+        <%= form_for(:filter,:url=>{:action=>'index'},:html=>{:id=>'filters',:method=>'get'}) do |f| %>
 
           <table cellspacing=0>
             <tbody>

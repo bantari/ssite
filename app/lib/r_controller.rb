@@ -16,11 +16,7 @@ module RController
     @filter.adjust_for_parameters(params)
     
     @items_count = model_name.count(:conditions=>@filter.sql_conditions)
-    @objects     = model_name.paginate(:all,:page=>params[:page],
-      :per_page   => @perpage || @filter.perpage,
-      :order      => @sortorder || @filter.sql_sortorder,
-      :conditions => @conditions || @filter.sql_conditions
-    )
+    @objects     = model_name.where(@conditions || @filter.sql_conditions).paginate(:page=>params[:page],:per_page=>(@perpage || @filter.perpage)).order(@sortorder || @filter.sql_sortorder)
 
     do_before_each
     respond_to do |format|
