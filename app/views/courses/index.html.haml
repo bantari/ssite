@@ -5,6 +5,6 @@
   - if has_roles?(:inventory)
     = link_to 'New', new_course_path, :class=>'new'
 
-= page_title_for "Courses"
+= page_title_for "Courses", :list
 
 = render :partial=>'list'

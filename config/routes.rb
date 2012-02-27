@@ -27,6 +27,8 @@ Ssite::Application.routes.draw do
     member do 
       get :publish
       get :activate
+      get :edit_search
+      put :update_search
     end
   end
   resources :publications do

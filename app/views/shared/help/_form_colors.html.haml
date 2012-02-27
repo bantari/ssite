@@ -4,13 +4,20 @@
 .block.help
   .title.clickable.closed{:id=>"#{block_id}_t",:onclick=>"flipBlock('#{block_id}');"}= "<span class='tag'></span>Form Field Colors Explanation".html_safe
   .content.noshow{:id=>block_id}
+
+    %h5= 'Optional Fields'
     %ul
-      %li
-        [
-        %b= 'Required Fields'
-        = "] --- fields which are required to be non-empty in order for the for to be submitted"
-      %li
-        [
-        %b= 'Necessary Fields'
-        = "] --- fields which can be left empty for now but will need to be filled in in order for the object to be released."
+      %li= "fields which are optional - most likely this means that they are only used locally within StemSite"
+
+    %h5= 'Optional/Automatic Fields'
+    %ul
+      %li= "fields which are needed but will be filled out automatically by the system if left empty"
+
+    %h5.red= 'Required Fields'
+    %ul
+      %li= "fields which are required to be non-empty in order for the for to be submitted"
+
+    %h5.purple= 'Necessary Fields'
+    %ul
+      %li= "fields which can be left empty for now but will need to be filled in in order for the object to be released."
     

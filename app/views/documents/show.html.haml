@@ -12,6 +12,7 @@
 .tabs
 
   = link_to "Details","?show[details]=yes", :class=>here_class(params[:show],'details',true)
+  = link_to "Search","?show[search]=yes", :class=>here_class(params[:show],'search')
   = tabs_divider
   = link_to "Abstract","?show[abstract]=yes", :class=>here_class(params[:show],'abstract')
   = link_to "Content","?show[content]=yes", :class=>here_class(params[:show],'content')
@@ -23,6 +24,8 @@
 
   - if params[:show] == nil || params[:show] && params[:show][:details]
     = render :partial=>'show_details'
+  - elsif params[:show] && params[:show][:search]
+    = render :partial=>'/shared/display/show_search_fields'
 
   - elsif params[:show] && params[:show][:abstract]
     = render :partial=>'/shared/display/show_html_block', :locals=>{:field_name=>'abstract'}

@@ -41,10 +41,12 @@
     = render :partial=>'show_details'
   - elsif params[:show] && params[:show][:search]
     = render :partial=>'/shared/display/show_search_fields'
+
   - elsif params[:show] && params[:show][:overview]
     = render :partial=>'/shared/display/show_html_block', :locals=>{:field_name=>:overview}
   - elsif params[:show] && params[:show][:specifications]
     = render :partial=>'/shared/display/show_html_block', :locals=>{:field_name=>:specifications}
+
   - elsif params[:show] && params[:show][:css_styles]
     = render :partial=>'/shared/display/show_css_styles'
 
