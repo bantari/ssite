@@ -13,6 +13,7 @@
             %th.id.key= RFilterHelper.sort_by_link('ID','id',@filter,sorter)
             %th.str.w150px= RFilterHelper.sort_by_link('Name','name',@filter,sorter)
             %th.str= RFilterHelper.sort_by_link('Title','title',@filter,sorter)
+            %th.status= 'Type'
             %th.status= 'Status'
 
           - reset_cycle
@@ -21,6 +22,7 @@
               %td.id.key= RDisplay.id_link(item)
               %td.str.w150px= link_to RDisplay.str(item.name), item, :class=>'low'
               %td.str= RDisplay.str(item.get_title)
+              %td.status= RDisplay.with_style(item.document_type,:name)
               %td.status= item.get_flags
             
     - else

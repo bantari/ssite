@@ -17,6 +17,9 @@ class Document < ActiveRecord::Base
   delegate :file_path,
     :to => :document_type
 
+  #--- scopes
+  scope :for_select, :order => 'name ASC'
+
 #--------------------------------------------------------------------------------------------------------------------------------
 
   def get_title
@@ -28,6 +31,9 @@ class Document < ActiveRecord::Base
     return "#{self.file_path}#{self.file_name}"
   end
 
+  def name_for_selection
+    return "#{self.name} (#{self.document_type.name})"
+  end
 #--------------------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------------
 

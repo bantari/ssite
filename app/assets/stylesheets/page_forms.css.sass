@@ -1,5 +1,6 @@
 
 #page
+  .field,
   select,
   textarea,
   input[type="text"],
@@ -26,6 +27,10 @@
     width: 100%
     border-color: #ccc
     background-color: #eee
+    
+  .field
+    width: 160px
+    display: inline-block
     
   select
     padding: 2px 5px 1px
@@ -56,6 +61,17 @@
   .input_msg.info
     color: #666
 
+  .field.automatic,
+  select.automatic,
+  input.automatic,
+  textarea.automatic
+    color: #036
+    border-color: #579
+    background-color: #abc
+  .input_msg.automatic
+    color: #369
+
+  .field.required,
   select.required,
   input.required,
   textarea.required
@@ -64,6 +80,8 @@
     background-color: #cab
   .input_msg.required
     color: #936
+
+  .field.necessary,
   select.necessary,
   input.necessary,
   textarea.necessary
@@ -87,8 +105,8 @@
   .block.for_line_items
     //background-color: #eee
     .content
-      border: 1px solid #999
-      background-color: #ccc
+      //border: 1px solid #999
+      //background-color: #ccc
       //border-width: 1px 5px
       //border-color: #999 #666
     .fields
@@ -106,7 +124,7 @@
       line-height: 12px
       border-right: 1px solid #000
       border-bottom: 1px solid #000
-      background-color: #999
+      background-color: #cab
       padding: 2px 5px
       text-decoration: none
       display: inline-block

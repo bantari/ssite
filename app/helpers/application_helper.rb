@@ -58,11 +58,14 @@ module ApplicationHelper
   def optional(options={})
     return input_msg('optional',options)
   end
-  def required(options={})
-    return input_msg('required',options)
+  def automatic(options={})
+    return input_msg('automatic',options)
   end
   def necessary(options={})
     return input_msg('necessary',options)
+  end
+  def required(options={})
+    return input_msg('required',options)
   end
   
   def field_info(txt,options={})
@@ -78,16 +81,30 @@ module ApplicationHelper
 # required_fields are the fields which cannot be empty for the object to save
 # necessary_fields are the fields necessary for object release
 
-  def input_flag(name,required_fields=[],necessary_fields=[])
+  def input_flag(name,field_flags=[])
+    return '' unless field_flags && field_flags.size>2
+
+    required_fields  = field_flags[0]
+    necessary_fields = field_flags[1]
+    automatic_fields = field_flags[2]
+
     return required  if required_fields  && required_fields.size>0  && required_fields.include?(name)
     return necessary if necessary_fields && necessary_fields.size>0 && necessary_fields.include?(name)
+    return automatic if automatic_fields && automatic_fields.size>0 && automatic_fields.include?(name)
     return optional
   end
 
-  def input_class(name,required_fields=[],necessary_fields=[])
+  def input_class(name,field_flags=[])
+    return '' unless field_flags && field_flags.size>2
+
+    required_fields  = field_flags[0]
+    necessary_fields = field_flags[1]
+    automatic_fields = field_flags[2]
+    
     s = ''
     s += ' required'  if required_fields  && required_fields.size>0  && required_fields.include?(name)
     s += ' necessary' if necessary_fields && necessary_fields.size>0 && necessary_fields.include?(name)
+    s += ' automatic' if automatic_fields && automatic_fields.size>0 && automatic_fields.include?(name)
     return s
   end
   

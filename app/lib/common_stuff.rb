@@ -40,6 +40,10 @@ module CommonStuff
     self.class_identifier
   end
 
+  def style 
+    return "flag #{self.class.name.tableize} #{self.name.downcase.gsub(' ','_')}"
+  end
+
 #--------------------------------------------------------------------------------------------------------------------------------
 
   def activate

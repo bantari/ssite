@@ -12,7 +12,7 @@
         .title.clickable{:onclick=>"flipElement('not_ready');"}= "<span class='tag'></span>Not ready to be published yet!".html_safe
         #not_ready.noshow
           .content
-            %p= 'Missing components:'
+            %h5= 'Missing components:'
             %ul
               - arr.each do |a|
                 %li= safe a

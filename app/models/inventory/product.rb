@@ -47,10 +47,20 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :product_suggestions, :allow_destroy => true, 
     :reject_if => proc {|attributes| attributes["_delete"] == "1"}
 
+  has_many :product_documents, :order => 'position ASC', :include => :document
+  has_many :documents, :through => :product_documents
+  accepts_nested_attributes_for :product_documents, :allow_destroy => true, 
+    :reject_if => proc {|attributes| attributes["_delete"] == "1"}
+
+  has_many :product_publications, :order => 'position ASC', :include => :publication
+  has_many :publications, :through => :product_publications
+  accepts_nested_attributes_for :product_publications, :allow_destroy => true, 
+    :reject_if => proc {|attributes| attributes["_delete"] == "1"}
+
   #--- additional accessors
   attr_accessor :editorial_comment
   
-  #--- scope
+  #--- scopes
   scope :for_select, :order => 'code ASC'
 
   #--- callbacks

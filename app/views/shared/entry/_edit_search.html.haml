@@ -5,7 +5,9 @@
 - object_name ||= table_name.singularize
 
 - required    ||= []
-- necessary   ||= []
+- necessary   ||= [:m_keywords,:m_description]
+- automatic   ||= [:m_title]
+- field_flags   = [required,necessary,automatic]
 
 = render :partial=>'/shared/help/index', :locals=>{:blocks=>[:form_colors,:search_fields]}
 
@@ -24,18 +26,18 @@
     .inside
       %table
         %tbody
-          = RDisplay.row('Meta Title',f.text_field(:m_title,:class=>input_class(:m_title,required,necessary))+input_flag(:m_title,required,necessary))
-          = RDisplay.row('Meta Keywords',f.text_area(:m_keywords,:rows=>2,:class=>input_class(:m_keywords,required,necessary))+input_flag(:m_keywords,required,necessary))
-          = RDisplay.row('Meta Description',f.text_area(:m_description,:rows=>3,:class=>input_class(:m_description,required,necessary))+input_flag(:m_description,required,necessary))
+          = RDisplay.row('Meta Title',f.text_field(:m_title,:class=>input_class(:m_title,field_flags))+input_flag(:m_title,field_flags))
+          = RDisplay.row('Meta Keywords',f.text_area(:m_keywords,:rows=>2,:class=>input_class(:m_keywords,field_flags))+input_flag(:m_keywords,field_flags))
+          = RDisplay.row('Meta Description',f.text_area(:m_description,:rows=>3,:class=>input_class(:m_description,field_flags))+input_flag(:m_description,field_flags))
 
   .block
     .title= 'Search Fields'
     .inside
       %table
         %tbody
-          = RDisplay.row('Search Title',f.text_field(:s_title,:class=>input_class(:s_title,required,necessary))+input_flag(:s_title,required,necessary))
-          = RDisplay.row('Search Keywords',f.text_area(:s_keywords,:rows=>2,:class=>input_class(:s_keywords,required,necessary))+input_flag(:s_keywords,required,necessary))
-          = RDisplay.row('Search Description',f.text_area(:s_description,:rows=>3,:class=>input_class(:s_description,required,necessary))+input_flag(:s_description,required,necessary))
+          = RDisplay.row('Search Title',f.text_field(:s_title,:class=>input_class(:s_title,field_flags))+input_flag(:s_title,field_flags))
+          = RDisplay.row('Search Keywords',f.text_area(:s_keywords,:rows=>2,:class=>input_class(:s_keywords,field_flags))+input_flag(:s_keywords,field_flags))
+          = RDisplay.row('Search Description',f.text_area(:s_description,:rows=>3,:class=>input_class(:s_description,field_flags))+input_flag(:s_description,field_flags))
         
   = render :partial=>'/shared/entry/editorial_comment', :locals=>{:f=>f}
 

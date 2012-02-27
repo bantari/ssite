@@ -1,0 +1,24 @@
+
+- item  ||= @object
+
+.buttons.top.for_form
+  = RDisplay.cancel_form_link("/products/#{item.id}?show[documents]=yes")
+  = RDisplay.submit_form_link("edit_product_#{item.id}")
+
+= page_title_for item, :edit, 'Attached Documents'
+
+= nested_form_for(item,:url=>"/products/#{item.id}/update_documents") do |f|
+  = render :partial=>'/shared/entry/errors'
+  
+  .block.for_line_items
+    .title= 'Attached Documents'
+    .content
+      - f.fields_for :product_documents do |product_documents_form|
+        = render :partial=>'product_document_fields', :locals=>{:f=>product_documents_form}
+      = f.link_to_add "Add a Document", :product_documents
+
+  = render :partial=>'/shared/entry/editorial_comment', :locals=>{:f=>f}
+
+.buttons.bot.for_form
+  = RDisplay.cancel_form_link("/products/#{item.id}?show[documents]=yes")
+  = RDisplay.submit_form_link("edit_product_#{item.id}")

@@ -28,6 +28,7 @@
   = link_to "Styles","?show[css_styles]=yes", :class=>here_class(params[:show],'css_styles')
   = tabs_divider
   = link_to "Products","?show[products]=yes", :class=>here_class(params[:show],'products')
+  = link_to "Documents","?show[documents]=yes", :class=>here_class(params[:show],'documents')
   .f-right
     = link_to "L","?show[live]=yes", :class=>here_class(params[:show],'live')
     = link_to "P","?show[published]=yes", :class=>here_class(params[:show],'published')
@@ -52,6 +53,8 @@
 
   - elsif params[:show] && params[:show][:products]
     = render :partial=>'show_products'
+  - elsif params[:show] && params[:show][:documents]
+    = render :partial=>'show_documents'
 
   - elsif params[:show] && params[:show][:live]
     = render :partial=>'show_live', :locals=>{:item=>item}
