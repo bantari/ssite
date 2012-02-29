@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "brand_menus", :force => true do |t|
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "brand_promos", :force => true do |t|
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "brand_styles", :force => true do |t|
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "brand_suggestions", :force => true do |t|
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",    :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "brands", :force => true do |t|
@@ -77,8 +77,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.string   "trace"
     t.string   "full"
     t.integer  "site_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "categories", :force => true do |t|
@@ -91,8 +91,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.string   "trace"
     t.string   "full"
     t.integer  "site_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "category_banners", :force => true do |t|
@@ -102,8 +102,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",  :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "category_menus", :force => true do |t|
@@ -113,8 +113,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",  :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "category_promos", :force => true do |t|
@@ -124,8 +124,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",  :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "category_styles", :force => true do |t|
@@ -135,8 +135,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",  :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "category_suggestions", :force => true do |t|
@@ -146,8 +146,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",    :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "course_banners", :force => true do |t|
@@ -157,8 +157,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "course_components", :force => true do |t|
@@ -168,8 +168,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",   :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "course_documents", :force => true do |t|
@@ -179,8 +179,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",  :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "course_images", :force => true do |t|
@@ -190,8 +190,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "course_menus", :force => true do |t|
@@ -201,8 +201,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "course_promos", :force => true do |t|
@@ -212,8 +212,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "course_publications", :force => true do |t|
@@ -223,8 +223,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",     :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "course_references", :force => true do |t|
@@ -234,8 +234,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",   :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "course_relations", :force => true do |t|
@@ -245,8 +245,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",  :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "course_styles", :force => true do |t|
@@ -256,8 +256,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "course_suggestions", :force => true do |t|
@@ -267,8 +267,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",    :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "course_vdeos", :force => true do |t|
@@ -278,8 +278,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "courses", :force => true do |t|
@@ -342,8 +342,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "released_by",      :default => 1
     t.integer  "created_by",       :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
   end
 
   create_table "document_types", :force => true do |t|
@@ -354,8 +354,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.string   "file_path"
     t.integer  "created_by",  :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "documents", :force => true do |t|
@@ -411,8 +411,26 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "released_by",      :default => 1
     t.integer  "created_by",       :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+  end
+
+  create_table "error_logs", :force => true do |t|
+    t.datetime "time"
+    t.integer  "user_id"
+    t.integer  "object_id"
+    t.string   "object_type"
+    t.string   "object_name"
+    t.string   "controller_name"
+    t.string   "action_name"
+    t.text     "message"
+    t.integer  "severity",        :default => 0
+    t.boolean  "active",          :default => true
+    t.boolean  "sent",            :default => false
+    t.integer  "app_id"
+    t.integer  "site_id",         :default => 1
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   create_table "event_logs", :force => true do |t|
@@ -426,8 +444,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.text     "comment"
     t.integer  "app_id"
     t.integer  "site_id",     :default => 1
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "page_banners", :force => true do |t|
@@ -437,8 +455,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "page_documents", :force => true do |t|
@@ -448,8 +466,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",  :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "page_images", :force => true do |t|
@@ -459,8 +477,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "page_menus", :force => true do |t|
@@ -470,8 +488,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "page_promos", :force => true do |t|
@@ -481,8 +499,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "page_publications", :force => true do |t|
@@ -492,8 +510,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",     :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "page_styles", :force => true do |t|
@@ -503,8 +521,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "page_vdeos", :force => true do |t|
@@ -514,8 +532,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "product_banners", :force => true do |t|
@@ -525,8 +543,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "product_components", :force => true do |t|
@@ -536,8 +554,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",   :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "product_documents", :force => true do |t|
@@ -547,8 +565,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",  :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "product_images", :force => true do |t|
@@ -558,8 +576,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "product_menus", :force => true do |t|
@@ -569,8 +587,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "product_promos", :force => true do |t|
@@ -580,8 +598,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "product_publications", :force => true do |t|
@@ -591,8 +609,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",     :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "product_references", :force => true do |t|
@@ -602,8 +620,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",   :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "product_relations", :force => true do |t|
@@ -613,8 +631,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",  :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "product_styles", :force => true do |t|
@@ -624,8 +642,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "product_suggestions", :force => true do |t|
@@ -635,8 +653,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",    :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "product_vdeos", :force => true do |t|
@@ -646,8 +664,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "products", :force => true do |t|
@@ -722,8 +740,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "released_by",         :default => 1
     t.integer  "created_by",          :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
   create_table "releases", :force => true do |t|
@@ -735,8 +753,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.text     "description"
     t.integer  "app_id"
     t.integer  "site_id",     :default => 1
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "skus", :force => true do |t|
@@ -775,8 +793,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "released_by",   :default => 1
     t.integer  "created_by",    :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "survey_banners", :force => true do |t|
@@ -786,8 +804,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "survey_documents", :force => true do |t|
@@ -797,8 +815,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",  :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "survey_images", :force => true do |t|
@@ -808,8 +826,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "survey_menus", :force => true do |t|
@@ -819,8 +837,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "survey_promos", :force => true do |t|
@@ -830,8 +848,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "survey_publications", :force => true do |t|
@@ -841,8 +859,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by",     :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "survey_styles", :force => true do |t|
@@ -852,8 +870,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "survey_vdeos", :force => true do |t|
@@ -863,8 +881,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.integer  "position"
     t.integer  "created_by", :default => 1
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -901,8 +919,8 @@ ActiveRecord::Schema.define(:version => 20120214234017) do
     t.boolean  "active",                                :default => true
     t.boolean  "editable",                              :default => true
     t.string   "sites_str"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                               :null => false
+    t.datetime "updated_at",                                               :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
