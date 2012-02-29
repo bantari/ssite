@@ -11,18 +11,18 @@
         %tbody
           %tr
             %th.id.key= RFilterHelper.sort_by_link('ID','id',@filter,sorter)
-            %th.str.w120px= RFilterHelper.sort_by_link('Category','category_id',@filter,sorter)
             %th.str.code= RFilterHelper.sort_by_link('Base SKU','code',@filter,sorter)
             %th.str.name= RFilterHelper.sort_by_link('Name','name',@filter,sorter)
+            %th.category= RFilterHelper.sort_by_link('Category','category_id',@filter,sorter)
             %th.status= 'Status'
 
           - reset_cycle
           - items.each do |item|
             %tr{:class=>cycle('odd','even')+row_class_for(item)}
               %td.id.key= RDisplay.id_link(item)
-              %td.str.w120px= RDisplay.link_to_obj(item.category,:name,:class=>'low')
               %td.str.code= link_to RDisplay.str(item.code), item, :class=>'low'
               %td.str.name= link_to RDisplay.str(item.name), item, :class=>'low'
+              %td.category= RDisplay.with_style(item.category,:name)
               %td.status= item.get_flags
 
     - else

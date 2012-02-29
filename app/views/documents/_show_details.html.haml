@@ -4,8 +4,9 @@
 = render :partial=>'/shared/help/index', :locals=>{:local_blocks=>[:details_help]}
 .strip.undertabs
 
-  .buttons.fright
-    = link_to 'Edit Details', "/documents/#{item.id}/edit", :class=>'edit'
+  - if has_roles_strict?(:documents,:editor)
+    .buttons.fright
+      = link_to 'Edit Details', "/documents/#{item.id}/edit", :class=>'edit'
 
   .tabs.small
     = link_to_function 'Details', "changeTab('tab_01')", :id=>'tab_01_a', :class=>'here'

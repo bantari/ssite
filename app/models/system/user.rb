@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, 
-    :admin, :developer, :creator, :editor, :destroyer, :releaser,
+    :admin, :developer, :creator, :editor, :destroyer, :publisher,
     :documents,:inventory,:website,:media,:web_social,:web_glossary,:web_faq,:live,:special,:system,
     :name, :title, :description, :editable, :active
 
@@ -113,8 +113,7 @@ class User < ActiveRecord::Base
 #--------------------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------------
 
-  def has_roles?(*roles)
-    return true if self.admin
+  def has_roles_strict?(*roles)
     has = true
     roles.each do |role|
       if self.respond_to?(role)
@@ -124,6 +123,10 @@ class User < ActiveRecord::Base
       end
     end # do roles
     return has
+  end
+  def has_roles?(*roles)
+    return true if self.admin
+    return has_roles_strict?(*roles)
   end
     
   def has_roles_either?(*roles)

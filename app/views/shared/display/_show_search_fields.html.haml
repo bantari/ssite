@@ -6,8 +6,9 @@
 
 .strip.undertabs
 
-  .buttons.fright
-    = link_to 'Edit Search Fields', "/#{table_name}/#{item.id}/edit_search", :class=>'edit'
+  - if has_roles_strict?(item.section,:editor)
+    .buttons.fright
+      = link_to 'Edit Search Fields', "/#{table_name}/#{item.id}/edit_search", :class=>'edit'
 
   .tabs.small
     = link_to_function "Editable",  "changeTab('tab_01')", :id=>'tab_01_a', :class=>"here" 

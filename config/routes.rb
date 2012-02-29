@@ -29,6 +29,12 @@ Ssite::Application.routes.draw do
       get :activate
       get :edit_search
       put :update_search
+      get :edit_abstract
+      put :update_abstract
+      get :edit_content
+      put :update_content
+      get :edit_products
+      put :update_products
     end
   end
   resources :publications do

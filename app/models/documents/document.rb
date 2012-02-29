@@ -14,6 +14,11 @@ class Document < ActiveRecord::Base
   #--- associations
   belongs_to :document_type
   
+  has_many :product_documents, :order => 'position ASC', :include => :product
+  has_many :products, :through => :product_documents
+  accepts_nested_attributes_for :product_documents, :allow_destroy => true, :reject_if => proc {|attributes| attributes["_delete"] == "1"}
+
+  #--- delegations
   delegate :file_path,
     :to => :document_type
 
@@ -34,6 +39,11 @@ class Document < ActiveRecord::Base
   def name_for_selection
     return "#{self.name} (#{self.document_type.name})"
   end
+  
+  def h2_title
+    return self.document_type.title
+  end
+  
 #--------------------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------------
 

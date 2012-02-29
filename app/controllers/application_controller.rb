@@ -50,8 +50,12 @@ end
 
 #--------------------------------------------------------------------------------------------------------------------------------
 
-  helper_method :has_roles?, :has_roles_either?
+  helper_method :has_roles_strict?, :has_roles?, :has_roles_either?
 
+  def has_roles_strict?(*roles)
+    return false unless current_user
+    return current_user.has_roles_strict?(*roles) || false
+  end
   def has_roles?(*roles)
     return false unless current_user
     return current_user.has_roles?(*roles) || false

@@ -20,7 +20,7 @@ class DocumentsController < ApplicationController
 #--------------------------------------------------------------------------------------------------------------------------------
 # generate edit_x and update_x pairs for various fields
 
-  [:search,:abstract,:content].each do |field|
+  [:search,:abstract,:content,:products].each do |field|
 
     define_method("edit_#{field}") do
       @object = Product.find(params[:id])

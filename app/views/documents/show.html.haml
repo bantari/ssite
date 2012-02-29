@@ -19,6 +19,8 @@
   .f-right
     = link_to "H","?show[history]=yes", :class=>here_class(params[:show],'history')
     = link_to "Comments","?show[comments]=yes", :class=>here_class(params[:show],'comments')
+  = tabs_divider
+  = link_to "Products","?show[products]=yes", :class=>here_class(params[:show],'products')
 
 .undertabs
 
@@ -31,6 +33,9 @@
     = render :partial=>'/shared/display/show_html_block', :locals=>{:field_name=>'abstract'}
   - elsif params[:show] && params[:show][:content]
     = render :partial=>'/shared/display/show_html_block', :locals=>{:field_name=>'content'}
+
+  - elsif params[:show] && params[:show][:products]
+    = render :partial=>'show_products'
 
   - elsif params[:show] && params[:show][:history]
     = render :partial=>'/shared/display/show_history', :locals=>{:field_name=>:history,:no_actions=>true}
