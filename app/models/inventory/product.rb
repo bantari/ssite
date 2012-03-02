@@ -101,6 +101,7 @@ class Product < ActiveRecord::Base
     
     arr << "details > <b>base sku</b>"            if self.code.blank?
     arr << "details > <b>name</b>"                if self.name.blank?
+    arr << "details > <b>title</b>"               if self.title.blank?
     
     arr << "search > meta > <b>keywords</b>"      if self.m_keywords.blank?
     arr << "search > meta > <b>description</b>"   if self.m_keywords.blank?

@@ -4,7 +4,7 @@
 - table_name  ||= item.class.name.tableize
 - object_name ||= table_name.singularize
 
-= render :partial=>'/shared/help/index', :locals=>{:blocks=>[:form_colors]}
+= render :partial=>'/shared/help/index', :locals=>{:blocks=>[:form_colors],:local_blocks=>[:details_help]}
 
 = page_title_for item, :edit, 'Details, SKUs, and Flags'
 

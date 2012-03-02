@@ -1,0 +1,23 @@
+
+- block_id = 'h_details'
+
+.block.help
+  .title.clickable.closed{:id=>"#{block_id}_t",:onclick=>"flipBlock('#{block_id}');"}= "<span class='tag'></span>Details Explanation".html_safe
+  .content.noshow{:id=>block_id}
+
+    %h5= 'Base SKU'
+    %ul
+      %li= 'Used for searching purposes only, not visible on the website'
+      
+    %h5= 'Name'
+    %ul
+      %li= "this is what shows in the dropdown lists in StemSite"
+      
+    %h5= 'Title'
+    %ul
+      %li= "this is what shows as the product name (title) on the website"
+
+    %h5= 'Description'
+    %ul
+      %li= "optional, shows nowhere except for the details screen in StemSite"
+

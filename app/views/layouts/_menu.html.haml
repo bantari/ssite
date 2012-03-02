@@ -29,7 +29,7 @@
 - elsif %(images videos).include? controller.controller_name 
   - menu_04_class   = 'show'
   - menu_04_class_h = 'here'
-- elsif %(users event_logs).include? controller.controller_name 
+- elsif %(users error_logs event_logs).include? controller.controller_name 
   - menu_10_class   = 'show'
   - menu_10_class_h = 'here'
 
@@ -115,4 +115,8 @@
       .menu_block
         %ul
           %li= link_to 'Users', users_path, :class=>menu_here('users')
-          %li= link_to 'Events', event_logs_path, :class=>menu_here('event_logs')
+        - if has_roles?(:admin,:developer)
+          %h6= 'Developer'
+          %ul.small
+            %li= link_to 'Errors', error_logs_path, :class=>menu_here('error_logs')
+            %li= link_to 'Events', event_logs_path, :class=>menu_here('event_logs')

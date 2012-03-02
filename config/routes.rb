@@ -11,7 +11,6 @@ Ssite::Application.routes.draw do
   end
 
   resources :brands
-  resources :event_logs
   resources :categories
   
   resources :document_types
@@ -138,6 +137,9 @@ Ssite::Application.routes.draw do
   resources :survey_menus
   resources :survey_banners
   resources :survey_styles
+
+  resources :error_logs
+  resources :event_logs
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

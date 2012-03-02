@@ -6,9 +6,10 @@
   .inside
     %table.entry.first
       %tbody
-        = RDisplay.row('Base SKU (Code)',f.text_field(:code, :class=>'short required')+required)
-        = RDisplay.row('Name',f.text_field(:name, :class=>'short required')+required)
-        = RDisplay.row('Title',f.text_field(:title, :class=>'normal')+optional)
+        = RDisplay.row('Base SKU (Code)',f.text_field(:code, :class=>'tiny required')+required)
+        = RDisplay.row('Name',f.text_field(:name, :class=>'required')+required)
+        = RDisplay.row('Title',f.text_field(:title, :class=>'necessary')+necessary)
+        = RDisplay.row('Description',f.text_field(:title, :class=>'optional')+optional)
     %table.entry.last
       %tbody
         = RDisplay.row_for_selection_with_none('Brand', item, :brand_id, Brand.all)
